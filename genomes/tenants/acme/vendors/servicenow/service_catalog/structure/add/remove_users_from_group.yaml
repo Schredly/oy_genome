@@ -1,0 +1,19 @@
+name: Add/Remove users from group
+category: ''
+description: "<p><span style=\"font-size: 10pt;\">Any member of a group can invite\
+  \ others to the group or request for removal of any member from the group through\
+  \ this catalog item.</span>\_</p>"
+active: true
+variables:
+- name: user
+  type: unknown
+  mandatory: false
+  question: ''
+- name: request_type
+  type: select
+  mandatory: false
+  question: ''
+- name: group_name
+  type: reference
+  mandatory: false
+  question: ''
