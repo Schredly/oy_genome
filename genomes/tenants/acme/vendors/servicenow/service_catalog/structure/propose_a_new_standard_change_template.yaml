@@ -1,0 +1,84 @@
+name: Propose a new Standard Change Template
+category: ''
+description: '<p class="p1"><span style="font-size: small;"><span class="s1">Standard
+  Changes are those with repeatable implementation steps that have a proven history
+  of success and are considered by Change Management to be low risk. Use this request
+  to propose a Standard Change for your Change Management team to confirm.</span></span></p>'
+active: true
+variables:
+- name: created_from_change
+  type: unknown
+  mandatory: false
+  question: ''
+- name: proposal
+  type: unknown
+  mandatory: false
+  question: ''
+- name: short_description
+  type: unknown
+  mandatory: false
+  question: ''
+- name: description
+  type: textarea
+  mandatory: false
+  question: ''
+- name: business_justification
+  type: textarea
+  mandatory: false
+  question: ''
+- name: category
+  type: reference
+  mandatory: false
+  question: ''
+- name: sample_change_requests
+  type: unknown
+  mandatory: false
+  question: ''
+- name: template_val_macro
+  type: unknown
+  mandatory: false
+  question: ''
+- name: formatter
+  type: unknown
+  mandatory: false
+  question: ''
+- name: categorisation
+  type: unknown
+  mandatory: false
+  question: ''
+- name: template_name
+  type: unknown
+  mandatory: false
+  question: ''
+- name: catalog
+  type: reference
+  mandatory: false
+  question: ''
+- name: formatter3
+  type: unknown
+  mandatory: false
+  question: ''
+- name: definition
+  type: unknown
+  mandatory: false
+  question: ''
+- name: formatter2
+  type: unknown
+  mandatory: false
+  question: ''
+- name: change_task_annotation
+  type: unknown
+  mandatory: false
+  question: ''
+- name: template_value
+  type: textarea
+  mandatory: false
+  question: ''
+- name: change_requests
+  type: unknown
+  mandatory: false
+  question: ''
+- name: state
+  type: unknown
+  mandatory: false
+  question: ''
