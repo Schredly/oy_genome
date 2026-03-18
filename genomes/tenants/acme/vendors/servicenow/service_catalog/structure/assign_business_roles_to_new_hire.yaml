@@ -1,0 +1,21 @@
+name: Assign business roles to new hire
+category: ''
+description: ''
+active: true
+variables:
+- name: Start
+  type: unknown
+  mandatory: false
+  question: ''
+- name: employee
+  type: reference
+  mandatory: false
+  question: ''
+- name: default_business_role
+  type: unknown
+  mandatory: false
+  question: ''
+- name: business_roles
+  type: unknown
+  mandatory: false
+  question: ''
