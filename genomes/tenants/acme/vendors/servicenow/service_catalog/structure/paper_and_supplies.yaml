@@ -1,0 +1,25 @@
+name: Paper and Supplies
+category: ''
+description: "<p><font size=\"3\" face=\"arial,helvetica,sans-serif\">Services Overview:</font></p>\n\
+  <p><font size=\"2\">This Service allows you to order a variety of paper products\
+  \ for your office.</font></p>\n<p>\_</p>\n<p><font size=\"3\">Services Include:</font></p>\n\
+  <ul><li><font size=\"2\">Paper Printer</font></li><li><font size=\"2\">Pens &amp;\
+  \ Highlighters</font></li><li><font size=\"2\">Miscellaneous supplies</font></li></ul>"
+active: true
+variables:
+- name: copier_reams
+  type: select
+  mandatory: false
+  question: ''
+- name: pens
+  type: select
+  mandatory: false
+  question: ''
+- name: screen_wipes
+  type: select
+  mandatory: false
+  question: ''
+- name: additional
+  type: textarea
+  mandatory: false
+  question: ''
