@@ -1,0 +1,22 @@
+name: New virtual pc request
+category: ''
+description: '<p><span style="font-size: 10pt;">Request a new windows virtual desktop
+  (WVD).</span></p>'
+active: true
+variables:
+- name: select_the_windows_virtual_desktop_type
+  type: select
+  mandatory: false
+  question: ''
+- name: i_am_requesting_this_for_personal_or_business_travel_to_other_countries
+  type: unknown
+  mandatory: false
+  question: ''
+- name: justification
+  type: textarea
+  mandatory: false
+  question: ''
+- name: upload_the_manager_approval_for_this_request
+  type: unknown
+  mandatory: false
+  question: ''
