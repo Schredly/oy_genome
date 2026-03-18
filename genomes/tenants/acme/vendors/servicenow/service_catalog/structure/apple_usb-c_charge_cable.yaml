@@ -1,0 +1,17 @@
+name: Apple USB-C charge cable
+category: ''
+description: "<p><span style=\"font-size: 10pt;\">This 3-metre charge cable \u2014\
+  \ with USB-C connectors on both ends \u2014 is ideal for charging, syncing and transferring\
+  \ data between USB-C devices. Pair the USB-C charge cable with a compatible USB-C\
+  \ power adapter to conveniently charge your devices from a power point and take\
+  \ advantage of fast-charging capabilities </span></p>"
+active: true
+variables:
+- name: requested_for
+  type: unknown
+  mandatory: false
+  question: ''
+- name: justification
+  type: textarea
+  mandatory: false
+  question: ''
