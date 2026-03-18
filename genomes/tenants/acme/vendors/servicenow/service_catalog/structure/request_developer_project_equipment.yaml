@@ -1,0 +1,13 @@
+name: Request Developer Project Equipment
+category: ''
+description: <p>Request hardware and software to support a development project</p>
+active: true
+variables:
+- name: os_platform
+  type: select
+  mandatory: false
+  question: ''
+- name: required_software
+  type: unknown
+  mandatory: false
+  question: ''
