@@ -1,0 +1,8 @@
+- name: Server Reboot
+- name: Database Restore
+- name: Request Knowledge Base
+- name: Application Server (Standard)
+- name: Application Server (Large)
+- name: Database Server & Oracle License
+- name: Email Account (old)
+- name: VM Provisioning
