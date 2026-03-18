@@ -1,0 +1,14 @@
+name: Corporate Mobile Devices - Bulk Orders
+category: ''
+description: "<p>If you are required to order mobile devices\_for your departments\
+  \ or groups, please use this service to order the corporate mobile devices in bulk</p>"
+active: true
+variables:
+- name: department
+  type: reference
+  mandatory: false
+  question: ''
+- name: business_justification
+  type: textarea
+  mandatory: false
+  question: ''
