@@ -1,0 +1,31 @@
+name: Database Restore
+category: ''
+description: '<p style="margin: 0px;"><font size="3" face="arial,helvetica,sans-serif">Please
+  fill in the information below to request a restore of a database. Please be aware
+  that restores of a production instance will require additional approvals.</font></p>'
+active: true
+variables:
+- name: cmdb_ci
+  type: reference
+  mandatory: false
+  question: ''
+- name: con
+  type: unknown
+  mandatory: false
+  question: ''
+- name: backup_source
+  type: reference
+  mandatory: false
+  question: ''
+- name: restore_pit
+  type: unknown
+  mandatory: false
+  question: ''
+- name: reason
+  type: multiple_choice
+  mandatory: false
+  question: ''
+- name: reason_details
+  type: textarea
+  mandatory: false
+  question: ''
