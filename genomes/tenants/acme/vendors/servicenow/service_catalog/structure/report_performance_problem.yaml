@@ -1,0 +1,20 @@
+name: Report Performance Problem
+category: ''
+description: "<p style=\"margin: 0px;\"><font size=\"3\" face=\"arial,helvetica,sans-serif\"\
+  >Request assistance with a performance issue you are having with a service or an\
+  \ application.\_An incident record will be created and managed through to successful\
+  \ resolution.</font></p>"
+active: true
+variables:
+- name: cmdb_ci
+  type: reference
+  mandatory: false
+  question: ''
+- name: transaction
+  type: multiple_choice
+  mandatory: false
+  question: ''
+- name: specific_transaction
+  type: unknown
+  mandatory: false
+  question: ''
