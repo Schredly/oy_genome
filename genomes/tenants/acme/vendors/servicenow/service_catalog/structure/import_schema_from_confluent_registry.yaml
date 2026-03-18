@@ -1,0 +1,15 @@
+name: Import Schema from Confluent Registry
+category: ''
+description: <p>Import an individual Confluent Schema to your ServiceNow instance.
+  Select the subject and version to import. By default, the latest version is selected.
+  If you need a previous version, you can select it before submitting the request.</p>
+active: true
+variables:
+- name: schema_subject
+  type: select
+  mandatory: false
+  question: ''
+- name: schema_version
+  type: select
+  mandatory: false
+  question: ''
