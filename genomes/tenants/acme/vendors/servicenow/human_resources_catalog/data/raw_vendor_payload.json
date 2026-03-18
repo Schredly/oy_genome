@@ -1,0 +1,180 @@
+{
+  "catalog": {
+    "name": "Human Resources Catalog",
+    "sys_id": "7b0370019f22120047a2d126c42e7075"
+  },
+  "items": [
+    {
+      "name": "Direct Deposit Inquiry",
+      "sys_id": "02c78de49f331200d9011977677fcf76"
+    },
+    {
+      "name": "HR Report Inquiry",
+      "sys_id": "03c78de49f331200d9011977677fcf9f"
+    },
+    {
+      "name": "Employee Profile Update",
+      "sys_id": "060189a3c3422200b599b4ad81d3ae66"
+    },
+    {
+      "name": "Report Discrimination",
+      "sys_id": "0a62f4b277b3311003ab76974f5a9932"
+    },
+    {
+      "name": "General Benefits Inquiry",
+      "sys_id": "1bc78de49f331200d9011977677fcfae"
+    },
+    {
+      "name": "Add Beneficiaries",
+      "sys_id": "1dec3d859f231200d9011977677fcfff"
+    },
+    {
+      "name": "HR Accounts Inquiry",
+      "sys_id": "22c78de49f331200d9011977677fcf87"
+    },
+    {
+      "name": "General Inquiry",
+      "sys_id": "27c78de49f331200d9011977677fcfb3"
+    },
+    {
+      "name": "Request Relocation Assistance",
+      "sys_id": "2c6295d53b422200d901655593efc43d"
+    },
+    {
+      "name": "Request Leave of Absence",
+      "sys_id": "3d343e3a9f1322003be01050a57fcf33"
+    },
+    {
+      "name": "Tuition Reimbursement Inquiry",
+      "sys_id": "3dc74de49f331200d9011977677fcfea"
+    },
+    {
+      "name": "401(k) Plan Enrollment Inquiry",
+      "sys_id": "40fcb1099f231200d9011977677fcf01"
+    },
+    {
+      "name": "Dental Benefits Enrollment Inquiry",
+      "sys_id": "46ec71099f231200d9011977677fcfa9"
+    },
+    {
+      "name": "Request Corporate Credit Card",
+      "sys_id": "4a317bcf53022200d901a7e6a11c089b"
+    },
+    {
+      "name": "Pharmacy Benefits Enrollment Inquiry",
+      "sys_id": "4bec71099f231200d9011977677fcfd5"
+    },
+    {
+      "name": "Medical Plan Enrollment",
+      "sys_id": "62ec71099f231200d9011977677fcfb8"
+    },
+    {
+      "name": "Vision Plan Enrollment",
+      "sys_id": "67ec71099f231200d9011977677fcfe4"
+    },
+    {
+      "name": "401(k) Retirement Plan Inquiry",
+      "sys_id": "73ec71099f231200d9011977677fcff3"
+    },
+    {
+      "name": "Dental Benefits Inquiry",
+      "sys_id": "79ec71099f231200d9011977677fcf9a"
+    },
+    {
+      "name": "Pharmacy Benefits Inquiry",
+      "sys_id": "7eec71099f231200d9011977677fcfc6"
+    },
+    {
+      "name": "Employee Travel Visa Request",
+      "sys_id": "8485404853622200eb7c0a1806dc3435"
+    },
+    {
+      "name": "Payroll Discrepancy",
+      "sys_id": "92c78de49f331200d9011977677fcf7b"
+    },
+    {
+      "name": "Report Misconduct",
+      "sys_id": "934c7b813ba10010d901655593efc4a6"
+    },
+    {
+      "name": "Password Reset",
+      "sys_id": "9ec78de49f331200d9011977677fcf81"
+    },
+    {
+      "name": "Erasure of Personal Data Request",
+      "sys_id": "a0d13e72eb223110cbe8509ba8522809"
+    },
+    {
+      "name": "Employee Onboarding",
+      "sys_id": "a46925dc3b58001052ca655593efc4a7"
+    },
+    {
+      "name": "HR Account Access Request",
+      "sys_id": "a6c78de49f331200d9011977677fcf8b"
+    },
+    {
+      "name": "HR Portal Support Request",
+      "sys_id": "b2c78de49f331200d9011977677fcf91"
+    },
+    {
+      "name": "Direct Deposit Setup",
+      "sys_id": "b9c78de49f331200d9011977677fcf6b"
+    },
+    {
+      "name": "HR Report Request",
+      "sys_id": "bac78de49f331200d9011977677fcf97"
+    },
+    {
+      "name": "Start a Performance Improvement Plan (PIP)",
+      "sys_id": "bed262b6eb420110afa96bf3a25228ea"
+    },
+    {
+      "name": "Tuition Reimbursement Request",
+      "sys_id": "bfae0099530222003585c3c606dc3449"
+    },
+    {
+      "name": "Pharmacy Plan Enrollment",
+      "sys_id": "c3ec71099f231200d9011977677fcfce"
+    },
+    {
+      "name": "401(k) Plan Enrollment",
+      "sys_id": "c8fc71099f231200d9011977677fcff9"
+    },
+    {
+      "name": "Dental Plan Enrollment",
+      "sys_id": "ceec71099f231200d9011977677fcfa1"
+    },
+    {
+      "name": "Medical Benefits Inquiry",
+      "sys_id": "daec71099f231200d9011977677fcfb0"
+    },
+    {
+      "name": "Request Accommodations",
+      "sys_id": "de11e647ff26201017e447cf793bf1d1"
+    },
+    {
+      "name": "Vision Benefits Inquiry",
+      "sys_id": "dfec71099f231200d9011977677fcfdc"
+    },
+    {
+      "name": "New Hire Onboarding (Demo)",
+      "sys_id": "e339591c3b9884d052ca655593efc49b"
+    },
+    {
+      "name": "Medical Benefits Enrollment Inquiry",
+      "sys_id": "e6ec71099f231200d9011977677fcfbf"
+    },
+    {
+      "name": "Vision Benefits Enrollment Inquiry",
+      "sys_id": "ebec71099f231200d9011977677fcfeb"
+    },
+    {
+      "name": "Beneficiaries Inquiry",
+      "sys_id": "edec71099f231200d9011977677fcf93"
+    },
+    {
+      "name": "Personal Information Report",
+      "sys_id": "f9f2e0c2a3630210991d265765fcda77"
+    }
+  ]
+}
