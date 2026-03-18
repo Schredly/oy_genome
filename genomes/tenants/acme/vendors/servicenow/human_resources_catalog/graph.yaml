@@ -1,0 +1,477 @@
+objects:
+- id: direct_deposit_inquiry
+  name: Direct Deposit Inquiry
+  type: table
+  fields: []
+  workflows:
+  - direct_deposit_inquiry_request
+  relationships: []
+- id: hr_report_inquiry
+  name: HR Report Inquiry
+  type: table
+  fields: []
+  workflows:
+  - hr_report_inquiry_request
+  relationships: []
+- id: employee_profile_update
+  name: Employee Profile Update
+  type: table
+  fields: []
+  workflows:
+  - employee_profile_update_request
+  relationships: []
+- id: report_discrimination
+  name: Report Discrimination
+  type: table
+  fields: []
+  workflows:
+  - report_discrimination_request
+  relationships: []
+- id: general_benefits_inquiry
+  name: General Benefits Inquiry
+  type: table
+  fields: []
+  workflows:
+  - general_benefits_inquiry_request
+  relationships: []
+- id: add_beneficiaries
+  name: Add Beneficiaries
+  type: table
+  fields: []
+  workflows:
+  - add_beneficiaries_request
+  relationships: []
+- id: hr_accounts_inquiry
+  name: HR Accounts Inquiry
+  type: table
+  fields: []
+  workflows:
+  - hr_accounts_inquiry_request
+  relationships: []
+- id: general_inquiry
+  name: General Inquiry
+  type: table
+  fields: []
+  workflows:
+  - general_inquiry_request
+  relationships: []
+- id: request_relocation_assistance
+  name: Request Relocation Assistance
+  type: table
+  fields: []
+  workflows:
+  - request_relocation_assistance_request
+  relationships: []
+- id: request_leave_of_absence
+  name: Request Leave of Absence
+  type: table
+  fields: []
+  workflows:
+  - request_leave_of_absence_request
+  relationships: []
+- id: tuition_reimbursement_inquiry
+  name: Tuition Reimbursement Inquiry
+  type: table
+  fields: []
+  workflows:
+  - tuition_reimbursement_inquiry_request
+  relationships: []
+- id: 401_k_plan_enrollment_inquiry
+  name: 401(k) Plan Enrollment Inquiry
+  type: table
+  fields: []
+  workflows:
+  - 401_k_plan_enrollment_inquiry_request
+  relationships: []
+- id: dental_benefits_enrollment_inquiry
+  name: Dental Benefits Enrollment Inquiry
+  type: table
+  fields: []
+  workflows:
+  - dental_benefits_enrollment_inquiry_request
+  relationships: []
+- id: request_corporate_credit_card
+  name: Request Corporate Credit Card
+  type: table
+  fields: []
+  workflows:
+  - request_corporate_credit_card_request
+  relationships: []
+- id: pharmacy_benefits_enrollment_inquiry
+  name: Pharmacy Benefits Enrollment Inquiry
+  type: table
+  fields: []
+  workflows:
+  - pharmacy_benefits_enrollment_inquiry_request
+  relationships: []
+- id: medical_plan_enrollment
+  name: Medical Plan Enrollment
+  type: table
+  fields: []
+  workflows:
+  - medical_plan_enrollment_request
+  relationships: []
+- id: vision_plan_enrollment
+  name: Vision Plan Enrollment
+  type: table
+  fields: []
+  workflows:
+  - vision_plan_enrollment_request
+  relationships: []
+- id: 401_k_retirement_plan_inquiry
+  name: 401(k) Retirement Plan Inquiry
+  type: table
+  fields: []
+  workflows:
+  - 401_k_retirement_plan_inquiry_request
+  relationships: []
+- id: dental_benefits_inquiry
+  name: Dental Benefits Inquiry
+  type: table
+  fields: []
+  workflows:
+  - dental_benefits_inquiry_request
+  relationships: []
+- id: pharmacy_benefits_inquiry
+  name: Pharmacy Benefits Inquiry
+  type: table
+  fields: []
+  workflows:
+  - pharmacy_benefits_inquiry_request
+  relationships: []
+- id: employee_travel_visa_request
+  name: Employee Travel Visa Request
+  type: table
+  fields: []
+  workflows:
+  - employee_travel_visa_request_request
+  relationships: []
+- id: payroll_discrepancy
+  name: Payroll Discrepancy
+  type: table
+  fields: []
+  workflows:
+  - payroll_discrepancy_request
+  relationships: []
+- id: report_misconduct
+  name: Report Misconduct
+  type: table
+  fields: []
+  workflows:
+  - report_misconduct_request
+  relationships: []
+- id: password_reset
+  name: Password Reset
+  type: table
+  fields: []
+  workflows:
+  - password_reset_request
+  relationships: []
+- id: erasure_of_personal_data_request
+  name: Erasure of Personal Data Request
+  type: table
+  fields: []
+  workflows:
+  - erasure_of_personal_data_request_request
+  relationships: []
+- id: employee_onboarding
+  name: Employee Onboarding
+  type: table
+  fields: []
+  workflows:
+  - employee_onboarding_request
+  relationships: []
+- id: hr_account_access_request
+  name: HR Account Access Request
+  type: table
+  fields: []
+  workflows:
+  - hr_account_access_request_request
+  relationships: []
+- id: hr_portal_support_request
+  name: HR Portal Support Request
+  type: table
+  fields: []
+  workflows:
+  - hr_portal_support_request_request
+  relationships: []
+- id: direct_deposit_setup
+  name: Direct Deposit Setup
+  type: table
+  fields: []
+  workflows:
+  - direct_deposit_setup_request
+  relationships: []
+- id: hr_report_request
+  name: HR Report Request
+  type: table
+  fields: []
+  workflows:
+  - hr_report_request_request
+  relationships: []
+- id: start_a_performance_improvement_plan_pip
+  name: Start a Performance Improvement Plan (PIP)
+  type: table
+  fields: []
+  workflows:
+  - start_a_performance_improvement_plan_pip_request
+  relationships: []
+- id: tuition_reimbursement_request
+  name: Tuition Reimbursement Request
+  type: table
+  fields: []
+  workflows:
+  - tuition_reimbursement_request_request
+  relationships: []
+- id: pharmacy_plan_enrollment
+  name: Pharmacy Plan Enrollment
+  type: table
+  fields: []
+  workflows:
+  - pharmacy_plan_enrollment_request
+  relationships: []
+- id: 401_k_plan_enrollment
+  name: 401(k) Plan Enrollment
+  type: table
+  fields: []
+  workflows:
+  - 401_k_plan_enrollment_inquiry_request
+  - 401_k_plan_enrollment_request
+  relationships: []
+- id: dental_plan_enrollment
+  name: Dental Plan Enrollment
+  type: table
+  fields: []
+  workflows:
+  - dental_plan_enrollment_request
+  relationships: []
+- id: medical_benefits_inquiry
+  name: Medical Benefits Inquiry
+  type: table
+  fields: []
+  workflows:
+  - medical_benefits_inquiry_request
+  relationships: []
+- id: request_accommodations
+  name: Request Accommodations
+  type: table
+  fields: []
+  workflows:
+  - request_accommodations_request
+  relationships: []
+- id: vision_benefits_inquiry
+  name: Vision Benefits Inquiry
+  type: table
+  fields: []
+  workflows:
+  - vision_benefits_inquiry_request
+  relationships: []
+- id: new_hire_onboarding_demo
+  name: New Hire Onboarding (Demo)
+  type: table
+  fields: []
+  workflows:
+  - new_hire_onboarding_demo_request
+  relationships: []
+- id: medical_benefits_enrollment_inquiry
+  name: Medical Benefits Enrollment Inquiry
+  type: table
+  fields: []
+  workflows:
+  - medical_benefits_enrollment_inquiry_request
+  relationships: []
+- id: vision_benefits_enrollment_inquiry
+  name: Vision Benefits Enrollment Inquiry
+  type: table
+  fields: []
+  workflows:
+  - vision_benefits_enrollment_inquiry_request
+  relationships: []
+- id: beneficiaries_inquiry
+  name: Beneficiaries Inquiry
+  type: table
+  fields: []
+  workflows:
+  - beneficiaries_inquiry_request
+  relationships: []
+- id: personal_information_report
+  name: Personal Information Report
+  type: table
+  fields: []
+  workflows:
+  - personal_information_report_request
+  relationships: []
+workflows:
+- id: direct_deposit_inquiry_request
+  name: Direct Deposit Inquiry request
+  trigger: ''
+  steps: []
+- id: hr_report_inquiry_request
+  name: HR Report Inquiry request
+  trigger: ''
+  steps: []
+- id: employee_profile_update_request
+  name: Employee Profile Update request
+  trigger: ''
+  steps: []
+- id: report_discrimination_request
+  name: Report Discrimination request
+  trigger: ''
+  steps: []
+- id: general_benefits_inquiry_request
+  name: General Benefits Inquiry request
+  trigger: ''
+  steps: []
+- id: add_beneficiaries_request
+  name: Add Beneficiaries request
+  trigger: ''
+  steps: []
+- id: hr_accounts_inquiry_request
+  name: HR Accounts Inquiry request
+  trigger: ''
+  steps: []
+- id: general_inquiry_request
+  name: General Inquiry request
+  trigger: ''
+  steps: []
+- id: request_relocation_assistance_request
+  name: Request Relocation Assistance request
+  trigger: ''
+  steps: []
+- id: request_leave_of_absence_request
+  name: Request Leave of Absence request
+  trigger: ''
+  steps: []
+- id: tuition_reimbursement_inquiry_request
+  name: Tuition Reimbursement Inquiry request
+  trigger: ''
+  steps: []
+- id: 401_k_plan_enrollment_inquiry_request
+  name: 401(k) Plan Enrollment Inquiry request
+  trigger: ''
+  steps: []
+- id: dental_benefits_enrollment_inquiry_request
+  name: Dental Benefits Enrollment Inquiry request
+  trigger: ''
+  steps: []
+- id: request_corporate_credit_card_request
+  name: Request Corporate Credit Card request
+  trigger: ''
+  steps: []
+- id: pharmacy_benefits_enrollment_inquiry_request
+  name: Pharmacy Benefits Enrollment Inquiry request
+  trigger: ''
+  steps: []
+- id: medical_plan_enrollment_request
+  name: Medical Plan Enrollment request
+  trigger: ''
+  steps: []
+- id: vision_plan_enrollment_request
+  name: Vision Plan Enrollment request
+  trigger: ''
+  steps: []
+- id: 401_k_retirement_plan_inquiry_request
+  name: 401(k) Retirement Plan Inquiry request
+  trigger: ''
+  steps: []
+- id: dental_benefits_inquiry_request
+  name: Dental Benefits Inquiry request
+  trigger: ''
+  steps: []
+- id: pharmacy_benefits_inquiry_request
+  name: Pharmacy Benefits Inquiry request
+  trigger: ''
+  steps: []
+- id: employee_travel_visa_request_request
+  name: Employee Travel Visa Request request
+  trigger: ''
+  steps: []
+- id: payroll_discrepancy_request
+  name: Payroll Discrepancy request
+  trigger: ''
+  steps: []
+- id: report_misconduct_request
+  name: Report Misconduct request
+  trigger: ''
+  steps: []
+- id: password_reset_request
+  name: Password Reset request
+  trigger: ''
+  steps: []
+- id: erasure_of_personal_data_request_request
+  name: Erasure of Personal Data Request request
+  trigger: ''
+  steps: []
+- id: employee_onboarding_request
+  name: Employee Onboarding request
+  trigger: ''
+  steps: []
+- id: hr_account_access_request_request
+  name: HR Account Access Request request
+  trigger: ''
+  steps: []
+- id: hr_portal_support_request_request
+  name: HR Portal Support Request request
+  trigger: ''
+  steps: []
+- id: direct_deposit_setup_request
+  name: Direct Deposit Setup request
+  trigger: ''
+  steps: []
+- id: hr_report_request_request
+  name: HR Report Request request
+  trigger: ''
+  steps: []
+- id: start_a_performance_improvement_plan_pip_request
+  name: Start a Performance Improvement Plan (PIP) request
+  trigger: ''
+  steps: []
+- id: tuition_reimbursement_request_request
+  name: Tuition Reimbursement Request request
+  trigger: ''
+  steps: []
+- id: pharmacy_plan_enrollment_request
+  name: Pharmacy Plan Enrollment request
+  trigger: ''
+  steps: []
+- id: 401_k_plan_enrollment_request
+  name: 401(k) Plan Enrollment request
+  trigger: ''
+  steps: []
+- id: dental_plan_enrollment_request
+  name: Dental Plan Enrollment request
+  trigger: ''
+  steps: []
+- id: medical_benefits_inquiry_request
+  name: Medical Benefits Inquiry request
+  trigger: ''
+  steps: []
+- id: request_accommodations_request
+  name: Request Accommodations request
+  trigger: ''
+  steps: []
+- id: vision_benefits_inquiry_request
+  name: Vision Benefits Inquiry request
+  trigger: ''
+  steps: []
+- id: new_hire_onboarding_demo_request
+  name: New Hire Onboarding (Demo) request
+  trigger: ''
+  steps: []
+- id: medical_benefits_enrollment_inquiry_request
+  name: Medical Benefits Enrollment Inquiry request
+  trigger: ''
+  steps: []
+- id: vision_benefits_enrollment_inquiry_request
+  name: Vision Benefits Enrollment Inquiry request
+  trigger: ''
+  steps: []
+- id: beneficiaries_inquiry_request
+  name: Beneficiaries Inquiry request
+  trigger: ''
+  steps: []
+- id: personal_information_report_request
+  name: Personal Information Report request
+  trigger: ''
+  steps: []
+relationships: []
