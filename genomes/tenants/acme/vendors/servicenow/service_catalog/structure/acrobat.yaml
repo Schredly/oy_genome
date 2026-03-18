@@ -1,0 +1,16 @@
+name: Acrobat
+category: ''
+description: "\n\t\t\t<p>\n\t\t\t\t<font size=\"3\">\n\t\t\t\t\t<span>\n\t\t\t\t\t\
+  \tAdobe Acrobat allows you to view, create, manipulate and print files in the Portable\
+  \ Document Format (PDF). </span>\n\t\t\t\t</font>\n\t\t\t</p>\n\t\t\t<p>\n\t\t\t\
+  \t<span>Features include:</span>\n\t\t\t</p>\n\t\t\t<ul><li>\n\t\t\t\t\t<span style=\"\
+  font-size: 10.0pt;\">Convert PDFs to other formats </span>\n\t\t\t\t</li><li>\n\t\
+  \t\t\t\t<span style=\"font-size: 10.0pt;\">Edit PDF documents </span>\n\t\t\t\t\
+  </li><li>\n\t\t\t\t\t<span style=\"font-size: 10.0pt;\">Create and analyze forms\
+  \ </span>\n\t\t\t\t</li><li>\n\t\t\t\t\t<span style=\"font-size: 10.0pt;\">Create\
+  \ PDF files </span>\n\t\t\t\t</li><li>\n\t\t\t\t\t<span style=\"font-size: 10.0pt;\"\
+  >Merge and combine files </span>\n\t\t\t\t</li><li>\n\t\t\t\t\t<span style=\"font-size:\
+  \ 10.0pt;\">Prepare files consistently </span>\n\t\t\t\t</li><li>\n\t\t\t\t\t<span\
+  \ style=\"font-size: 10.0pt;\">Work with new cloud services</span>\n\t\t\t\t</li></ul>"
+active: true
+variables: []
