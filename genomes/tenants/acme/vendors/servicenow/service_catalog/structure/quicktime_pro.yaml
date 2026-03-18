@@ -1,0 +1,20 @@
+name: QuickTime Pro
+category: ''
+description: "\n\n\t\t\t<p style=\"font-size: 13.3333px; margin: 0px 0px 9px;\">\n\
+  \t\t\t\t<font face=\"arial,helvetica,sans-serif\" size=\"3\">\n\t\t\t\t\tQuickTime\
+  \ Pro provides video playback, editing and exporting.</font>\n\t\t\t</p>\n\t\t\t\
+  <p style=\"font-size: 13.3333px; margin: 0px 0px 9px;\">\n\t\t\t\t<font face=\"\
+  arial,helvetica,sans-serif\" size=\"3\">Features include:</font>\n\t\t\t</p>\n\t\
+  \t\t<p>\n\t\t\t</p><ul><li style=\"font-size: 13.3333px;\">\n\t\t\t\t\t<font face=\"\
+  arial,helvetica,sans-serif\" size=\"2\">Conversion of media to formats</font>\n\t\
+  \t\t\t</li><li style=\"font-size: 13.3333px;\">\n\t\t\t\t\t<font face=\"arial,helvetica,sans-serif\"\
+  \ size=\"2\">Supports third-party plugins</font>\n\t\t\t\t</li><li style=\"font-size:\
+  \ 13.3333px;\">\n\t\t\t\t\t<font face=\"arial,helvetica,sans-serif\" size=\"2\"\
+  >Supports optimisation for multiple devices</font>\n\t\t\t\t</li><li style=\"font-size:\
+  \ 13.3333px;\">\n\t\t\t\t\t<font face=\"arial,helvetica,sans-serif\" size=\"2\"\
+  >Supports streaming of content using the HTTP protocol</font>\n\t\t\t\t</li><li\
+  \ style=\"font-size: 13.3333px;\">\n\t\t\t\t\t<font face=\"arial,helvetica,sans-serif\"\
+  \ size=\"2\">Broadcast video in conjunction with other Quicktime products</font>\n\
+  \t\t\t\t</li></ul>\n\t\t\t<p></p>"
+active: true
+variables: []
