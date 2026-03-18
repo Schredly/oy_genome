@@ -1,5 +1,15 @@
 name: Request Knowledge Base
 category: ''
-description: ''
+description: <p>Here you can request a new Knowledge Base to be used. A Knowledge
+  Base can be used to store Knowledge in an organization and anyone can request for
+  a new one to be created.</p>
 active: true
-variables: []
+variables:
+- name: request_reason
+  type: '2'
+  mandatory: false
+  question: What is the reason for this Knowledge Base to be created?
+- name: requested_title
+  type: '6'
+  mandatory: false
+  question: What is the name of the Knowledge Base?
