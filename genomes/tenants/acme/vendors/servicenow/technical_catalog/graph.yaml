@@ -1,0 +1,91 @@
+objects:
+- id: server_reboot
+  name: Server Reboot
+  type: table
+  fields: []
+  workflows:
+  - server_reboot_request
+  relationships: []
+- id: database_restore
+  name: Database Restore
+  type: table
+  fields: []
+  workflows:
+  - database_restore_request
+  relationships: []
+- id: request_knowledge_base
+  name: Request Knowledge Base
+  type: table
+  fields: []
+  workflows:
+  - request_knowledge_base_request
+  relationships: []
+- id: application_server_standard
+  name: Application Server (Standard)
+  type: table
+  fields: []
+  workflows:
+  - application_server_standard_request
+  relationships: []
+- id: application_server_large
+  name: Application Server (Large)
+  type: table
+  fields: []
+  workflows:
+  - application_server_large_request
+  relationships: []
+- id: database_server_oracle_license
+  name: Database Server & Oracle License
+  type: table
+  fields: []
+  workflows:
+  - database_server_oracle_license_request
+  relationships: []
+- id: email_account_old
+  name: Email Account (old)
+  type: table
+  fields: []
+  workflows:
+  - email_account_old_request
+  relationships: []
+- id: vm_provisioning
+  name: VM Provisioning
+  type: table
+  fields: []
+  workflows:
+  - vm_provisioning_request
+  relationships: []
+workflows:
+- id: server_reboot_request
+  name: Server Reboot request
+  trigger: ''
+  steps: []
+- id: database_restore_request
+  name: Database Restore request
+  trigger: ''
+  steps: []
+- id: request_knowledge_base_request
+  name: Request Knowledge Base request
+  trigger: ''
+  steps: []
+- id: application_server_standard_request
+  name: Application Server (Standard) request
+  trigger: ''
+  steps: []
+- id: application_server_large_request
+  name: Application Server (Large) request
+  trigger: ''
+  steps: []
+- id: database_server_oracle_license_request
+  name: Database Server & Oracle License request
+  trigger: ''
+  steps: []
+- id: email_account_old_request
+  name: Email Account (old) request
+  trigger: ''
+  steps: []
+- id: vm_provisioning_request
+  name: VM Provisioning request
+  trigger: ''
+  steps: []
+relationships: []
