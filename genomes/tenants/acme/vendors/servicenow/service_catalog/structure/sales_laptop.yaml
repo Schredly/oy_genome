@@ -1,0 +1,43 @@
+name: Sales Laptop
+category: ''
+description: "<p class=\"p1\"><font size=\"3\" face=\"arial,helvetica,sans-serif\"\
+  ><span class=\"s1\">Acer Aspire NX</span></font></p>\n<p class=\"p2\"><font size=\"\
+  2\" face=\"arial,helvetica,sans-serif\"><span class=\"s1\">The corporate standard\
+  \ laptop for sales employees.</span></font></p>\n<p class=\"p2\"><font size=\"2\"\
+  \ face=\"arial,helvetica,sans-serif\"><span class=\"s1\">High performance and light\
+  \ weight.</span></font></p>\n<p class=\"p2\"><font size=\"2\" face=\"arial,helvetica,sans-serif\"\
+  ><span class=\"s1\">Item Includes:</span></font></p>\n<ul class=\"ul1\"><li class=\"\
+  li3\"><font size=\"2\" face=\"arial,helvetica,sans-serif\"><span class=\"s1\">2.5\
+  \ GHz intel Core i5 Processor</span></font></li><li class=\"li3\"><font size=\"\
+  2\" face=\"arial,helvetica,sans-serif\"><span class=\"s1\">750 GB Hard Drive</span></font></li><li\
+  \ class=\"li3\"><font size=\"2\" face=\"arial,helvetica,sans-serif\"><span class=\"\
+  s1\">8 GB RAM</span></font></li><li class=\"li3\"><font size=\"2\" face=\"arial,helvetica,sans-serif\"\
+  ><span class=\"s1\">Microsoft Windows 8</span></font></li><li class=\"li3\"><font\
+  \ size=\"2\" face=\"arial,helvetica,sans-serif\"><span class=\"s1\">Microsoft Office\_\
+  </span></font></li></ul>"
+active: true
+variables:
+- name: optional_label
+  type: unknown
+  mandatory: false
+  question: ''
+- name: powerpoint
+  type: unknown
+  mandatory: false
+  question: ''
+- name: acrobat
+  type: unknown
+  mandatory: false
+  question: ''
+- name: photoshop
+  type: unknown
+  mandatory: false
+  question: ''
+- name: siebel
+  type: unknown
+  mandatory: false
+  question: ''
+- name: software_requirements
+  type: textarea
+  mandatory: false
+  question: ''
