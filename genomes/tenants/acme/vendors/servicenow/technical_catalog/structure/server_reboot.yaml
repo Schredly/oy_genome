@@ -1,0 +1,29 @@
+name: Server Reboot
+category: ''
+description: "<p style=\"margin: 0px;\"><font size=\"4\" face=\"arial,helvetica,sans-serif\"\
+  >Service Overview:</font></p>\n<p style=\"margin: 0px;\">\_</p>\n<p style=\"margin:\
+  \ 0px;\"><font size=\"3\" face=\"arial,helvetica,sans-serif\">Please use the form\
+  \ below to request a server reboot. Please be aware that reboots of production servers\
+  \ may require additional documentation.</font></p>"
+active: true
+variables:
+- name: server_details
+  type: unknown
+  mandatory: false
+  question: ''
+- name: cmdb_ci
+  type: reference
+  mandatory: false
+  question: ''
+- name: reboot_date
+  type: unknown
+  mandatory: false
+  question: ''
+- name: reason
+  type: multiple_choice
+  mandatory: false
+  question: ''
+- name: reason_details
+  type: textarea
+  mandatory: false
+  question: ''
