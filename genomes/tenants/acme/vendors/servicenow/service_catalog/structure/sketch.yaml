@@ -1,0 +1,13 @@
+name: Sketch
+category: ''
+description: '<p><span style="font-size: 10pt;">Professional digital design for mac</span></p>'
+active: true
+variables:
+- name: requested_for
+  type: unknown
+  mandatory: false
+  question: ''
+- name: justification
+  type: textarea
+  mandatory: false
+  question: ''
