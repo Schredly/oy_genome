@@ -1,0 +1,34 @@
+name: Request zoom webinar
+category: ''
+description: '<div><span style="font-size: 10pt;">Engage your audiences with flawless
+  and engaging video webinars. Share your story and host online events with zoom webinar</span></div>'
+active: true
+variables:
+- name: topic
+  type: unknown
+  mandatory: false
+  question: ''
+- name: descripion
+  type: textarea
+  mandatory: false
+  question: ''
+- name: select_webinar_start_time
+  type: unknown
+  mandatory: false
+  question: ''
+- name: select_webinar_end_time
+  type: unknown
+  mandatory: false
+  question: ''
+- name: requires_password
+  type: unknown
+  mandatory: false
+  question: ''
+- name: set_password
+  type: unknown
+  mandatory: false
+  question: ''
+- name: add_co_hosts
+  type: unknown
+  mandatory: false
+  question: ''
