@@ -1,0 +1,13 @@
+name: New Email Account
+category: ''
+description: "<p>\_</p>\n<p><font size=\"3\"><span style=\"font-size: 10.0pt;\">Service\
+  \ Overview:</span></font></p>\n<p><span style=\"font-size: 10.0pt;\">Creation of\
+  \ a new email account within our Microsoft Exchange environment. Creation of your\
+  \ email address will also create your Active Directory account.\_</span></p>\n<p>\_\
+  </p>"
+active: true
+variables:
+- name: new_email
+  type: unknown
+  mandatory: false
+  question: ''
