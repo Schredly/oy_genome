@@ -1,0 +1,16 @@
+name: Miro
+category: ''
+description: "<p><span style=\"font-size: 10pt;\">Miro is the\_online collaborative\
+  \ whiteboard platform\_that enables distributed teams to work effectively together,\
+  \ from brainstorming with digital sticky notes to planning and managing agile workflows.\
+  \ </span></p>"
+active: true
+variables:
+- name: requested_for
+  type: unknown
+  mandatory: false
+  question: ''
+- name: justification
+  type: textarea
+  mandatory: false
+  question: ''
