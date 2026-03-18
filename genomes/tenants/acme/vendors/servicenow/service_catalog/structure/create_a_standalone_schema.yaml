@@ -1,0 +1,21 @@
+name: Create a Standalone Schema
+category: ''
+description: ''
+active: true
+variables:
+- name: schema_id
+  type: unknown
+  mandatory: false
+  question: ''
+- name: input_source_choices
+  type: multiple_choice
+  mandatory: false
+  question: ''
+- name: attach_schema_file
+  type: unknown
+  mandatory: false
+  question: ''
+- name: json_schema_string
+  type: textarea
+  mandatory: false
+  question: ''
