@@ -1,0 +1,40 @@
+{
+  "catalog": {
+    "name": "Technical Catalog",
+    "sys_id": "742ce428d7211100f2d224837e61036d"
+  },
+  "items": [
+    {
+      "name": "Server Reboot",
+      "sys_id": "4ab3477b0a0a0b99008c1fc344d3d44f"
+    },
+    {
+      "name": "Database Restore",
+      "sys_id": "508b6735c0a800050056c0334b734118"
+    },
+    {
+      "name": "Request Knowledge Base",
+      "sys_id": "81c887819f203100d8f8700c267fcfb5"
+    },
+    {
+      "name": "Application Server (Standard)",
+      "sys_id": "a9a3ae4f0a0a0aa700a24a296c2ceac4"
+    },
+    {
+      "name": "Application Server (Large)",
+      "sys_id": "a9d7f3790a0a0aa700f68277bf62a054"
+    },
+    {
+      "name": "Database Server & Oracle License",
+      "sys_id": "a9da93400a0a0aa70030fb3e7787e7a7"
+    },
+    {
+      "name": "Email Account (old)",
+      "sys_id": "d67a86b6c0a80165009386c752cd4a09"
+    },
+    {
+      "name": "VM Provisioning",
+      "sys_id": "f3937ada4fff0200086eeed18110c7f2"
+    }
+  ]
+}
