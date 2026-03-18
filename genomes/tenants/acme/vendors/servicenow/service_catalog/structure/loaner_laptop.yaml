@@ -1,0 +1,18 @@
+name: Loaner Laptop
+category: ''
+description: "<p><span style=\"font-size: 10.0pt;\">Did you break your laptop?\_ Maybe\
+  \ lost it?\_ Need a temporary loaner?\_ We can help.</span></p>\n<p><span style=\"\
+  font-size: 10.0pt;\">In order to take advantage of a loaner notebook computer, you\
+  \ must meet company eligibility requirements per the Notebook Loaner Policy</span></p>\n\
+  <p><span style=\"font-size: 10.0pt;\">Loaner laptops will be provided based on what\
+  \ devices are available.\_</span></p>"
+active: true
+variables:
+- name: when_do_need_it
+  type: unknown
+  mandatory: false
+  question: ''
+- name: how_long_do_you_need_it_for
+  type: select
+  mandatory: false
+  question: ''
