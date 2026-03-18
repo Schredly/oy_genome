@@ -1,0 +1,36 @@
+name: Apple iPhone 13 pro
+category: ''
+description: '<p><span style="font-size: 10pt;">All-new dual-camera system with ultra
+  wide and night mode. All-day battery. Five new colours. And the A13 Bionic, our
+  fastest chip ever.</span></p>
+
+  <p><span style="font-size: 10pt;">Key Features:</span></p>
+
+  <ul style="list-style-position: inside;"><li style="font-size: 10pt;"><span style="font-size:
+  10pt;">Storage capacity: 128 GB, 256 GB, 512 GB</span></li><li style="font-size:
+  10pt;"><span style="font-size: 10pt;">Network generation: 4G</span></li><li style="font-size:
+  10pt;"><span style="font-size: 10pt;">Style: Smartphone</span></li><li style="font-size:
+  10pt;"><span style="font-size: 10pt;">Camera: 12.0 MP</span></li><li style="font-size:
+  10pt;"><span style="font-size: 10pt;">Operating system: iOS</span></li></ul>'
+active: true
+variables:
+- name: is_this_a_replacement_for_a_lost_or_broken_iphone
+  type: multiple_choice
+  mandatory: false
+  question: ''
+- name: what_was_the_original_phone_number
+  type: unknown
+  mandatory: false
+  question: ''
+- name: monthly_data_allowance
+  type: select
+  mandatory: false
+  question: ''
+- name: colour
+  type: multiple_choice
+  mandatory: false
+  question: ''
+- name: storage
+  type: multiple_choice
+  mandatory: false
+  question: ''
