@@ -1,0 +1,21 @@
+application: Technical Catalog
+vendor_source: servicenow
+tenant: acme
+captured_date: '2026-03-18'
+objects:
+  tables:
+  - name: Server Reboot
+  - name: Database Restore
+  - name: Request Knowledge Base
+  - name: Application Server (Standard)
+  - name: Application Server (Large)
+  - name: Database Server & Oracle License
+  - name: Email Account (old)
+  - name: VM Provisioning
+  workflows: []
+  scripts: []
+summary:
+  table_count: 8
+  workflow_count: 0
+  script_count: 0
+  total_objects: 8
