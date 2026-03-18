@@ -6,35 +6,251 @@
   "items": [
     {
       "name": "Server Reboot",
-      "sys_id": "4ab3477b0a0a0b99008c1fc344d3d44f"
+      "sys_id": "4ab3477b0a0a0b99008c1fc344d3d44f",
+      "description": "<p style=\"margin: 0px;\"><font size=\"4\" face=\"arial,helvetica,sans-serif\">Service Overview:</font></p>\n<p style=\"margin: 0px;\">\u00a0</p>\n<p style=\"margin: 0px;\"><font size=\"3\" face=\"arial,helvetica,sans-serif\">Please use the form below to request a server reboot. Please be aware that reboots of production servers may require additional documentation.</font></p>",
+      "variables": [
+        {
+          "name": "server_details",
+          "question_text": null,
+          "type": "19",
+          "mandatory": false
+        },
+        {
+          "name": "cmdb_ci",
+          "question_text": "Server to reboot",
+          "type": "8",
+          "mandatory": true
+        },
+        {
+          "name": "reboot_date",
+          "question_text": "Desired date and time of reboot",
+          "type": "10",
+          "mandatory": false
+        },
+        {
+          "name": null,
+          "question_text": null,
+          "type": "20",
+          "mandatory": false
+        },
+        {
+          "name": "reason",
+          "question_text": "Reason for reboot",
+          "type": "3",
+          "mandatory": false
+        },
+        {
+          "name": "reason_details",
+          "question_text": "Detailed reason for reboot",
+          "type": "2",
+          "mandatory": false
+        }
+      ]
     },
     {
       "name": "Database Restore",
-      "sys_id": "508b6735c0a800050056c0334b734118"
+      "sys_id": "508b6735c0a800050056c0334b734118",
+      "description": "<p style=\"margin: 0px;\"><font size=\"3\" face=\"arial,helvetica,sans-serif\">Please fill in the information below to request a restore of a database. Please be aware that restores of a production instance will require additional approvals.</font></p>",
+      "variables": [
+        {
+          "name": "cmdb_ci",
+          "question_text": "Database to restore",
+          "type": "8",
+          "mandatory": true
+        },
+        {
+          "name": "con",
+          "question_text": null,
+          "type": "19",
+          "mandatory": false
+        },
+        {
+          "name": "backup_source",
+          "question_text": "Restore from this source",
+          "type": "8",
+          "mandatory": false
+        },
+        {
+          "name": "restore_pit",
+          "question_text": "Restore from this point in time",
+          "type": "10",
+          "mandatory": false
+        },
+        {
+          "name": null,
+          "question_text": null,
+          "type": "20",
+          "mandatory": false
+        },
+        {
+          "name": "reason",
+          "question_text": "Reason for restore",
+          "type": "3",
+          "mandatory": false
+        },
+        {
+          "name": "reason_details",
+          "question_text": "Detailed reason for restore",
+          "type": "2",
+          "mandatory": false
+        }
+      ]
     },
     {
       "name": "Request Knowledge Base",
-      "sys_id": "81c887819f203100d8f8700c267fcfb5"
+      "sys_id": "81c887819f203100d8f8700c267fcfb5",
+      "description": "<p>Here you can request a new Knowledge Base to be used. A Knowledge Base can be used to store Knowledge in an organization and anyone can request for a new one to be created.</p>",
+      "variables": [
+        {
+          "name": "request_reason",
+          "question_text": "What is the reason for this Knowledge Base to be created?",
+          "type": "2",
+          "mandatory": false
+        },
+        {
+          "name": "requested_title",
+          "question_text": "What is the name of the Knowledge Base?",
+          "type": "6",
+          "mandatory": false
+        }
+      ]
     },
     {
       "name": "Application Server (Standard)",
-      "sys_id": "a9a3ae4f0a0a0aa700a24a296c2ceac4"
+      "sys_id": "a9a3ae4f0a0a0aa700a24a296c2ceac4",
+      "description": "<p><font size=\"3\"><span>Corporate application server</span></font></p>\n<p><span style=\"font-size: 10.0pt;\">Standard Default configuration includes:</span></p>\n<ul><li><span style=\"font-size: 10.0pt;\">4GB RAM </span></li><li><span style=\"font-size: 10.0pt;\">2 X 70G SCSI drives (Raid 0) </span></li><li><span style=\"font-size: 10.0pt;\">Up to 250G of SAN storage (specify) </span></li><li><span style=\"font-size: 10.0pt;\">Linux or Windows XP (specify) </span></li></ul>\n<p><span style=\"font-size: 10.0pt;\">Recommended Use: Application or Web server </span></p>",
+      "variables": [
+        {
+          "name": "project_code",
+          "question_text": "Which project code is this server to be billed to?",
+          "type": "6",
+          "mandatory": false
+        },
+        {
+          "name": "budget_code",
+          "question_text": "What budget code should this server be billed to?",
+          "type": "6",
+          "mandatory": false
+        },
+        {
+          "name": "OS",
+          "question_text": "Please Specify an Operating System",
+          "type": "3",
+          "mandatory": false
+        },
+        {
+          "name": "san",
+          "question_text": "How much (if any) SAN Storage is required?",
+          "type": "6",
+          "mandatory": false
+        }
+      ]
     },
     {
       "name": "Application Server (Large)",
-      "sys_id": "a9d7f3790a0a0aa700f68277bf62a054"
+      "sys_id": "a9d7f3790a0a0aa700f68277bf62a054",
+      "description": "<p style=\"margin: 13.5pt 0in 6.75pt 0in;\"><font size=\"3\"><span>Corporate application server (Large)</span></font></p>\n<p><span style=\"font-size: 10.0pt;\">Default configuration includes:</span></p>\n<ul><li><span style=\"font-size: 10.0pt;\">16GB RAM</span></li><li><span style=\"font-size: 10.0pt;\">2 X 70G SCSI drives (Raid 0)</span></li><li><span style=\"font-size: 10.0pt;\">Up to 500G of SAN storage (specify)</span></li><li><span style=\"font-size: 10.0pt;\">Linux or Windows XP (specify)</span></li></ul>\n<p><span style=\"font-size: 10.0pt;\">Recommended Use: Application server for applications with high transaction volume.</span></p>",
+      "variables": [
+        {
+          "name": "project_code",
+          "question_text": "Which project code is this server to be billed to?",
+          "type": "6",
+          "mandatory": false
+        },
+        {
+          "name": "budget_code",
+          "question_text": "What budget code should this server be billed to?",
+          "type": "6",
+          "mandatory": false
+        },
+        {
+          "name": "OS",
+          "question_text": "Please Specify an Operating System",
+          "type": "3",
+          "mandatory": false
+        },
+        {
+          "name": "san",
+          "question_text": "How much (if any) SAN Storage is required?",
+          "type": "6",
+          "mandatory": false
+        }
+      ]
     },
     {
       "name": "Database Server & Oracle License",
-      "sys_id": "a9da93400a0a0aa70030fb3e7787e7a7"
+      "sys_id": "a9da93400a0a0aa70030fb3e7787e7a7",
+      "description": "<ul><li>\n<p><font size=\"3\"><span>Corporate database server (Standard)</span></font></p>\n<ul><li><span style=\"font-size: 10.0pt;\">Default configuration includes:</span></li><li><span style=\"font-size: 10.0pt;\">64GB RAM</span></li><li><span style=\"font-size: 10.0pt;\">2 X 70G SCSI drives (Raid 0)</span></li><li><span style=\"font-size: 10.0pt;\">Up to 1 TB of SAN Storage (specify in request)</span></li><li><span style=\"font-size: 10.0pt;\">Linux or Windows XP (specify)</span></li><li><span style=\"font-size: 10.0pt;\">Oracle 10g R2</span></li></ul>\n<font size=\"4\" face=\"arial,helvetica,sans-serif\"><span style=\"font-size: 8.5pt;\"><br /><br /></span></font></li></ul>",
+      "variables": [
+        {
+          "name": "project_code",
+          "question_text": "Which project code is this server to be billed to?",
+          "type": "6",
+          "mandatory": false
+        },
+        {
+          "name": "budget_code",
+          "question_text": "What budget code should this server be billed to?",
+          "type": "6",
+          "mandatory": false
+        },
+        {
+          "name": "OS",
+          "question_text": "Please Specify an Operating System",
+          "type": "3",
+          "mandatory": false
+        },
+        {
+          "name": "san",
+          "question_text": "How much (if any) SAN Storage is required?",
+          "type": "6",
+          "mandatory": false
+        }
+      ]
     },
     {
       "name": "Email Account (old)",
-      "sys_id": "d67a86b6c0a80165009386c752cd4a09"
+      "sys_id": "d67a86b6c0a80165009386c752cd4a09",
+      "description": "<p><font size=\"3\" face=\"arial,helvetica,sans-serif\">Services Overview:</font></p>\n<p><font size=\"2\" face=\"arial,helvetica,sans-serif\">Corporate email supports both the outlook client as well as outlook web access (OWA). \u00a0This comes pre-installed on all users\u00a0corporate\u00a0issued devices.</font></p>\n<p><font size=\"3\" face=\"arial,helvetica,sans-serif\">Services Overview:</font></p>\n<ul><li><font size=\"2\" face=\"arial,helvetica,sans-serif\">24/7 Monitoring</font></li><li><font size=\"2\" face=\"arial,helvetica,sans-serif\">End user support</font></li></ul>",
+      "variables": [
+        {
+          "name": "is_this_a_new_account",
+          "question_text": "Is this a new account ?",
+          "type": "5",
+          "mandatory": false
+        },
+        {
+          "name": "special_requirements",
+          "question_text": "Special Requirements",
+          "type": "2",
+          "mandatory": false
+        }
+      ]
     },
     {
       "name": "VM Provisioning",
-      "sys_id": "f3937ada4fff0200086eeed18110c7f2"
+      "sys_id": "f3937ada4fff0200086eeed18110c7f2",
+      "description": "<p><font size=\"2\">This service provides support and administration of a VMware virtual server running a supported Linux server operating system. Configuration changes will be handled as requested.</font></p>\n<p><font size=\"3\">Services Include:</font></p>\n<ul><li><font size=\"2\">Linux Environment</font></li><li><font size=\"2\">Standard 50 GB of Storage, 4 GB of RAM</font></li><li><font size=\"2\">Additional CPUs, Storage, and RAM available upon request</font></li><li><font size=\"2\">Alerting and Monitoring</font></li></ul>",
+      "variables": [
+        {
+          "name": "cpu",
+          "question_text": "How many CPUs?",
+          "type": "5",
+          "mandatory": false
+        },
+        {
+          "name": "ram",
+          "question_text": "How much RAM?",
+          "type": "5",
+          "mandatory": false
+        },
+        {
+          "name": "storage",
+          "question_text": "Amount of storage?",
+          "type": "5",
+          "mandatory": false
+        }
+      ]
     }
   ]
 }
