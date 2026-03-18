@@ -1,0 +1,11 @@
+name: Asus G Series
+category: ''
+description: "\n\t\t\t<p>\n\t\t\t\t<font size=\"3\">\n\t\t\t\t\t<span>\n\t\t\t\t\t\
+  \tAsus G Series Notebook</span>\n\t\t\t\t</font>\n\t\t\t</p>\n\t\t\t<ul><li>\n\t\
+  \t\t\t\t<span style=\"font-size: 10.0pt;\">Intel Core i7-2630QM 2.0GHz</span>\n\t\
+  \t\t\t</li><li>\n\t\t\t\t\t<span style=\"font-size: 10.0pt;\">8GB Memory 500GB HDD</span>\n\
+  \t\t\t\t</li><li>\n\t\t\t\t\t<span style=\"font-size: 10.0pt;\">NVIDIA GeForce GTX\
+  \ 460M</span>\n\t\t\t\t</li><li>\n\t\t\t\t\t<span style=\"font-size: 10.0pt;\">DVD\
+  \ Super Multi</span>\n\t\t\t\t</li></ul>"
+active: true
+variables: []
