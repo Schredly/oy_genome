@@ -1,5 +1,19 @@
 name: Email Account (old)
 category: ''
-description: ''
+description: "<p><font size=\"3\" face=\"arial,helvetica,sans-serif\">Services Overview:</font></p>\n\
+  <p><font size=\"2\" face=\"arial,helvetica,sans-serif\">Corporate email supports\
+  \ both the outlook client as well as outlook web access (OWA). \_This comes pre-installed\
+  \ on all users\_corporate\_issued devices.</font></p>\n<p><font size=\"3\" face=\"\
+  arial,helvetica,sans-serif\">Services Overview:</font></p>\n<ul><li><font size=\"\
+  2\" face=\"arial,helvetica,sans-serif\">24/7 Monitoring</font></li><li><font size=\"\
+  2\" face=\"arial,helvetica,sans-serif\">End user support</font></li></ul>"
 active: true
-variables: []
+variables:
+- name: is_this_a_new_account
+  type: '5'
+  mandatory: false
+  question: Is this a new account ?
+- name: special_requirements
+  type: '2'
+  mandatory: false
+  question: Special Requirements
