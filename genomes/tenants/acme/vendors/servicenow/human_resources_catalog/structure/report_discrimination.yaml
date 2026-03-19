@@ -1,5 +1,33 @@
 name: Report Discrimination
 category: ''
-description: ''
+description: null
 active: true
-variables: []
+variables:
+- name: anonymous_section
+  type: '19'
+  mandatory: false
+  question: null
+- name: anonymous_text
+  type: '32'
+  mandatory: false
+  question: null
+- name: description_of_incident
+  type: '2'
+  mandatory: true
+  question: Please describe the situation in detail
+- name: formatter
+  type: '20'
+  mandatory: false
+  question: null
+- name: incident_date
+  type: '9'
+  mandatory: false
+  question: Indicate the approximate date of the incident
+- name: location_incident
+  type: '2'
+  mandatory: false
+  question: Let us know where the incident took place
+- name: preferred_contact_method
+  type: '5'
+  mandatory: true
+  question: In case we need to contact you, choose a method you prefer
