@@ -1,0 +1,1 @@
+Create a world class service catalog with an AI chat capability that allows me to search for catalog items as well as create catalog items. When I say create item, give it a category, a description, along with fields I want to have on that item it should create the item.
