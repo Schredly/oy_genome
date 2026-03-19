@@ -1,5 +1,17 @@
 name: Payroll Discrepancy
 category: ''
-description: ''
+description: null
 active: true
-variables: []
+variables:
+- name: pay_discrepancy_type
+  type: '3'
+  mandatory: true
+  question: Specify where in your pay stub you have a discrepancy
+- name: pay_dependancy_inquiry
+  type: '2'
+  mandatory: true
+  question: Describe the discrepancy
+- name: pay_stub_attached
+  type: '7'
+  mandatory: false
+  question: Is the pay stub attached?
