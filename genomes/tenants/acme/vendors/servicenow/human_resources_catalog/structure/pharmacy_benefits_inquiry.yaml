@@ -1,5 +1,21 @@
 name: Pharmacy Benefits Inquiry
 category: ''
-description: ''
+description: null
 active: true
-variables: []
+variables:
+- name: pharmacy_current
+  type: '17'
+  mandatory: false
+  question: null
+- name: benefit_provider
+  type: '8'
+  mandatory: false
+  question: If your question is regarding a specific plan, please select the plan
+- name: pharmacy_forms
+  type: '17'
+  mandatory: false
+  question: null
+- name: what_is_your_question
+  type: '2'
+  mandatory: true
+  question: What is your question?
