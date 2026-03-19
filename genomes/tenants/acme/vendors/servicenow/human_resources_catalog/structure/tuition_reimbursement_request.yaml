@@ -1,0 +1,45 @@
+name: Tuition Reimbursement Request
+category: ''
+description: null
+active: true
+variables:
+- name: submitted_tuition_reimbursements
+  type: '17'
+  mandatory: false
+  question: null
+- name: reimbursement_fields
+  type: '19'
+  mandatory: false
+  question: null
+- name: school_program_name
+  type: '6'
+  mandatory: true
+  question: Name of School or Company
+- name: course_title
+  type: '6'
+  mandatory: true
+  question: Course Title
+- name: formatter
+  type: '24'
+  mandatory: false
+  question: null
+- name: course_start_date
+  type: '9'
+  mandatory: true
+  question: Course Start Date
+- name: course_end_date
+  type: '9'
+  mandatory: true
+  question: Course End Date
+- name: formatter2
+  type: '20'
+  mandatory: false
+  question: null
+- name: course_cost
+  type: '6'
+  mandatory: true
+  question: Estimated Cost
+- name: course_justification
+  type: '2'
+  mandatory: false
+  question: Justification for taking the course
