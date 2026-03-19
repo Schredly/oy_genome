@@ -1,5 +1,17 @@
 name: Request Corporate Credit Card
 category: ''
-description: ''
+description: null
 active: true
-variables: []
+variables:
+- name: subject_person
+  type: '8'
+  mandatory: true
+  question: Employee name
+- name: manager_name
+  type: '6'
+  mandatory: false
+  question: Immediate supervisor name
+- name: business_justification
+  type: '6'
+  mandatory: true
+  question: Business justification
