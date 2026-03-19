@@ -1,0 +1,13 @@
+name: HR Account Access Request
+category: ''
+description: null
+active: true
+variables:
+- name: hr_system
+  type: '18'
+  mandatory: true
+  question: Select the HR system for which you require access
+- name: op_access_request
+  type: '2'
+  mandatory: true
+  question: Specify the type of access you need and why you need it
