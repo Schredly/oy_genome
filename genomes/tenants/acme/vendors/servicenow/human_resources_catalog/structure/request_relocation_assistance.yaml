@@ -1,0 +1,57 @@
+name: Request Relocation Assistance
+category: ''
+description: null
+active: true
+variables:
+- name: container_start
+  type: '19'
+  mandatory: false
+  question: null
+- name: relocation_reason
+  type: '5'
+  mandatory: true
+  question: Relocation reason
+- name: office_location
+  type: '8'
+  mandatory: false
+  question: To which office are you relocating?
+- name: instruction_text
+  type: '17'
+  mandatory: false
+  question: null
+- name: relocation_address
+  type: '2'
+  mandatory: false
+  question: Address
+- name: relocation_city
+  type: '6'
+  mandatory: false
+  question: City
+- name: relocation_state
+  type: '6'
+  mandatory: false
+  question: State / Province
+- name: relocation_zip
+  type: '6'
+  mandatory: false
+  question: Zip / Postal code
+- name: relocation_country
+  type: '8'
+  mandatory: false
+  question: Country
+- name: formatter
+  type: '24'
+  mandatory: false
+  question: null
+- name: relocation_date
+  type: '9'
+  mandatory: true
+  question: Anticipated relocation date
+- name: work_visa_required
+  type: '1'
+  mandatory: false
+  question: Will you require a work visa?
+- name: formatter2
+  type: '20'
+  mandatory: false
+  question: null
