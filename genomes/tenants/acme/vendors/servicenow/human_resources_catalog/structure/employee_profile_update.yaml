@@ -1,5 +1,97 @@
 name: Employee Profile Update
 category: ''
-description: ''
+description: null
 active: true
-variables: []
+variables:
+- name: start
+  type: '19'
+  mandatory: false
+  question: General Information
+- name: introduction
+  type: '5'
+  mandatory: false
+  question: Prefix
+- name: first_name
+  type: '6'
+  mandatory: true
+  question: First name
+- name: middle_name
+  type: '6'
+  mandatory: false
+  question: Middle name
+- name: last_name
+  type: '6'
+  mandatory: true
+  question: Last name
+- name: formatter
+  type: '24'
+  mandatory: false
+  question: Split
+- name: marital_status
+  type: '5'
+  mandatory: false
+  question: Marital status
+- name: country_of_birth
+  type: '8'
+  mandatory: true
+  question: Country of birth
+- name: ethnicity
+  type: '6'
+  mandatory: true
+  question: Ethnicity
+- name: gender
+  type: '5'
+  mandatory: false
+  question: Gender
+- name: formatter2
+  type: '20'
+  mandatory: false
+  question: End
+- name: contact_information
+  type: '19'
+  mandatory: false
+  question: Contact Information
+- name: address
+  type: '6'
+  mandatory: true
+  question: Home address
+- name: city
+  type: '6'
+  mandatory: true
+  question: Home city
+- name: state
+  type: '6'
+  mandatory: true
+  question: Home state/province
+- name: zip
+  type: '6'
+  mandatory: true
+  question: Zip/postal code
+- name: country
+  type: '8'
+  mandatory: true
+  question: Country
+- name: formatter3
+  type: '24'
+  mandatory: false
+  question: Split
+- name: personal_email
+  type: '26'
+  mandatory: true
+  question: Personal email
+- name: mobile_phone
+  type: '6'
+  mandatory: false
+  question: Personal mobile
+- name: work_mobile
+  type: '6'
+  mandatory: false
+  question: Work mobile
+- name: home_phone
+  type: '6'
+  mandatory: true
+  question: Home phone
+- name: formatter4
+  type: '20'
+  mandatory: false
+  question: End
