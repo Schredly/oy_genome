@@ -1,0 +1,30 @@
+{
+  "tables": [
+    {
+      "name": "Direct Deposit Inquiry",
+      "fields": [
+        "direct_deposit_current",
+        "deposit_type",
+        "deposit_percent",
+        "deposit_amount"
+      ]
+    },
+    {
+      "name": "HR Report Inquiry",
+      "fields": [
+        "hr_system"
+      ]
+    },
+    {
+      "name": "Employee Profile Update",
+      "fields": [
+        "employee_id"
+      ]
+    }
+  ],
+  "workflows": [
+    "direct_deposit_inquiry_request",
+    "hr_report_inquiry_request",
+    "employee_profile_update_request"
+  ]
+}
