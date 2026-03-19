@@ -1,0 +1,3227 @@
+objects:
+- id: direct_deposit_inquiry
+  name: Direct Deposit Inquiry
+  type: table
+  fields:
+  - id: direct_deposit_current
+    name: direct_deposit_current
+    object_name: Direct Deposit Inquiry
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: deposit_type
+    name: deposit_type
+    object_name: Direct Deposit Inquiry
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: deposit_percent
+    name: deposit_percent
+    object_name: Direct Deposit Inquiry
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: deposit_amount
+    name: deposit_amount
+    object_name: Direct Deposit Inquiry
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - direct_deposit_inquiry_request
+  relationships:
+  - rel_0
+- id: hr_report_inquiry
+  name: HR Report Inquiry
+  type: table
+  fields:
+  - id: hr_system
+    name: hr_system
+    object_name: HR Report Inquiry
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - hr_report_inquiry_request
+  relationships:
+  - rel_1
+- id: employee_profile_update
+  name: Employee Profile Update
+  type: table
+  fields:
+  - id: employee_id
+    name: employee_id
+    object_name: Employee Profile Update
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - employee_profile_update_request
+  - employee_profile_update
+  relationships:
+  - rel_2
+- id: report_discrimination
+  name: Report Discrimination
+  type: table
+  fields: []
+  workflows:
+  - report_discrimination_request
+  relationships:
+  - rel_3
+- id: general_benefits_inquiry
+  name: General Benefits Inquiry
+  type: table
+  fields: []
+  workflows:
+  - general_benefits_inquiry_request
+  relationships:
+  - rel_4
+- id: add_beneficiaries
+  name: Add Beneficiaries
+  type: table
+  fields:
+  - id: beneficiaries_current
+    name: beneficiaries_current
+    object_name: Add Beneficiaries
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - add_beneficiaries_request
+  relationships:
+  - rel_5
+- id: hr_accounts_inquiry
+  name: HR Accounts Inquiry
+  type: table
+  fields: []
+  workflows:
+  - hr_accounts_inquiry_request
+  relationships:
+  - rel_6
+- id: general_inquiry
+  name: General Inquiry
+  type: table
+  fields: []
+  workflows:
+  - general_inquiry_request
+  relationships:
+  - rel_7
+- id: request_relocation_assistance
+  name: Request Relocation Assistance
+  type: table
+  fields:
+  - id: relocation_reason
+    name: relocation_reason
+    object_name: Request Relocation Assistance
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: relocation_address
+    name: relocation_address
+    object_name: Request Relocation Assistance
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: relocation_city
+    name: relocation_city
+    object_name: Request Relocation Assistance
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: relocation_state
+    name: relocation_state
+    object_name: Request Relocation Assistance
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: relocation_zip
+    name: relocation_zip
+    object_name: Request Relocation Assistance
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: relocation_country
+    name: relocation_country
+    object_name: Request Relocation Assistance
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: relocation_date
+    name: relocation_date
+    object_name: Request Relocation Assistance
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - request_relocation_assistance_request
+  relationships:
+  - rel_8
+- id: request_leave_of_absence
+  name: Request Leave of Absence
+  type: table
+  fields:
+  - id: leave_type
+    name: leave_type
+    object_name: Request Leave of Absence
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - request_leave_of_absence_request
+  relationships:
+  - rel_9
+- id: tuition_reimbursement_inquiry
+  name: Tuition Reimbursement Inquiry
+  type: table
+  fields:
+  - id: reimbursement_fields
+    name: reimbursement_fields
+    object_name: Tuition Reimbursement Inquiry
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - tuition_reimbursement_inquiry_request
+  relationships:
+  - rel_10
+- id: 401_k_plan_enrollment_inquiry
+  name: 401(k) Plan Enrollment Inquiry
+  type: table
+  fields: []
+  workflows:
+  - 401_k_plan_enrollment_inquiry_request
+  relationships:
+  - rel_11
+- id: dental_benefits_enrollment_inquiry
+  name: Dental Benefits Enrollment Inquiry
+  type: table
+  fields:
+  - id: dental_current
+    name: dental_current
+    object_name: Dental Benefits Enrollment Inquiry
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: dental_forms
+    name: dental_forms
+    object_name: Dental Benefits Enrollment Inquiry
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: dental_plan_attachment
+    name: dental_plan_attachment
+    object_name: Dental Benefits Enrollment Inquiry
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - dental_benefits_enrollment_inquiry_request
+  relationships:
+  - rel_12
+- id: request_corporate_credit_card
+  name: Request Corporate Credit Card
+  type: table
+  fields: []
+  workflows:
+  - request_corporate_credit_card_request
+  relationships:
+  - rel_13
+- id: pharmacy_benefits_enrollment_inquiry
+  name: Pharmacy Benefits Enrollment Inquiry
+  type: table
+  fields:
+  - id: pharmacy_current
+    name: pharmacy_current
+    object_name: Pharmacy Benefits Enrollment Inquiry
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: pharmacy_forms
+    name: pharmacy_forms
+    object_name: Pharmacy Benefits Enrollment Inquiry
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - pharmacy_benefits_enrollment_inquiry_request
+  relationships:
+  - rel_14
+- id: medical_plan_enrollment
+  name: Medical Plan Enrollment
+  type: table
+  fields:
+  - id: medical_current
+    name: medical_current
+    object_name: Medical Plan Enrollment
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: medical_forms
+    name: medical_forms
+    object_name: Medical Plan Enrollment
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - medical_plan_enrollment_request
+  relationships:
+  - rel_15
+- id: vision_plan_enrollment
+  name: Vision Plan Enrollment
+  type: table
+  fields:
+  - id: vision_current
+    name: vision_current
+    object_name: Vision Plan Enrollment
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: vision_forms
+    name: vision_forms
+    object_name: Vision Plan Enrollment
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - vision_plan_enrollment_request
+  relationships:
+  - rel_16
+- id: 401_k_retirement_plan_inquiry
+  name: 401(k) Retirement Plan Inquiry
+  type: table
+  fields:
+  - id: retirement_plan_current
+    name: retirement_plan_current
+    object_name: 401(k) Retirement Plan Inquiry
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: retirement_forms
+    name: retirement_forms
+    object_name: 401(k) Retirement Plan Inquiry
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - 401_k_retirement_plan_inquiry_request
+  relationships:
+  - rel_17
+- id: dental_benefits_inquiry
+  name: Dental Benefits Inquiry
+  type: table
+  fields: []
+  workflows:
+  - dental_benefits_inquiry_request
+  relationships:
+  - rel_18
+- id: pharmacy_benefits_inquiry
+  name: Pharmacy Benefits Inquiry
+  type: table
+  fields: []
+  workflows:
+  - pharmacy_benefits_inquiry_request
+  relationships:
+  - rel_19
+- id: employee_travel_visa_request
+  name: Employee Travel Visa Request
+  type: table
+  fields:
+  - id: visa_fields
+    name: visa_fields
+    object_name: Employee Travel Visa Request
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - employee_travel_visa_request_request
+  relationships:
+  - rel_20
+- id: payroll_discrepancy
+  name: Payroll Discrepancy
+  type: table
+  fields: []
+  workflows:
+  - payroll_discrepancy_request
+  relationships:
+  - rel_21
+- id: report_misconduct
+  name: Report Misconduct
+  type: table
+  fields: []
+  workflows:
+  - report_misconduct_request
+  relationships:
+  - rel_22
+- id: password_reset
+  name: Password Reset
+  type: table
+  fields: []
+  workflows:
+  - password_reset_request
+  - update_password_reset_request_status
+  - password_reset_master_subflow
+  - password_reset
+  relationships:
+  - rel_23
+- id: erasure_of_personal_data_request
+  name: Erasure of Personal Data Request
+  type: table
+  fields:
+  - id: personal_email
+    name: personal_email
+    object_name: Erasure of Personal Data Request
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - erasure_of_personal_data_request_request
+  relationships:
+  - rel_24
+- id: employee_onboarding
+  name: Employee Onboarding
+  type: table
+  fields: []
+  workflows:
+  - employee_onboarding_request
+  relationships:
+  - rel_25
+- id: hr_account_access_request
+  name: HR Account Access Request
+  type: table
+  fields:
+  - id: account_nickname
+    name: account_nickname
+    object_name: HR Account Access Request
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: account_number
+    name: account_number
+    object_name: HR Account Access Request
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: account_type
+    name: account_type
+    object_name: HR Account Access Request
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - hr_account_access_request_request
+  relationships:
+  - rel_26
+- id: hr_portal_support_request
+  name: HR Portal Support Request
+  type: table
+  fields:
+  - id: support_type
+    name: support_type
+    object_name: HR Portal Support Request
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: support_browser
+    name: support_browser
+    object_name: HR Portal Support Request
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - hr_portal_support_request_request
+  relationships:
+  - rel_27
+- id: direct_deposit_setup
+  name: Direct Deposit Setup
+  type: table
+  fields: []
+  workflows:
+  - direct_deposit_setup_request
+  relationships:
+  - rel_28
+- id: hr_report_request
+  name: HR Report Request
+  type: table
+  fields: []
+  workflows:
+  - hr_report_request_request
+  relationships:
+  - rel_29
+- id: start_a_performance_improvement_plan_pip
+  name: Start a Performance Improvement Plan (PIP)
+  type: table
+  fields:
+  - id: start
+    name: start
+    object_name: Start a Performance Improvement Plan (PIP)
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - start_a_performance_improvement_plan_pip_request
+  relationships:
+  - rel_30
+- id: tuition_reimbursement_request
+  name: Tuition Reimbursement Request
+  type: table
+  fields: []
+  workflows:
+  - tuition_reimbursement_request_request
+  relationships:
+  - rel_31
+- id: pharmacy_plan_enrollment
+  name: Pharmacy Plan Enrollment
+  type: table
+  fields: []
+  workflows:
+  - pharmacy_plan_enrollment_request
+  relationships:
+  - rel_32
+- id: 401_k_plan_enrollment
+  name: 401(k) Plan Enrollment
+  type: table
+  fields: []
+  workflows:
+  - 401_k_plan_enrollment_inquiry_request
+  - 401_k_plan_enrollment_request
+  relationships:
+  - rel_33
+- id: dental_plan_enrollment
+  name: Dental Plan Enrollment
+  type: table
+  fields: []
+  workflows:
+  - dental_plan_enrollment_request
+  relationships:
+  - rel_34
+- id: medical_benefits_inquiry
+  name: Medical Benefits Inquiry
+  type: table
+  fields: []
+  workflows:
+  - medical_benefits_inquiry_request
+  relationships:
+  - rel_35
+- id: request_accommodations
+  name: Request Accommodations
+  type: table
+  fields: []
+  workflows:
+  - request_accommodations_request
+  relationships:
+  - rel_36
+- id: vision_benefits_inquiry
+  name: Vision Benefits Inquiry
+  type: table
+  fields: []
+  workflows:
+  - vision_benefits_inquiry_request
+  relationships:
+  - rel_37
+- id: new_hire_onboarding_demo
+  name: New Hire Onboarding (Demo)
+  type: table
+  fields: []
+  workflows:
+  - new_hire_onboarding_demo_request
+  relationships:
+  - rel_38
+- id: medical_benefits_enrollment_inquiry
+  name: Medical Benefits Enrollment Inquiry
+  type: table
+  fields: []
+  workflows:
+  - medical_benefits_enrollment_inquiry_request
+  relationships:
+  - rel_39
+- id: vision_benefits_enrollment_inquiry
+  name: Vision Benefits Enrollment Inquiry
+  type: table
+  fields: []
+  workflows:
+  - vision_benefits_enrollment_inquiry_request
+  relationships:
+  - rel_40
+- id: beneficiaries_inquiry
+  name: Beneficiaries Inquiry
+  type: table
+  fields: []
+  workflows:
+  - beneficiaries_inquiry_request
+  relationships:
+  - rel_41
+- id: personal_information_report
+  name: Personal Information Report
+  type: table
+  fields: []
+  workflows:
+  - personal_information_report_request
+  relationships:
+  - rel_42
+- id: global
+  name: global
+  type: virtual
+  fields:
+  - id: what_is_your_question
+    name: what_is_your_question
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: introduction
+    name: introduction
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: first_name
+    name: first_name
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: middle_name
+    name: middle_name
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: last_name
+    name: last_name
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: formatter
+    name: formatter
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: marital_status
+    name: marital_status
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: country_of_birth
+    name: country_of_birth
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: ethnicity
+    name: ethnicity
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: gender
+    name: gender
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: formatter2
+    name: formatter2
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: contact_information
+    name: contact_information
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: address
+    name: address
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: city
+    name: city
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: state
+    name: state
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: zip
+    name: zip
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: country
+    name: country
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: formatter3
+    name: formatter3
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: mobile_phone
+    name: mobile_phone
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: work_mobile
+    name: work_mobile
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: home_phone
+    name: home_phone
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: formatter4
+    name: formatter4
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: anonymous_section
+    name: anonymous_section
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: anonymous_text
+    name: anonymous_text
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: description_of_incident
+    name: description_of_incident
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: incident_date
+    name: incident_date
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: location_incident
+    name: location_incident
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: preferred_contact_method
+    name: preferred_contact_method
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: instruction_text
+    name: instruction_text
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: benefit_provider
+    name: benefit_provider
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: beneficiary_forms
+    name: beneficiary_forms
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: completed_form_attached
+    name: completed_form_attached
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: container_start
+    name: container_start
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: office_location
+    name: office_location
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: work_visa_required
+    name: work_visa_required
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: first_day_of_leave
+    name: first_day_of_leave
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: estimated_last_day_of_leave
+    name: estimated_last_day_of_leave
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: subject_person
+    name: subject_person
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: manager_name
+    name: manager_name
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: business_justification
+    name: business_justification
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: birth_country
+    name: birth_country
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: country_travelling_to
+    name: country_travelling_to
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: date_needed_by
+    name: date_needed_by
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: trip_duration
+    name: trip_duration
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: pay_discrepancy_type
+    name: pay_discrepancy_type
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: pay_dependancy_inquiry
+    name: pay_dependancy_inquiry
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: pay_stub_attached
+    name: pay_stub_attached
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: user_name
+    name: user_name
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: selected_pii_data
+    name: selected_pii_data
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: selected_hr_cases
+    name: selected_hr_cases
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: selected_case_data_option
+    name: selected_case_data_option
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: email_id
+    name: email_id
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: reason_for_deletion
+    name: reason_for_deletion
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: additional_comments
+    name: additional_comments
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: location_type
+    name: location_type
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: department
+    name: department
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: position
+    name: position
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: employment_type
+    name: employment_type
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: op_access_request
+    name: op_access_request
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: routing_number
+    name: routing_number
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: which_system
+    name: which_system
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: op_report_report_type
+    name: op_report_report_type
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: op_report_justification
+    name: op_report_justification
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: op_report_description
+    name: op_report_description
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: op_report_frequency
+    name: op_report_frequency
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: pip_start_date
+    name: pip_start_date
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: pip_end_date
+    name: pip_end_date
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: pip_rationale
+    name: pip_rationale
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: pip_improvement_areas
+    name: pip_improvement_areas
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: submitted_tuition_reimbursements
+    name: submitted_tuition_reimbursements
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: school_program_name
+    name: school_program_name
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: course_title
+    name: course_title
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: course_start_date
+    name: course_start_date
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: course_end_date
+    name: course_end_date
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: course_cost
+    name: course_cost
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: course_justification
+    name: course_justification
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: type_of_accommodation
+    name: type_of_accommodation
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: time_sensitive_request
+    name: time_sensitive_request
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: part_of_job_improvement
+    name: part_of_job_improvement
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: accessible_benefits
+    name: accessible_benefits
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: previous_accommodations
+    name: previous_accommodations
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: previous_accommodation_effectiveness
+    name: previous_accommodation_effectiveness
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: anything_else
+    name: anything_else
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: left_column
+    name: left_column
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: employment_information_section
+    name: employment_information_section
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: employment_start_date
+    name: employment_start_date
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: manager
+    name: manager
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: location
+    name: location
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: formatter5
+    name: formatter5
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: additional_needs
+    name: additional_needs
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: needs_work_visa
+    name: needs_work_visa
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: needs_transfer_work_visa
+    name: needs_transfer_work_visa
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: needs_relocation_assistance
+    name: needs_relocation_assistance
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: subject_person_email
+    name: subject_person_email
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: reason_for_request
+    name: reason_for_request
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows: []
+  relationships: []
+workflows:
+- id: direct_deposit_inquiry_request
+  name: Direct Deposit Inquiry request
+  trigger: ''
+  steps: []
+- id: hr_report_inquiry_request
+  name: HR Report Inquiry request
+  trigger: ''
+  steps: []
+- id: employee_profile_update_request
+  name: Employee Profile Update request
+  trigger: ''
+  steps: []
+- id: report_discrimination_request
+  name: Report Discrimination request
+  trigger: ''
+  steps: []
+- id: general_benefits_inquiry_request
+  name: General Benefits Inquiry request
+  trigger: ''
+  steps: []
+- id: add_beneficiaries_request
+  name: Add Beneficiaries request
+  trigger: ''
+  steps: []
+- id: hr_accounts_inquiry_request
+  name: HR Accounts Inquiry request
+  trigger: ''
+  steps: []
+- id: general_inquiry_request
+  name: General Inquiry request
+  trigger: ''
+  steps: []
+- id: request_relocation_assistance_request
+  name: Request Relocation Assistance request
+  trigger: ''
+  steps: []
+- id: request_leave_of_absence_request
+  name: Request Leave of Absence request
+  trigger: ''
+  steps: []
+- id: tuition_reimbursement_inquiry_request
+  name: Tuition Reimbursement Inquiry request
+  trigger: ''
+  steps: []
+- id: 401_k_plan_enrollment_inquiry_request
+  name: 401(k) Plan Enrollment Inquiry request
+  trigger: ''
+  steps: []
+- id: dental_benefits_enrollment_inquiry_request
+  name: Dental Benefits Enrollment Inquiry request
+  trigger: ''
+  steps: []
+- id: request_corporate_credit_card_request
+  name: Request Corporate Credit Card request
+  trigger: ''
+  steps: []
+- id: pharmacy_benefits_enrollment_inquiry_request
+  name: Pharmacy Benefits Enrollment Inquiry request
+  trigger: ''
+  steps: []
+- id: medical_plan_enrollment_request
+  name: Medical Plan Enrollment request
+  trigger: ''
+  steps: []
+- id: vision_plan_enrollment_request
+  name: Vision Plan Enrollment request
+  trigger: ''
+  steps: []
+- id: 401_k_retirement_plan_inquiry_request
+  name: 401(k) Retirement Plan Inquiry request
+  trigger: ''
+  steps: []
+- id: dental_benefits_inquiry_request
+  name: Dental Benefits Inquiry request
+  trigger: ''
+  steps: []
+- id: pharmacy_benefits_inquiry_request
+  name: Pharmacy Benefits Inquiry request
+  trigger: ''
+  steps: []
+- id: employee_travel_visa_request_request
+  name: Employee Travel Visa Request request
+  trigger: ''
+  steps: []
+- id: payroll_discrepancy_request
+  name: Payroll Discrepancy request
+  trigger: ''
+  steps: []
+- id: report_misconduct_request
+  name: Report Misconduct request
+  trigger: ''
+  steps: []
+- id: password_reset_request
+  name: Password Reset request
+  trigger: ''
+  steps: []
+- id: erasure_of_personal_data_request_request
+  name: Erasure of Personal Data Request request
+  trigger: ''
+  steps: []
+- id: employee_onboarding_request
+  name: Employee Onboarding request
+  trigger: ''
+  steps: []
+- id: hr_account_access_request_request
+  name: HR Account Access Request request
+  trigger: ''
+  steps: []
+- id: hr_portal_support_request_request
+  name: HR Portal Support Request request
+  trigger: ''
+  steps: []
+- id: direct_deposit_setup_request
+  name: Direct Deposit Setup request
+  trigger: ''
+  steps: []
+- id: hr_report_request_request
+  name: HR Report Request request
+  trigger: ''
+  steps: []
+- id: start_a_performance_improvement_plan_pip_request
+  name: Start a Performance Improvement Plan (PIP) request
+  trigger: ''
+  steps: []
+- id: tuition_reimbursement_request_request
+  name: Tuition Reimbursement Request request
+  trigger: ''
+  steps: []
+- id: pharmacy_plan_enrollment_request
+  name: Pharmacy Plan Enrollment request
+  trigger: ''
+  steps: []
+- id: 401_k_plan_enrollment_request
+  name: 401(k) Plan Enrollment request
+  trigger: ''
+  steps: []
+- id: dental_plan_enrollment_request
+  name: Dental Plan Enrollment request
+  trigger: ''
+  steps: []
+- id: medical_benefits_inquiry_request
+  name: Medical Benefits Inquiry request
+  trigger: ''
+  steps: []
+- id: request_accommodations_request
+  name: Request Accommodations request
+  trigger: ''
+  steps: []
+- id: vision_benefits_inquiry_request
+  name: Vision Benefits Inquiry request
+  trigger: ''
+  steps: []
+- id: new_hire_onboarding_demo_request
+  name: New Hire Onboarding (Demo) request
+  trigger: ''
+  steps: []
+- id: medical_benefits_enrollment_inquiry_request
+  name: Medical Benefits Enrollment Inquiry request
+  trigger: ''
+  steps: []
+- id: vision_benefits_enrollment_inquiry_request
+  name: Vision Benefits Enrollment Inquiry request
+  trigger: ''
+  steps: []
+- id: beneficiaries_inquiry_request
+  name: Beneficiaries Inquiry request
+  trigger: ''
+  steps: []
+- id: personal_information_report_request
+  name: Personal Information Report request
+  trigger: ''
+  steps: []
+- id: on_call_send_notification_email
+  name: 'On-Call: Send Notification - Email'
+  trigger: ''
+  steps: []
+- id: update_request_for_application_provisioning
+  name: Update Request for Application provisioning
+  trigger: ''
+  steps: []
+- id: request_management_approval
+  name: Request Management Approval
+  trigger: ''
+  steps: []
+- id: flow_template_subflow
+  name: Flow Template Subflow
+  trigger: ''
+  steps: []
+- id: interaction_review_and_attach_article
+  name: '[Interaction] Review and attach article'
+  trigger: ''
+  steps: []
+- id: new_hire_on_boarding_case_trigger_hr_profile
+  name: New Hire On boarding Case Trigger HR Profile
+  trigger: ''
+  steps: []
+- id: wait_until_tracker_completes
+  name: Wait Until Tracker Completes
+  trigger: ''
+  steps: []
+- id: change_start_date
+  name: Change Start Date
+  trigger: ''
+  steps: []
+- id: sla_notification_and_escalation_flow
+  name: SLA notification and escalation flow
+  trigger: ''
+  steps: []
+- id: delete_configuration_items
+  name: Delete Configuration Items
+  trigger: ''
+  steps: []
+- id: notify_assessment_user
+  name: Notify assessment user
+  trigger: ''
+  steps: []
+- id: flowtemplate_record_create_trigger_empty
+  name: 'FlowTemplate: Record Create Trigger Empty'
+  trigger: ''
+  steps: []
+- id: object_template_security_v1
+  name: Object Template - Security v1
+  trigger: ''
+  steps: []
+- id: default_guidance_automation_plan
+  name: Default Guidance Automation Plan
+  trigger: ''
+  steps: []
+- id: create_task
+  name: Create Task
+  trigger: ''
+  steps: []
+- id: apply_stash
+  name: Apply Stash
+  trigger: ''
+  steps: []
+- id: placeholder_subflow_for_mfa_guided_setup
+  name: Placeholder Subflow for MFA Guided Setup
+  trigger: ''
+  steps: []
+- id: update_service_job_tracker_flow
+  name: Update Service Job Tracker Flow
+  trigger: ''
+  steps: []
+- id: delegate_roles_in_group
+  name: Delegate Roles in Group
+  trigger: ''
+  steps: []
+- id: sidebar_discussion_creation
+  name: Sidebar discussion creation
+  trigger: ''
+  steps: []
+- id: learning_template_retire_course
+  name: Learning - Template Retire Course
+  trigger: ''
+  steps: []
+- id: non_ml_copy_resolution
+  name: '[Non-ML] Copy Resolution'
+  trigger: ''
+  steps: []
+- id: object_template_standard_catalog_item
+  name: Object Template - Standard Catalog Item
+  trigger: ''
+  steps: []
+- id: process_app_template_email_data
+  name: Process app template email data
+  trigger: ''
+  steps: []
+- id: check_record_access_for_user
+  name: Check Record Access For User
+  trigger: ''
+  steps: []
+- id: run_job
+  name: Run Job
+  trigger: ''
+  steps: []
+- id: application_template_workspace_starter_experience_template
+  name: Application Template - Workspace Starter Experience Template
+  trigger: ''
+  steps: []
+- id: inbound_email_flow_example_logging_a_problem
+  name: 'Inbound Email Flow Example: logging a problem'
+  trigger: ''
+  steps: []
+- id: flow_template_for_new_incidents_create_a_zoom_call_and_send_the_information_to_teams
+  name: 'Flow Template: For new Incidents, create a Zoom call and send the information
+    to Teams'
+  trigger: ''
+  steps: []
+- id: application_template_team_contacts_template
+  name: Application Template - Team Contacts Template
+  trigger: ''
+  steps: []
+- id: sc_best_practice_flow
+  name: SC Best Practice Flow
+  trigger: ''
+  steps: []
+- id: retire_configuration_items
+  name: Retire Configuration Items
+  trigger: ''
+  steps: []
+- id: payload_map_template_flow
+  name: Payload & Map Template Flow
+  trigger: ''
+  steps: []
+- id: evaluate_audience
+  name: Evaluate Audience
+  trigger: ''
+  steps: []
+- id: update_password_reset_request_status
+  name: Update Password Reset Request Status
+  trigger: ''
+  steps: []
+- id: workday_learning_user_mapping
+  name: Workday Learning User Mapping
+  trigger: ''
+  steps: []
+- id: on_call_new_trigger_engine_handler
+  name: 'On-Call: New Trigger Engine Handler'
+  trigger: ''
+  steps: []
+- id: wait_for_a_event_and_check_trigger
+  name: Wait for a event and check trigger
+  trigger: ''
+  steps: []
+- id: flow_template_post_a_weekly_message_from_gmail
+  name: 'Flow Template: Post a weekly message from Gmail'
+  trigger: ''
+  steps: []
+- id: request_multi_level_approval
+  name: Request Multi-Level Approval
+  trigger: ''
+  steps: []
+- id: service_fulfillment_steps_task
+  name: Service Fulfillment Steps - Task
+  trigger: ''
+  steps: []
+- id: delete_related_entry_configuration_item
+  name: Delete Related Entry Configuration Item
+  trigger: ''
+  steps: []
+- id: hr_activity_set_trigger_check
+  name: HR Activity Set Trigger Check
+  trigger: ''
+  steps: []
+- id: run_incident_record_user_permission_action
+  name: Run Incident Record User permission action
+  trigger: ''
+  steps: []
+- id: atf_suite_start_with_id
+  name: ATF Suite Start With ID
+  trigger: ''
+  steps: []
+- id: service_catalog_request
+  name: Service Catalog Request
+  trigger: ''
+  steps: []
+- id: learning_insta_publish_flow
+  name: Learning - Insta Publish Flow
+  trigger: ''
+  steps: []
+- id: change_normal_implement
+  name: Change - Normal - Implement
+  trigger: ''
+  steps: []
+- id: transfer_order
+  name: Transfer Order
+  trigger: ''
+  steps: []
+- id: check_intake_status_on_development_instance
+  name: Check Intake Status on Development Instance
+  trigger: ''
+  steps: []
+- id: object_template_portal_starter_experience_template
+  name: Object Template - Portal Starter Experience Template
+  trigger: ''
+  steps: []
+- id: step_based_request_fulfillment
+  name: Step based request fulfillment
+  trigger: ''
+  steps: []
+- id: knowledge_instant_publish
+  name: Knowledge - Instant Publish
+  trigger: ''
+  steps: []
+- id: object_template_create_a_new_issue_in_jira_when_an_sn_record_is_created_v1
+  name: Object Template - Create a new issue in Jira when an SN record is created
+    v1
+  trigger: ''
+  steps: []
+- id: hr_service_activities
+  name: HR service activities
+  trigger: ''
+  steps: []
+- id: knowledge_article
+  name: Knowledge Article
+  trigger: ''
+  steps: []
+- id: auto_resolution_start_simulation_run
+  name: Auto-Resolution Start Simulation Run
+  trigger: ''
+  steps: []
+- id: flow_template_send_a_notification_to_an_email_address
+  name: 'Flow Template: Send a notification to an email address'
+  trigger: ''
+  steps: []
+- id: object_template_create_an_approval_for_a_requested_catalog_item
+  name: Object Template - Create an approval for a requested catalog item
+  trigger: ''
+  steps: []
+- id: password_reset_master_subflow
+  name: Password Reset Master Subflow
+  trigger: ''
+  steps: []
+- id: checklist_task_from_template_activity
+  name: Checklist Task from Template Activity
+  trigger: ''
+  steps: []
+- id: attach_article_to_interaction
+  name: Attach article to interaction
+  trigger: ''
+  steps: []
+- id: on_call_escalations_by_email_per_rota
+  name: 'On-Call: Escalations By Email Per Rota'
+  trigger: ''
+  steps: []
+- id: upload_attachment_to_slack
+  name: Upload Attachment to Slack
+  trigger: ''
+  steps: []
+- id: batch_results
+  name: Batch Results
+  trigger: ''
+  steps: []
+- id: one_api_feature_executor
+  name: One API - Feature Executor
+  trigger: ''
+  steps: []
+- id: requested_item_email_notification
+  name: Requested Item Email Notification
+  trigger: ''
+  steps: []
+- id: checklist_task_activity
+  name: Checklist Task Activity
+  trigger: ''
+  steps: []
+- id: simple_instruction
+  name: Simple Instruction
+  trigger: ''
+  steps: []
+- id: pull_user_activity_from_workday_learning
+  name: Pull User Activity from Workday Learning
+  trigger: ''
+  steps: []
+- id: change_unauthorized_authorize
+  name: Change - Unauthorized - Authorize
+  trigger: ''
+  steps: []
+- id: hri_case_user_acceptance
+  name: HRI Case User Acceptance
+  trigger: ''
+  steps: []
+- id: change_normal_authorize
+  name: Change - Normal - Authorize
+  trigger: ''
+  steps: []
+- id: catalog_builder_item_review_base_flow
+  name: Catalog Builder - Item review base flow
+  trigger: ''
+  steps: []
+- id: request_manager_approval
+  name: Request Manager Approval
+  trigger: ''
+  steps: []
+- id: collect_data_activity
+  name: Collect Data Activity
+  trigger: ''
+  steps: []
+- id: one_api_service_plan_runner
+  name: One API - Service Plan Runner
+  trigger: ''
+  steps: []
+- id: service_catalog_item_request
+  name: Service Catalog item request
+  trigger: ''
+  steps: []
+- id: kpi_signals_reminder_notification_flow
+  name: KPI Signals Reminder Notification Flow
+  trigger: ''
+  steps: []
+- id: template_service_fulfillment_steps
+  name: 'Template: Service Fulfillment Steps'
+  trigger: ''
+  steps: []
+- id: vtb_sample_flow
+  name: VTB Sample Flow
+  trigger: ''
+  steps: []
+- id: on_call_assign_and_notify_snc
+  name: 'On-Call: Assign and Notify SNC'
+  trigger: ''
+  steps: []
+- id: commit_retrieved_update_set
+  name: Commit Retrieved Update Set
+  trigger: ''
+  steps: []
+- id: guidance_automation_flow_executor
+  name: Guidance Automation Flow Executor
+  trigger: ''
+  steps: []
+- id: object_template_assign_incidents_created_by_vips_to_a_specific_group_v2
+  name: Object Template - Assign Incidents created by VIPs to a specific group v2
+  trigger: ''
+  steps: []
+- id: learning_set_course_state
+  name: Learning - Set Course State
+  trigger: ''
+  steps: []
+- id: pull_courses_from_workday_learning
+  name: Pull Courses from Workday Learning
+  trigger: ''
+  steps: []
+- id: send_or_edit_chat_message
+  name: Send Or Edit Chat Message
+  trigger: ''
+  steps: []
+- id: create_task
+  name: Create task
+  trigger: ''
+  steps: []
+- id: archive_dependent_cis
+  name: Archive Dependent CIs
+  trigger: ''
+  steps: []
+- id: flow_template_create_an_approval_for_a_requested_catalog_item
+  name: 'Flow Template: Create an approval for a requested catalog item'
+  trigger: ''
+  steps: []
+- id: object_template_create_a_new_catalog_item
+  name: Object Template - Create a new catalog item
+  trigger: ''
+  steps: []
+- id: show_record_list
+  name: Show record list
+  trigger: ''
+  steps: []
+- id: process_decision
+  name: Process Decision
+  trigger: ''
+  steps: []
+- id: delete_orphaned_dependent_cis
+  name: Delete Orphaned Dependent CIs
+  trigger: ''
+  steps: []
+- id: check_activity_and_wait_for_time_interval
+  name: Check Activity And Wait For Time Interval
+  trigger: ''
+  steps: []
+- id: deployment_pipeline_environment_order_process
+  name: Deployment Pipeline Environment Order Process
+  trigger: ''
+  steps: []
+- id: review_and_attach_article
+  name: Review and attach article
+  trigger: ''
+  steps: []
+- id: rollback_application_with_id
+  name: Rollback Application With ID
+  trigger: ''
+  steps: []
+- id: flow_template_for_new_incidents_create_a_zoom_call_and_send_the_information_to_slack
+  name: 'Flow Template: For new Incidents, create a Zoom call and send the information
+    to Slack'
+  trigger: ''
+  steps: []
+- id: instance_scan_execute_full_scan
+  name: Instance Scan Execute Full Scan
+  trigger: ''
+  steps: []
+- id: application_template_performance_review_template
+  name: Application Template - Performance Review Template
+  trigger: ''
+  steps: []
+- id: application_template_subflow
+  name: Application Template Subflow
+  trigger: ''
+  steps: []
+- id: create_child_case
+  name: Create Child Case
+  trigger: ''
+  steps: []
+- id: service_fulfillment_steps_custom_approval
+  name: Service Fulfillment Steps - Custom approval
+  trigger: ''
+  steps: []
+- id: campaign_approval
+  name: Campaign Approval
+  trigger: ''
+  steps: []
+- id: template_integration_service
+  name: Template Integration Service
+  trigger: ''
+  steps: []
+- id: application_template_scoped_app_template_with_roles_ds
+  name: Application Template - Scoped app template with roles - DS
+  trigger: ''
+  steps: []
+- id: link_outage_to_task
+  name: Link outage to task
+  trigger: ''
+  steps: []
+- id: learning_template_publish_flow
+  name: Learning - Template Publish Flow
+  trigger: ''
+  steps: []
+- id: apply_changes_from_source_control_with_id
+  name: Apply Changes From Source Control With ID
+  trigger: ''
+  steps: []
+- id: object_template_add_or_import_data
+  name: Object Template - Add or import data
+  trigger: ''
+  steps: []
+- id: software_procurement_flow
+  name: Software Procurement Flow
+  trigger: ''
+  steps: []
+- id: learning_insta_republish_flow
+  name: Learning - Insta Republish Flow
+  trigger: ''
+  steps: []
+- id: attach_article_in_comment
+  name: Attach Article In Comment
+  trigger: ''
+  steps: []
+- id: microsoft_receipt_scanner
+  name: Microsoft Receipt Scanner
+  trigger: ''
+  steps: []
+- id: instance_scan_execute_combo_suite_scan
+  name: Instance Scan Execute Combo Suite Scan
+  trigger: ''
+  steps: []
+- id: flow_template_create_a_new_row_in_microsoft_excel_when_a_servicenow_record_is_created
+  name: 'Flow Template: Create a new row in Microsoft Excel when a ServiceNow record
+    is created'
+  trigger: ''
+  steps: []
+- id: install_application_with_scope
+  name: Install Application With Scope
+  trigger: ''
+  steps: []
+- id: instance_scan_execute_suite_scan_for_scoped_app
+  name: Instance Scan Execute Suite Scan For Scoped App
+  trigger: ''
+  steps: []
+- id: on_call_time_off_approval_update_roster_state
+  name: On Call Time Off Approval Update Roster State
+  trigger: ''
+  steps: []
+- id: cmdb_task_approval_subflow
+  name: CMDB Task approval subflow
+  trigger: ''
+  steps: []
+- id: new_hire_on_boarding_case_trigger_job
+  name: New Hire On boarding Case Trigger Job
+  trigger: ''
+  steps: []
+- id: flowtemplate_record_create_or_update_trigger_empty
+  name: 'FlowTemplate: Record Create or Update Trigger Empty'
+  trigger: ''
+  steps: []
+- id: set_visibility_of_analytics_applications_v2
+  name: Set visibility of Analytics applications(v2)
+  trigger: ''
+  steps: []
+- id: non_ml_link_as_parent_incident
+  name: '[Non-ML] Link as parent incident'
+  trigger: ''
+  steps: []
+- id: link_problem_to_mulitple_incidents
+  name: Link problem to mulitple incidents
+  trigger: ''
+  steps: []
+- id: grant_role_delegator_role_to_user_in_group
+  name: Grant role_delegator role to user in group
+  trigger: ''
+  steps: []
+- id: guidance_automation_template_legacy
+  name: Guidance Automation Template Legacy
+  trigger: ''
+  steps: []
+- id: send_or_edit_slack_message
+  name: Send Or Edit Slack Message
+  trigger: ''
+  steps: []
+- id: retrieve_update_set_with_instance_id
+  name: Retrieve Update Set With Instance ID
+  trigger: ''
+  steps: []
+- id: password_reset
+  name: Password Reset
+  trigger: ''
+  steps: []
+- id: service_fulfillment_steps_manager_approval
+  name: Service Fulfillment Steps - Manager approval
+  trigger: ''
+  steps: []
+- id: docker_webhook_subflow
+  name: Docker Webhook Subflow
+  trigger: ''
+  steps: []
+- id: link_incident_to_task
+  name: Link incident to task
+  trigger: ''
+  steps: []
+- id: new_request_app_approval_flow
+  name: New Request App Approval Flow
+  trigger: ''
+  steps: []
+- id: archive_configuration_items
+  name: Archive Configuration Items
+  trigger: ''
+  steps: []
+- id: iar_sla_reminder
+  name: IAR SLA Reminder
+  trigger: ''
+  steps: []
+- id: on_call_assign_by_acknowledgement
+  name: 'On-Call: Assign By Acknowledgement'
+  trigger: ''
+  steps: []
+- id: source_request
+  name: Source Request
+  trigger: ''
+  steps: []
+- id: collab_chat_subscribe_webhook
+  name: Collab Chat Subscribe Webhook
+  trigger: ''
+  steps: []
+- id: wait_for_timer_and_check_trigger
+  name: Wait for timer and check trigger
+  trigger: ''
+  steps: []
+- id: learning_republish_course_ask_for_approval
+  name: Learning - Republish Course Ask for Approval
+  trigger: ''
+  steps: []
+- id: dummy_subflow
+  name: Dummy Subflow
+  trigger: ''
+  steps: []
+- id: gs_iframe
+  name: GS Iframe
+  trigger: ''
+  steps: []
+- id: remediate_server
+  name: Remediate - server
+  trigger: ''
+  steps: []
+- id: change_standard_proposal
+  name: Change - Standard - Proposal
+  trigger: ''
+  steps: []
+- id: hr_case_approval_subflow
+  name: HR Case Approval Subflow
+  trigger: ''
+  steps: []
+- id: knowledge_approval_publish
+  name: Knowledge - Approval Publish
+  trigger: ''
+  steps: []
+- id: run_script_include_as_fdih_subflow
+  name: Run script include as FDIH subflow.
+  trigger: ''
+  steps: []
+- id: track_approval_for_workday_learning
+  name: Track Approval for Workday Learning
+  trigger: ''
+  steps: []
+- id: change_implementation_tasks
+  name: Change - Implementation tasks
+  trigger: ''
+  steps: []
+- id: trigger_external_interface_flow
+  name: Trigger external interface flow
+  trigger: ''
+  steps: []
+- id: object_template_create_integration
+  name: Object Template - Create Integration
+  trigger: ''
+  steps: []
+- id: request_approval
+  name: Request Approval
+  trigger: ''
+  steps: []
+- id: application_template_request_app
+  name: Application Template - Request app
+  trigger: ''
+  steps: []
+- id: procurement_process_flow_mobile
+  name: Procurement Process Flow - Mobile
+  trigger: ''
+  steps: []
+- id: wait_for_create_record
+  name: Wait For Create Record
+  trigger: ''
+  steps: []
+- id: link_change_request
+  name: Link change request
+  trigger: ''
+  steps: []
+- id: publish_app_if_version_is_not_yet_published
+  name: Publish app if version is not yet published
+  trigger: ''
+  steps: []
+- id: trigger_workday_learning_integration
+  name: Trigger Workday Learning Integration
+  trigger: ''
+  steps: []
+- id: content_approvals
+  name: Content Approvals
+  trigger: ''
+  steps: []
+- id: password_expiration_details_master_subflow
+  name: Password Expiration Details Master Subflow
+  trigger: ''
+  steps: []
+- id: create_record_activity
+  name: Create Record Activity
+  trigger: ''
+  steps: []
+- id: change_emergency_authorize
+  name: Change - Emergency - Authorize
+  trigger: ''
+  steps: []
+- id: on_call_assign_by_ack_per_rota_catch_all
+  name: 'On-Call: Assign By Ack Per Rota Catch-All'
+  trigger: ''
+  steps: []
+- id: hr_activity_set_launcher
+  name: HR Activity Set Launcher
+  trigger: ''
+  steps: []
+- id: knowledge_approval_ownership_group
+  name: Knowledge - Approval Ownership Group
+  trigger: ''
+  steps: []
+- id: pipeline_runner
+  name: Pipeline Runner
+  trigger: ''
+  steps: []
+- id: request_new_knowledge_base
+  name: Request new Knowledge Base
+  trigger: ''
+  steps: []
+- id: create_collaboration_chat
+  name: Create Collaboration Chat
+  trigger: ''
+  steps: []
+- id: assign_task
+  name: Assign Task
+  trigger: ''
+  steps: []
+- id: document_management_default
+  name: Document Management Default
+  trigger: ''
+  steps: []
+- id: guided_setup_activate_plugin
+  name: Guided Setup Activate Plugin
+  trigger: ''
+  steps: []
+- id: flow_template_post_a_weekly_message_via_sms_with_twilio
+  name: 'Flow Template: Post a weekly message via SMS with Twilio'
+  trigger: ''
+  steps: []
+- id: check_activity_and_wait_for_event
+  name: Check activity and wait for event
+  trigger: ''
+  steps: []
+- id: kpi_signals_task_create_update_workflow
+  name: KPI Signals Task Create/Update Workflow
+  trigger: ''
+  steps: []
+- id: iar_analysis_in_nlu_wb
+  name: IAR Analysis in NLU WB
+  trigger: ''
+  steps: []
+- id: object_template_create_a_new_process_template
+  name: Object Template - Create a new Process template
+  trigger: ''
+  steps: []
+- id: install_application_with_id
+  name: Install Application With ID
+  trigger: ''
+  steps: []
+- id: instance_scan_execute_suite_scan_for_update_sets
+  name: Instance Scan Execute Suite Scan For Update Sets
+  trigger: ''
+  steps: []
+- id: password_change
+  name: Password Change
+  trigger: ''
+  steps: []
+- id: process_client_role_rule_change
+  name: Process Client Role Rule Change
+  trigger: ''
+  steps: []
+- id: batch_rollback
+  name: Batch Rollback
+  trigger: ''
+  steps: []
+- id: flow_template_create_a_new_row_in_google_sheets_when_a_servicenow_record_updates
+  name: 'Flow Template: Create a new row in Google Sheets when a ServiceNow record
+    updates'
+  trigger: ''
+  steps: []
+- id: validate_environments_job
+  name: Validate Environments Job
+  trigger: ''
+  steps: []
+- id: iar_send_email_notification
+  name: IAR Send Email Notification
+  trigger: ''
+  steps: []
+- id: switch_primary_job
+  name: Switch primary job
+  trigger: ''
+  steps: []
+- id: apply_changes_from_source_control_with_scope
+  name: Apply Changes From Source Control With Scope
+  trigger: ''
+  steps: []
+- id: change_standard_implement
+  name: Change - Standard - Implement
+  trigger: ''
+  steps: []
+- id: create_child_task
+  name: Create Child Task
+  trigger: ''
+  steps: []
+- id: default_sla_flow
+  name: Default SLA flow
+  trigger: ''
+  steps: []
+- id: publish_application_with_id
+  name: Publish Application With ID
+  trigger: ''
+  steps: []
+- id: object_template_classic_ui
+  name: Object Template - Classic UI
+  trigger: ''
+  steps: []
+- id: ask_for_collaboration_approval
+  name: Ask For Collaboration Approval
+  trigger: ''
+  steps: []
+- id: hr_activity_launcher
+  name: HR Activity Launcher
+  trigger: ''
+  steps: []
+- id: attach_article_to_task
+  name: Attach article to task
+  trigger: ''
+  steps: []
+- id: cmdb_task_due_date_notifications
+  name: CMDB Task Due Date Notifications
+  trigger: ''
+  steps: []
+- id: procurement_process_flow_default
+  name: Procurement Process Flow - DEFAULT
+  trigger: ''
+  steps: []
+- id: add_a_pause
+  name: Add a Pause
+  trigger: ''
+  steps: []
+- id: contract_approval_flow
+  name: Contract Approval Flow
+  trigger: ''
+  steps: []
+- id: learning_publish_course_ask_for_approval
+  name: Learning - Publish Course Ask for Approval
+  trigger: ''
+  steps: []
+- id: knowledge_approval_retire
+  name: Knowledge - Approval Retire
+  trigger: ''
+  steps: []
+- id: service_catalog_request_price_approval
+  name: Service Catalog Request Price Approval
+  trigger: ''
+  steps: []
+- id: application_intake_request_v2
+  name: Application Intake Request V2
+  trigger: ''
+  steps: []
+- id: cancel_remedial_action_playbook
+  name: Cancel remedial action playbook
+  trigger: ''
+  steps: []
+- id: request_ad_hoc_approval
+  name: Request Ad hoc Approval
+  trigger: ''
+  steps: []
+- id: import_application_from_source_control
+  name: Import Application from Source Control
+  trigger: ''
+  steps: []
+- id: object_template_when_an_incident_is_closed_post_a_message_to_twitter
+  name: Object Template - When an incident is closed, post a message to Twitter
+  trigger: ''
+  steps: []
+- id: cccif_link_unfurling
+  name: CCCIF Link Unfurling
+  trigger: ''
+  steps: []
+- id: force_use_report_designer_when_next_experience_is_on
+  name: Force use report designer when Next Experience is ON
+  trigger: ''
+  steps: []
+- id: employee_profile_update
+  name: Employee Profile Update
+  trigger: ''
+  steps: []
+- id: template_integration_gateway
+  name: 'TEMPLATE: Integration Gateway'
+  trigger: ''
+  steps: []
+- id: user_approval_device
+  name: User approval - device
+  trigger: ''
+  steps: []
+- id: flow_template_for_new_incidents_create_a_zoom_call_and_send_the_information_to_an_email_address
+  name: 'Flow Template: For new Incidents, create a Zoom call and send the information
+    to an email address'
+  trigger: ''
+  steps: []
+- id: check_if_deployment_pipeline_is_active_on_instance
+  name: Check if Deployment Pipeline is Active on Instance
+  trigger: ''
+  steps: []
+- id: learning_publish_course
+  name: Learning - Publish Course
+  trigger: ''
+  steps: []
+- id: external_interface_template
+  name: External interface template
+  trigger: ''
+  steps: []
+- id: flow_template_send_a_notification_to_slack
+  name: 'Flow Template: Send a notification to Slack'
+  trigger: ''
+  steps: []
+- id: flow_template_post_a_weekly_message_to_microsoft_teams
+  name: 'Flow Template: Post a weekly message to Microsoft Teams'
+  trigger: ''
+  steps: []
+- id: create_releaseops_deployment_request
+  name: Create ReleaseOps deployment request
+  trigger: ''
+  steps: []
+- id: toggle_par_pie_bar_context_menus
+  name: Toggle PAR Pie/Bar Context Menus
+  trigger: ''
+  steps: []
+- id: run_sc_notifications
+  name: Run SC Notifications
+  trigger: ''
+  steps: []
+- id: on_call_time_off_approval
+  name: 'On-Call: Time off approval'
+  trigger: ''
+  steps: []
+- id: flowtemplate_empty
+  name: FlowTemplate_Empty
+  trigger: ''
+  steps: []
+- id: password_connection_test
+  name: Password Connection Test
+  trigger: ''
+  steps: []
+- id: object_template_create_an_empty_flow_with_triggers
+  name: Object Template - Create an empty flow with triggers
+  trigger: ''
+  steps: []
+- id: transform_job_records
+  name: Transform Job Records
+  trigger: ''
+  steps: []
+- id: oneextend_dynamic_translation_subflow
+  name: OneExtend Dynamic Translation Subflow
+  trigger: ''
+  steps: []
+- id: rollback_plugin
+  name: Rollback Plugin
+  trigger: ''
+  steps: []
+- id: get_deployment_request_subflow
+  name: Get Deployment Request Subflow
+  trigger: ''
+  steps: []
+- id: register_business_application
+  name: Register Business Application
+  trigger: ''
+  steps: []
+- id: pipeline_connection_validation
+  name: Pipeline Connection Validation
+  trigger: ''
+  steps: []
+- id: inbound_email_flow_example_handling_email_replies
+  name: 'Inbound Email Flow Example: handling email replies'
+  trigger: ''
+  steps: []
+- id: lifecycle_event_case_approval_flow
+  name: Lifecycle Event Case Approval Flow
+  trigger: ''
+  steps: []
+- id: object_template_create_a_zoom_meeting_and_notify_a_workspace_when_an_servicenow_record_is_created_v1
+  name: Object Template - Create a Zoom meeting and notify a workspace when an ServiceNow
+    record is created v1
+  trigger: ''
+  steps: []
+- id: ready_to_publish
+  name: Ready To Publish
+  trigger: ''
+  steps: []
+- id: account_notification_flow
+  name: Account Notification Flow
+  trigger: ''
+  steps: []
+- id: create_task_activity
+  name: Create Task Activity
+  trigger: ''
+  steps: []
+- id: scheduled_deployment_install_application_with_id
+  name: 'Scheduled Deployment: Install Application with ID'
+  trigger: ''
+  steps: []
+- id: password_lock_state
+  name: Password Lock State
+  trigger: ''
+  steps: []
+- id: flow_template_send_a_notification_from_a_gmail_account
+  name: 'Flow Template: Send a notification from a Gmail account'
+  trigger: ''
+  steps: []
+- id: object_template_create_a_new_row_in_a_spreadsheet_from_a_record_update_v1
+  name: Object Template - Create a new row in a spreadsheet from a record update v1
+  trigger: ''
+  steps: []
+- id: analytics_list_dashboard_widget_migration
+  name: Analytics List Dashboard Widget Migration
+  trigger: ''
+  steps: []
+- id: kpi_signals_configuration_update_flow
+  name: KPI Signals Configuration Update Flow
+  trigger: ''
+  steps: []
+- id: application_template_scoped_app_template
+  name: Application Template - Scoped App Template
+  trigger: ''
+  steps: []
+- id: va_telemetry_daily_rollup
+  name: VA Telemetry Daily Rollup
+  trigger: ''
+  steps: []
+- id: two_step_instruction
+  name: Two Step Instruction
+  trigger: ''
+  steps: []
+- id: send_an_email
+  name: Send an email
+  trigger: ''
+  steps: []
+- id: remediate_device
+  name: Remediate - device
+  trigger: ''
+  steps: []
+- id: commit_multiple_retrieved_update_sets
+  name: Commit Multiple Retrieved Update Sets
+  trigger: ''
+  steps: []
+- id: docker_sample_outbound_flow
+  name: Docker Sample Outbound Flow
+  trigger: ''
+  steps: []
+- id: on_call_assign
+  name: 'On-Call: Assign'
+  trigger: ''
+  steps: []
+- id: external_links
+  name: External Links
+  trigger: ''
+  steps: []
+- id: add_role_to_user_or_group
+  name: Add Role to User Or Group
+  trigger: ''
+  steps: []
+- id: application_template_scoped_app_template_with_roles
+  name: Application Template - Scoped app template with roles
+  trigger: ''
+  steps: []
+- id: update_record_activity
+  name: Update Record Activity
+  trigger: ''
+  steps: []
+- id: change_conflict_detection
+  name: Change - Conflict Detection
+  trigger: ''
+  steps: []
+- id: retrieve_update_set_with_update_set_source_id
+  name: Retrieve Update Set With Update Set Source ID
+  trigger: ''
+  steps: []
+- id: application_template_time_off_template
+  name: Application Template - Time Off Template
+  trigger: ''
+  steps: []
+- id: multiple_atf_suites_start_with_ids
+  name: Multiple ATF Suites Start With IDs
+  trigger: ''
+  steps: []
+- id: send_email_after_change_password
+  name: Send Email After Change Password
+  trigger: ''
+  steps: []
+- id: launch_activities
+  name: Launch Activities
+  trigger: ''
+  steps: []
+- id: link_unfurling
+  name: Link Unfurling
+  trigger: ''
+  steps: []
+- id: create_cmdb_ci_if_not_present
+  name: Create CMDB CI if not present
+  trigger: ''
+  steps: []
+- id: create_slack_chat
+  name: Create Slack Chat
+  trigger: ''
+  steps: []
+- id: add_article_in_work_notes
+  name: Add article in work notes
+  trigger: ''
+  steps: []
+- id: schedule_change_request
+  name: Schedule change request
+  trigger: ''
+  steps: []
+- id: object_template_subflow
+  name: Object Template Subflow
+  trigger: ''
+  steps: []
+- id: activate_plugin
+  name: Activate Plugin
+  trigger: ''
+  steps: []
+- id: case_trigger_custom_condition
+  name: Case Trigger Custom Condition
+  trigger: ''
+  steps: []
+- id: application_template_document_approval_template
+  name: Application Template - Document Approval Template
+  trigger: ''
+  steps: []
+- id: change_emergency_review
+  name: Change - Emergency - Review
+  trigger: ''
+  steps: []
+- id: lifecycle_event_notification_flow
+  name: Lifecycle Event Notification Flow
+  trigger: ''
+  steps: []
+- id: publish_application_with_scope
+  name: Publish Application With Scope
+  trigger: ''
+  steps: []
+- id: guidance_automation_template
+  name: Guidance Automation Template
+  trigger: ''
+  steps: []
+- id: wait_until_template_is_finished_running
+  name: Wait Until Template Is Finished Running
+  trigger: ''
+  steps: []
+- id: transfer_order_line
+  name: Transfer Order Line
+  trigger: ''
+  steps: []
+- id: flow_template_send_a_notification_via_sms_with_twilio
+  name: 'Flow Template: Send a notification via SMS with Twilio'
+  trigger: ''
+  steps: []
+- id: add_user_or_group_to_collaboration_descriptor
+  name: Add User or Group to Collaboration Descriptor
+  trigger: ''
+  steps: []
+- id: run_service_flow
+  name: Run Service Flow
+  trigger: ''
+  steps: []
+- id: flow_template_create_a_new_issue_in_jira_when_a_record_is_created
+  name: 'Flow Template: Create a new issue in JIRA when a record is created'
+  trigger: ''
+  steps: []
+- id: copy_resolution_notes_to_incident
+  name: Copy resolution notes to incident
+  trigger: ''
+  steps: []
+- id: object_template_create_a_new_row_in_a_spreadsheet_from_a_record_v1
+  name: Object Template - Create a new row in a spreadsheet from a record v1
+  trigger: ''
+  steps: []
+- id: integrate_change_management_for_deployment_pipelines
+  name: Integrate Change Management for deployment pipelines
+  trigger: ''
+  steps: []
+- id: new_application_task_state_updated
+  name: New Application Task State Updated
+  trigger: ''
+  steps: []
+- id: batch_install
+  name: Batch Install
+  trigger: ''
+  steps: []
+- id: multi_record_associator_flow
+  name: Multi Record Associator Flow
+  trigger: ''
+  steps: []
+- id: on_call_assign_by_acknowledgement_per_rota
+  name: 'On-Call: Assign By Acknowledgement Per Rota'
+  trigger: ''
+  steps: []
+- id: create_role_and_acl
+  name: Create role and ACL
+  trigger: ''
+  steps: []
+- id: back_out_update_set
+  name: Back Out Update Set
+  trigger: ''
+  steps: []
+- id: deploy_to_environment_if_not_present
+  name: Deploy to Environment if not Present
+  trigger: ''
+  steps: []
+- id: logout_and_send_notification_in_mobile
+  name: Logout and Send Notification in Mobile
+  trigger: ''
+  steps: []
+- id: run_create_app_template
+  name: Run Create App Template
+  trigger: ''
+  steps: []
+- id: password_unlock
+  name: Password Unlock
+  trigger: ''
+  steps: []
+- id: add_groups_to_discussion
+  name: Add groups to discussion
+  trigger: ''
+  steps: []
+- id: non_ml_link_problem_as_parent
+  name: '[Non-ML] Link problem as parent'
+  trigger: ''
+  steps: []
+- id: manual_activity
+  name: Manual Activity
+  trigger: ''
+  steps: []
+- id: add_user_or_group_to_additional_role
+  name: Add User or Group to additional role
+  trigger: ''
+  steps: []
+- id: send_email_activity
+  name: Send Email Activity
+  trigger: ''
+  steps: []
+- id: link_problem_to_task
+  name: Link problem to task
+  trigger: ''
+  steps: []
+- id: process_external_interface
+  name: Process external interface
+  trigger: ''
+  steps: []
+- id: on_call_send_notifications
+  name: 'On-Call: Send Notifications'
+  trigger: ''
+  steps: []
+- id: change_unauthorized_review
+  name: Change - Unauthorized - Review
+  trigger: ''
+  steps: []
+- id: on_call_escalations_by_email_per_rota_notifications
+  name: 'On-Call: Escalations By Email Per Rota - Notifications'
+  trigger: ''
+  steps: []
+- id: nlu_train_subflow
+  name: NLU Train Subflow
+  trigger: ''
+  steps: []
+- id: validate_environments_and_set_instance_id
+  name: Validate Environments And Set Instance Id
+  trigger: ''
+  steps: []
+- id: atf_suite_start_with_name
+  name: ATF Suite Start With Name
+  trigger: ''
+  steps: []
+- id: deploy_to_test_environment
+  name: Deploy to Test Environment
+  trigger: ''
+  steps: []
+- id: create_change_request
+  name: Create change request
+  trigger: ''
+  steps: []
+- id: critical_update_instruction_flow
+  name: Critical Update Instruction Flow
+  trigger: ''
+  steps: []
+- id: one_api_async_feature_executor
+  name: One API - Async Feature Executor
+  trigger: ''
+  steps: []
+- id: requested_item_manager_approval
+  name: Requested Item Manager Approval
+  trigger: ''
+  steps: []
+- id: wait_for_email_reply_activity
+  name: Wait for Email Reply Activity
+  trigger: ''
+  steps: []
+- id: enable_unified_analytics_workspace
+  name: Enable Unified Analytics Workspace
+  trigger: ''
+  steps: []
+- id: send_email_for_knowledge_base_request
+  name: Send Email for Knowledge Base Request
+  trigger: ''
+  steps: []
+- id: complete_multiple_update_set
+  name: Complete Multiple Update Set
+  trigger: ''
+  steps: []
+- id: trigger_service_fulfillment_step_subflow
+  name: Trigger Service Fulfillment Step Subflow
+  trigger: ''
+  steps: []
+- id: send_email_with_user_input_activity
+  name: Send Email with user input Activity
+  trigger: ''
+  steps: []
+- id: requested_item_dept_head_approval
+  name: Requested Item Dept Head Approval
+  trigger: ''
+  steps: []
+- id: business_process_approval_flow
+  name: Business process approval flow
+  trigger: ''
+  steps: []
+- id: update_case_and_external_interface_record_status
+  name: Update Case and External Interface Record Status
+  trigger: ''
+  steps: []
+- id: validate_development_instance_and_user
+  name: Validate Development Instance and User
+  trigger: ''
+  steps: []
+- id: flow_template_when_an_incident_is_updated_send_a_tweet
+  name: 'Flow Template: When an incident is updated, send a tweet'
+  trigger: ''
+  steps: []
+- id: flow_template_assign_incidents_created_by_vips_to_a_specific_group
+  name: Flow Template - Assign Incidents created by VIPs to a specific group
+  trigger: ''
+  steps: []
+- id: procurement_process_flow_hardware
+  name: Procurement Process Flow - Hardware
+  trigger: ''
+  steps: []
+- id: check_intake_status_on_instance_for_user
+  name: Check Intake Status on Instance For User
+  trigger: ''
+  steps: []
+- id: assign_course_to_workday_learning
+  name: Assign Course to Workday Learning
+  trigger: ''
+  steps: []
+- id: application_intake_request_flow_deprecated
+  name: Application Intake Request Flow (Deprecated)
+  trigger: ''
+  steps: []
+- id: deprecate_homepages_when_polaris_is_on
+  name: Deprecate Homepages when Polaris is ON
+  trigger: ''
+  steps: []
+- id: iar_task_update
+  name: IAR Task Update
+  trigger: ''
+  steps: []
+- id: macroponent_loader
+  name: Macroponent loader
+  trigger: ''
+  steps: []
+- id: collaboration_request_flow
+  name: Collaboration Request Flow
+  trigger: ''
+  steps: []
+- id: create_new_request_app_flow_task
+  name: Create new request app flow task
+  trigger: ''
+  steps: []
+- id: object_template_mobile
+  name: Object Template - Mobile
+  trigger: ''
+  steps: []
+- id: wait_for_condition_activity
+  name: Wait for Condition Activity
+  trigger: ''
+  steps: []
+- id: deployment_pipeline_template_environment
+  name: Deployment Pipeline Template - Environment
+  trigger: ''
+  steps: []
+- id: retrieve_and_auto_preview_multiple_update_sets
+  name: Retrieve and Auto Preview Multiple Update Sets
+  trigger: ''
+  steps: []
+- id: enable_unified_analytics
+  name: Enable Unified Analytics
+  trigger: ''
+  steps: []
+- id: check_if_collaboration_request_is_active_on_instance
+  name: Check if Collaboration Request is Active on Instance
+  trigger: ''
+  steps: []
+- id: genai_semantic_filter_matcher
+  name: GenAI Semantic Filter Matcher
+  trigger: ''
+  steps: []
+- id: password_change_master_subflow
+  name: Password Change Master Subflow
+  trigger: ''
+  steps: []
+- id: change_emergency_implement
+  name: Change - Emergency - Implement
+  trigger: ''
+  steps: []
+- id: case_trigger_custom_date_check
+  name: Case Trigger Custom Date Check
+  trigger: ''
+  steps: []
+- id: grant_role_delegator_role
+  name: Grant role_delegator role
+  trigger: ''
+  steps: []
+- id: send_article_in_chat
+  name: Send article in chat
+  trigger: ''
+  steps: []
+- id: get_unfurl_data
+  name: Get Unfurl Data
+  trigger: ''
+  steps: []
+- id: flow_template_send_a_notification_to_microsoft_teams
+  name: 'Flow Template: Send a notification to Microsoft Teams'
+  trigger: ''
+  steps: []
+- id: guidance_automation_flow_executor_legacy
+  name: Guidance Automation Flow Executor Legacy
+  trigger: ''
+  steps: []
+- id: learning_retire_course
+  name: Learning - Retire Course
+  trigger: ''
+  steps: []
+- id: new_application_admin_task_state_updated
+  name: New Application Admin Task State Updated
+  trigger: ''
+  steps: []
+- id: change_standard
+  name: Change - Standard
+  trigger: ''
+  steps: []
+- id: rollback_application_with_scope
+  name: Rollback Application With Scope
+  trigger: ''
+  steps: []
+- id: change_cloud_infrastructure_authorize
+  name: Change - Cloud Infrastructure - Authorize
+  trigger: ''
+  steps: []
+- id: publication_publish_with_approval
+  name: Publication - Publish With Approval
+  trigger: ''
+  steps: []
+- id: validate_connection_and_set_instance_id
+  name: Validate Connection and Set Instance Id
+  trigger: ''
+  steps: []
+- id: knowledge_instant_retire
+  name: Knowledge - Instant Retire
+  trigger: ''
+  steps: []
+- id: application_template_scoped_app_ide
+  name: Application Template - Scoped App IDE
+  trigger: ''
+  steps: []
+- id: integration_gateway
+  name: Integration Gateway
+  trigger: ''
+  steps: []
+- id: publication_instant_publish
+  name: Publication - Instant Publish
+  trigger: ''
+  steps: []
+- id: application_template_emergency_alert_template
+  name: Application Template - Emergency Alert Template
+  trigger: ''
+  steps: []
+- id: check_user_exists_and_for_latest_intake
+  name: Check User Exists and For Latest Intake
+  trigger: ''
+  steps: []
+- id: preview_retrieved_update_set
+  name: Preview Retrieved Update Set
+  trigger: ''
+  steps: []
+- id: change_normal_assess
+  name: Change - Normal - Assess
+  trigger: ''
+  steps: []
+- id: on_call_escalations_by_email
+  name: 'On-Call: Escalations by Email'
+  trigger: ''
+  steps: []
+- id: flowtemplate_record_update_trigger_empty
+  name: 'FlowTemplate: Record Update Trigger Empty'
+  trigger: ''
+  steps: []
+- id: object_template_send_a_notification_to_a_workspace_v1
+  name: Object Template - Send a notification to a workspace v1
+  trigger: ''
+  steps: []
+- id: object_template_mobile_v2
+  name: Object Template - Mobile v2
+  trigger: ''
+  steps: []
+- id: flow_template_create_a_new_row_in_microsoft_excel_when_a_servicenow_record_is_updated
+  name: 'Flow Template: Create a new row in Microsoft Excel when a ServiceNow record
+    is updated'
+  trigger: ''
+  steps: []
+- id: advanced_instruction
+  name: Advanced Instruction
+  trigger: ''
+  steps: []
+- id: post_deployment_request_subflow
+  name: Post Deployment Request Subflow
+  trigger: ''
+  steps: []
+- id: object_template_post_a_weekly_reminder_to_a_workspace_v1
+  name: Object Template - Post a weekly reminder to a workspace v1
+  trigger: ''
+  steps: []
+- id: execute_ci_action_for_a_standard_change
+  name: Execute CI action for a standard change
+  trigger: ''
+  steps: []
+- id: benchmark_recommendation_evaluator
+  name: Benchmark Recommendation Evaluator
+  trigger: ''
+  steps: []
+- id: learning_set_user_activity_to_expired
+  name: Learning - Set User activity to Expired
+  trigger: ''
+  steps: []
+- id: deployment_type_pipeline
+  name: Deployment Type Pipeline
+  trigger: ''
+  steps: []
+- id: service_fulfillment_steps_base_flow
+  name: Service Fulfillment Steps base flow
+  trigger: ''
+  steps: []
+- id: template_create_cmdb_ci_if_not_present
+  name: 'Template: Create CMDB CI if not present'
+  trigger: ''
+  steps: []
+- id: template_catalog_builder_item_review
+  name: 'Template: Catalog Builder - Item review'
+  trigger: ''
+  steps: []
+- id: pipeline_type_template
+  name: Pipeline Type Template
+  trigger: ''
+  steps: []
+- id: sidebar_upload_attachment_to_sharepoint
+  name: Sidebar - Upload Attachment to Sharepoint
+  trigger: ''
+  steps: []
+- id: deploy_to_environment_default
+  name: Deploy to Environment Default
+  trigger: ''
+  steps: []
+- id: flow_template_post_a_weekly_message_to_slack
+  name: 'Flow Template: Post a weekly message to Slack'
+  trigger: ''
+  steps: []
+- id: hr_case_approval_step
+  name: HR Case Approval Step
+  trigger: ''
+  steps: []
+- id: one_api_feature_template
+  name: One API - Feature (TEMPLATE)
+  trigger: ''
+  steps: []
+- id: user_form_activity
+  name: User Form Activity
+  trigger: ''
+  steps: []
+- id: object_template_flowtemplate_createemptyflow_v1
+  name: Object Template - FlowTemplate_CreateEmptyFlow v1
+  trigger: ''
+  steps: []
+- id: run_job_by_id
+  name: Run Job by ID
+  trigger: ''
+  steps: []
+- id: report_access_request_flow
+  name: Report Access Request Flow
+  trigger: ''
+  steps: []
+- id: delegate_roles
+  name: Delegate Roles
+  trigger: ''
+  steps: []
+- id: instance_scan_execute_point_scan
+  name: Instance Scan Execute Point Scan
+  trigger: ''
+  steps: []
+relationships:
+- id: rel_0
+  source_object: Direct Deposit Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_1
+  source_object: HR Report Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_2
+  source_object: Employee Profile Update
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_3
+  source_object: Report Discrimination
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_4
+  source_object: General Benefits Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_5
+  source_object: Add Beneficiaries
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_6
+  source_object: HR Accounts Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_7
+  source_object: General Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_8
+  source_object: Request Relocation Assistance
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_9
+  source_object: Request Leave of Absence
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_10
+  source_object: Tuition Reimbursement Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_11
+  source_object: 401(k) Plan Enrollment Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_12
+  source_object: Dental Benefits Enrollment Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_13
+  source_object: Request Corporate Credit Card
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_14
+  source_object: Pharmacy Benefits Enrollment Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_15
+  source_object: Medical Plan Enrollment
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_16
+  source_object: Vision Plan Enrollment
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_17
+  source_object: 401(k) Retirement Plan Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_18
+  source_object: Dental Benefits Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_19
+  source_object: Pharmacy Benefits Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_20
+  source_object: Employee Travel Visa Request
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_21
+  source_object: Payroll Discrepancy
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_22
+  source_object: Report Misconduct
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_23
+  source_object: Password Reset
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_24
+  source_object: Erasure of Personal Data Request
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_25
+  source_object: Employee Onboarding
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_26
+  source_object: HR Account Access Request
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_27
+  source_object: HR Portal Support Request
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_28
+  source_object: Direct Deposit Setup
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_29
+  source_object: HR Report Request
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_30
+  source_object: Start a Performance Improvement Plan (PIP)
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_31
+  source_object: Tuition Reimbursement Request
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_32
+  source_object: Pharmacy Plan Enrollment
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_33
+  source_object: 401(k) Plan Enrollment
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_34
+  source_object: Dental Plan Enrollment
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_35
+  source_object: Medical Benefits Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_36
+  source_object: Request Accommodations
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_37
+  source_object: Vision Benefits Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_38
+  source_object: New Hire Onboarding (Demo)
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_39
+  source_object: Medical Benefits Enrollment Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_40
+  source_object: Vision Benefits Enrollment Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_41
+  source_object: Beneficiaries Inquiry
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_42
+  source_object: Personal Information Report
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
