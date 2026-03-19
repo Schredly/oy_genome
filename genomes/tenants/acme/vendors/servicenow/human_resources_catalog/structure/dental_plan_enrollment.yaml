@@ -1,0 +1,29 @@
+name: Dental Plan Enrollment
+category: ''
+description: null
+active: true
+variables:
+- name: dental_current
+  type: '17'
+  mandatory: false
+  question: null
+- name: benefit_provider
+  type: '8'
+  mandatory: false
+  question: Select plan
+- name: dental_forms
+  type: '17'
+  mandatory: false
+  question: null
+- name: instruction_text
+  type: '17'
+  mandatory: false
+  question: null
+- name: completed_form_attached
+  type: '7'
+  mandatory: false
+  question: Is the completed form attached?
+- name: dental_plan_attachment
+  type: '33'
+  mandatory: false
+  question: Attachment
