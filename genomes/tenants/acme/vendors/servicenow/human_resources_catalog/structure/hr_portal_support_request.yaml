@@ -1,0 +1,17 @@
+name: HR Portal Support Request
+category: ''
+description: null
+active: true
+variables:
+- name: support_type
+  type: '3'
+  mandatory: true
+  question: What type of support do you need?
+- name: what_is_your_question
+  type: '2'
+  mandatory: false
+  question: Details
+- name: support_browser
+  type: '5'
+  mandatory: false
+  question: Browser
