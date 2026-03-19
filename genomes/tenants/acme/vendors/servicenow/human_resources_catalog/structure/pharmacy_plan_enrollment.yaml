@@ -1,5 +1,25 @@
 name: Pharmacy Plan Enrollment
 category: ''
-description: ''
+description: null
 active: true
-variables: []
+variables:
+- name: pharmacy_current
+  type: '17'
+  mandatory: false
+  question: null
+- name: benefit_provider
+  type: '8'
+  mandatory: false
+  question: Select plan
+- name: pharmacy_forms
+  type: '17'
+  mandatory: false
+  question: null
+- name: instruction_text
+  type: '17'
+  mandatory: false
+  question: null
+- name: completed_form_attached
+  type: '7'
+  mandatory: false
+  question: Is the completed form attached?
