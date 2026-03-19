@@ -1,5 +1,41 @@
 name: Direct Deposit Setup
 category: ''
-description: ''
+description: null
 active: true
-variables: []
+variables:
+- name: direct_deposit_current
+  type: '17'
+  mandatory: false
+  question: null
+- name: instruction_text
+  type: '17'
+  mandatory: false
+  question: null
+- name: account_nickname
+  type: '6'
+  mandatory: false
+  question: Account nickname
+- name: routing_number
+  type: '6'
+  mandatory: true
+  question: Bank routing number
+- name: account_number
+  type: '6'
+  mandatory: true
+  question: Account number
+- name: account_type
+  type: '3'
+  mandatory: true
+  question: Account type
+- name: deposit_type
+  type: '3'
+  mandatory: true
+  question: Deposit type
+- name: deposit_percent
+  type: '6'
+  mandatory: false
+  question: Percentage of paycheck
+- name: deposit_amount
+  type: '6'
+  mandatory: false
+  question: Amount
