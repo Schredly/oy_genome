@@ -1,5 +1,25 @@
 name: HR Report Request
 category: ''
-description: ''
+description: null
 active: true
-variables: []
+variables:
+- name: which_system
+  type: '18'
+  mandatory: true
+  question: Select the HR system
+- name: op_report_report_type
+  type: '18'
+  mandatory: false
+  question: Report type
+- name: op_report_justification
+  type: '2'
+  mandatory: true
+  question: Business justification
+- name: op_report_description
+  type: '2'
+  mandatory: true
+  question: Description
+- name: op_report_frequency
+  type: '18'
+  mandatory: true
+  question: Frequency
