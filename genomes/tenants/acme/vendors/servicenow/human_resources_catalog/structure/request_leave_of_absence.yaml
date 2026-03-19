@@ -1,5 +1,17 @@
 name: Request Leave of Absence
 category: ''
-description: ''
+description: null
 active: true
-variables: []
+variables:
+- name: first_day_of_leave
+  type: '9'
+  mandatory: false
+  question: First Day Of Leave
+- name: estimated_last_day_of_leave
+  type: '9'
+  mandatory: false
+  question: Estimated Last Day Of Leave
+- name: leave_type
+  type: '8'
+  mandatory: false
+  question: Leave Type
