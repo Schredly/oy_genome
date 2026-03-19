@@ -1,0 +1,9 @@
+name: HR Accounts Inquiry
+category: ''
+description: null
+active: true
+variables:
+- name: what_is_your_question
+  type: '2'
+  mandatory: true
+  question: What is your question?
