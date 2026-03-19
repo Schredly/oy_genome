@@ -1,5 +1,105 @@
 name: New Hire Onboarding (Demo)
 category: ''
-description: ''
+description: null
 active: true
-variables: []
+variables:
+- name: left_column
+  type: '19'
+  mandatory: false
+  question: ' About Employee'
+- name: first_name
+  type: '6'
+  mandatory: true
+  question: First name
+- name: middle_name
+  type: '6'
+  mandatory: false
+  question: Middle name
+- name: last_name
+  type: '6'
+  mandatory: true
+  question: Last name
+- name: formatter
+  type: '24'
+  mandatory: false
+  question: null
+- name: personal_email
+  type: '26'
+  mandatory: true
+  question: Personal email
+- name: mobile_phone
+  type: '6'
+  mandatory: false
+  question: Mobile number
+- name: formatter2
+  type: '20'
+  mandatory: false
+  question: null
+- name: employment_information_section
+  type: '19'
+  mandatory: false
+  question: Employment information
+- name: employment_start_date
+  type: '9'
+  mandatory: true
+  question: Employment start date
+- name: employment_type
+  type: '5'
+  mandatory: true
+  question: Employment type
+- name: location_type
+  type: '5'
+  mandatory: true
+  question: Location type
+- name: city
+  type: '6'
+  mandatory: false
+  question: Home city
+- name: state
+  type: '6'
+  mandatory: false
+  question: Home state
+- name: formatter3
+  type: '24'
+  mandatory: false
+  question: null
+- name: position
+  type: '8'
+  mandatory: true
+  question: Title
+- name: department
+  type: '8'
+  mandatory: true
+  question: Department
+- name: manager
+  type: '8'
+  mandatory: true
+  question: Manager
+- name: location
+  type: '8'
+  mandatory: true
+  question: Company location
+- name: formatter4
+  type: '20'
+  mandatory: false
+  question: null
+- name: formatter5
+  type: '12'
+  mandatory: false
+  question: null
+- name: additional_needs
+  type: '11'
+  mandatory: false
+  question: Additional needs
+- name: needs_work_visa
+  type: '7'
+  mandatory: false
+  question: Needs work visa
+- name: needs_transfer_work_visa
+  type: '7'
+  mandatory: false
+  question: Needs to transfer work visa
+- name: needs_relocation_assistance
+  type: '7'
+  mandatory: false
+  question: Needs relocation assistance
