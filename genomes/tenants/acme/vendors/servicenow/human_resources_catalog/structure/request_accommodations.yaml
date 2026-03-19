@@ -1,0 +1,35 @@
+name: Request Accommodations
+category: ''
+description: "<p>Let us know if you need any changes to your working environment,\
+  \ arrangement, or other aspect of your job.\_</p>"
+active: true
+variables:
+- name: type_of_accommodation
+  type: '2'
+  mandatory: true
+  question: Tell us about the type of accommodation(s) you're looking for.
+- name: time_sensitive_request
+  type: '1'
+  mandatory: true
+  question: Is this request time sensitive?
+- name: part_of_job_improvement
+  type: '2'
+  mandatory: false
+  question: What part of your job (if any) would this most help improve?
+- name: accessible_benefits
+  type: '2'
+  mandatory: false
+  question: Are there any benefits, perks, or employee programs this would help you
+    access?
+- name: previous_accommodations
+  type: '1'
+  mandatory: true
+  question: Have you had any accommodations in the past for this same situation?
+- name: previous_accommodation_effectiveness
+  type: '2'
+  mandatory: true
+  question: If yes, what were they and how effective were they?
+- name: anything_else
+  type: '2'
+  mandatory: false
+  question: Anything else you want us to know?
