@@ -1,0 +1,165 @@
+summarized_genome:
+  catalog:
+  - name: Direct Deposit Inquiry
+  - name: HR Report Inquiry
+  - name: Employee Profile Update
+  - name: Report Discrimination
+  - name: General Benefits Inquiry
+  - name: Add Beneficiaries
+  - name: HR Accounts Inquiry
+  - name: General Inquiry
+  - name: Request Relocation Assistance
+  - name: Request Leave of Absence
+  - name: Tuition Reimbursement Inquiry
+  - name: 401(k) Plan Enrollment Inquiry
+  - name: Dental Benefits Enrollment Inquiry
+  - name: Request Corporate Credit Card
+  - name: Pharmacy Benefits Enrollment Inquiry
+  - name: Medical Plan Enrollment
+  - name: Vision Plan Enrollment
+  - name: 401(k) Retirement Plan Inquiry
+  - name: Dental Benefits Inquiry
+  - name: Pharmacy Benefits Inquiry
+  - name: Employee Travel Visa Request
+  - name: Payroll Discrepancy
+  - name: Report Misconduct
+  - name: Password Reset
+  - name: Erasure of Personal Data Request
+    description: 'NOTE: Before specifying the data for deletion, please review the Personal Information report to understand what personal data is held by the system.'
+  - name: Employee Onboarding
+  - name: HR Account Access Request
+  - name: HR Portal Support Request
+  - name: Direct Deposit Setup
+  - name: HR Report Request
+  - name: Start a Performance Improvement Plan (PIP)
+  - name: Tuition Reimbursement Request
+  - name: Pharmacy Plan Enrollment
+  - name: 401(k) Plan Enrollment
+  - name: Dental Plan Enrollment
+  - name: Medical Benefits Inquiry
+  - name: Request Accommodations
+    description: 'Let us know if you need any changes to your working environment, arrangement, or other aspect of your job.'
+  - name: Vision Benefits Inquiry
+  - name: New Hire Onboarding (Demo)
+  - name: Medical Benefits Enrollment Inquiry
+  - name: Vision Benefits Enrollment Inquiry
+  - name: Beneficiaries Inquiry
+  - name: Personal Information Report
+
+  objects:
+    tables:
+    - name: Direct Deposit Inquiry
+    - name: HR Report Inquiry
+    - name: Employee Profile Update
+    - name: Report Discrimination
+    - name: General Benefits Inquiry
+    - name: Add Beneficiaries
+    - name: HR Accounts Inquiry
+    - name: General Inquiry
+    - name: Request Relocation Assistance
+    - name: Request Leave of Absence
+    - name: Tuition Reimbursement Inquiry
+    - name: 401(k) Plan Enrollment Inquiry
+    - name: Dental Benefits Enrollment Inquiry
+    - name: Request Corporate Credit Card
+    - name: Pharmacy Benefits Enrollment Inquiry
+    - name: Medical Plan Enrollment
+    - name: Vision Plan Enrollment
+    - name: 401(k) Retirement Plan Inquiry
+    - name: Dental Benefits Inquiry
+    - name: Pharmacy Benefits Inquiry
+    - name: Employee Travel Visa Request
+    - name: Payroll Discrepancy
+    - name: Report Misconduct
+    - name: Password Reset
+    - name: Erasure of Personal Data Request
+      description: 'This item is described in the genome configuration.'
+    - name: Employee Onboarding
+    - name: HR Account Access Request
+    - name: HR Portal Support Request
+    - name: Direct Deposit Setup
+    - name: HR Report Request
+    - name: Start a Performance Improvement Plan (PIP)
+    - name: Tuition Reimbursement Request
+    - name: Pharmacy Plan Enrollment
+    - name: 401(k) Plan Enrollment
+    - name: Dental Plan Enrollment
+    - name: Medical Benefits Inquiry
+    - name: Request Accommodations
+      description: 'Information included above.'
+    - name: Vision Benefits Inquiry
+    - name: New Hire Onboarding (Demo)
+    - name: Medical Benefits Enrollment Inquiry
+    - name: Vision Benefits Enrollment Inquiry
+    - name: Beneficiaries Inquiry
+    - name: Personal Information Report
+
+  workflows:
+  - name: On-Call: Send Notification - Email
+  - name: Update Request for Application provisioning
+  - name: Request Management Approval
+  - name: Flow Template Subflow
+  - name: [Interaction] Review and attach article
+  - name: New Hire On boarding Case Trigger HR Profile
+  - name: Wait Until Tracker Completes
+  - name: Change Start Date
+  - name: SLA notification and escalation flow
+  - name: Delete Configuration Items
+  - name: Notify assessment user
+  - name: 'FlowTemplate: Record Create Trigger Empty'
+  - name: Object Template - Security v1
+  - name: Default Guidance Automation Plan
+  - name: Create Task
+  - name: Apply Stash
+  - name: Placeholder Subflow for MFA Guided Setup
+  - name: Update Service Job Tracker Flow
+  - name: Delegate Roles in Group
+  - name: Sidebar discussion creation
+  - name: Learning - Template Retire Course
+  - name: '[Non-ML] Copy Resolution'
+  - name: Object Template - Standard Catalog Item
+  - name: Process app template email data
+  - name: Check Record Access For User
+  - name: Run Job
+  - name: Application Template - Workspace Starter Experience Template
+  - name: 'Inbound Email Flow Example: logging a problem'
+  - name: 'Flow Template: For new Incidents, create a Zoom call and send the information to Teams'
+  - name: Application Template - Team Contacts Template
+  - name: SC Best Practice Flow
+  - name: Retire Configuration Items
+  - name: Payload & Map Template Flow
+  - name: Evaluate Audience
+  - name: Update Password Reset Request Status
+  - name: Workday Learning User Mapping
+  - name: On-Call: New Trigger Engine Handler
+  - name: Wait for a event and check trigger
+  - name: 'Flow Template: Post a weekly message from Gmail'
+  - name: Request Multi-Level Approval
+  - name: Service Fulfillment Steps - Task
+  - name: Delete Related Entry Configuration Item
+  - name: HR Activity Set Trigger Check
+  - name: Run Incident Record User permission action
+  - name: ATF Suite Start With ID
+  - name: Service Catalog Request
+  - name: Learning - Insta Publish Flow
+  - name: Change - Normal - Implement
+  - name: Transfer Order
+  - name: Check Intake Status on Development Instance
+  - name: Object Template - Portal Starter Experience Template
+  - name: Step based request fulfillment
+  - name: Knowledge - Instant Publish
+  - name: Object Template - Create a new issue in Jira when an SN record is created v1
+  - name: HR service activities
+  - name: Knowledge Article
+  - name: Auto-Resolution Start Simulation Run
+  - name: 'Flow Template: Send a notification to an email address'
+  - name: Object Template - Create an approval for a requested catalog item
+  - name: Password Reset Master Subflow
+  - name: Checklist Task from Template Activity
+  - name: Attach article to interaction
+  - name: On-Call: Escalations By Email Per Rota
+  - name: Upload Attachment to Slack
+  - name: Batch Results
+  - name: One API - Feature Executor
+  - name: Notify HR for Onboarding Processes
+
