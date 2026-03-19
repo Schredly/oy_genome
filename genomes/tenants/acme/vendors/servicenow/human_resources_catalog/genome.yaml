@@ -1,0 +1,721 @@
+application: Human Resources Catalog
+vendor_source: servicenow
+tenant: acme
+captured_date: '2026-03-18'
+objects:
+  tables:
+  - name: Direct Deposit Inquiry
+  - name: HR Report Inquiry
+  - name: Employee Profile Update
+  - name: Report Discrimination
+  - name: General Benefits Inquiry
+  - name: Add Beneficiaries
+  - name: HR Accounts Inquiry
+  - name: General Inquiry
+  - name: Request Relocation Assistance
+  - name: Request Leave of Absence
+  - name: Tuition Reimbursement Inquiry
+  - name: 401(k) Plan Enrollment Inquiry
+  - name: Dental Benefits Enrollment Inquiry
+  - name: Request Corporate Credit Card
+  - name: Pharmacy Benefits Enrollment Inquiry
+  - name: Medical Plan Enrollment
+  - name: Vision Plan Enrollment
+  - name: 401(k) Retirement Plan Inquiry
+  - name: Dental Benefits Inquiry
+  - name: Pharmacy Benefits Inquiry
+  - name: Employee Travel Visa Request
+  - name: Payroll Discrepancy
+  - name: Report Misconduct
+  - name: Password Reset
+  - name: Erasure of Personal Data Request
+    description: '<p><span style="color: #e03e2d; font-size: 10pt;"><strong>NOTE:
+      Before specifying the data for deletion, please review the Personal Information
+      report to understand what personal data of yours is held by the system.</strong></span></p>'
+  - name: Employee Onboarding
+  - name: HR Account Access Request
+  - name: HR Portal Support Request
+  - name: Direct Deposit Setup
+  - name: HR Report Request
+  - name: Start a Performance Improvement Plan (PIP)
+  - name: Tuition Reimbursement Request
+  - name: Pharmacy Plan Enrollment
+  - name: 401(k) Plan Enrollment
+  - name: Dental Plan Enrollment
+  - name: Medical Benefits Inquiry
+  - name: Request Accommodations
+    description: "<p>Let us know if you need any changes to your working environment,\
+      \ arrangement, or other aspect of your job.\_</p>"
+  - name: Vision Benefits Inquiry
+  - name: New Hire Onboarding (Demo)
+  - name: Medical Benefits Enrollment Inquiry
+  - name: Vision Benefits Enrollment Inquiry
+  - name: Beneficiaries Inquiry
+  - name: Personal Information Report
+  workflows:
+  - name: 'On-Call: Send Notification - Email'
+  - name: Update Request for Application provisioning
+  - name: Request Management Approval
+  - name: Flow Template Subflow
+  - name: '[Interaction] Review and attach article'
+  - name: New Hire On boarding Case Trigger HR Profile
+  - name: Wait Until Tracker Completes
+  - name: Change Start Date
+  - name: SLA notification and escalation flow
+  - name: Delete Configuration Items
+  - name: Notify assessment user
+  - name: 'FlowTemplate: Record Create Trigger Empty'
+  - name: Object Template - Security v1
+  - name: Default Guidance Automation Plan
+  - name: Create Task
+  - name: Apply Stash
+  - name: Placeholder Subflow for MFA Guided Setup
+  - name: Update Service Job Tracker Flow
+  - name: Delegate Roles in Group
+  - name: Sidebar discussion creation
+  - name: Learning - Template Retire Course
+  - name: '[Non-ML] Copy Resolution'
+  - name: Object Template - Standard Catalog Item
+  - name: Process app template email data
+  - name: Check Record Access For User
+  - name: Run Job
+  - name: Application Template - Workspace Starter Experience Template
+  - name: 'Inbound Email Flow Example: logging a problem'
+  - name: 'Flow Template: For new Incidents, create a Zoom call and send the information
+      to Teams'
+  - name: Application Template - Team Contacts Template
+  - name: SC Best Practice Flow
+  - name: Retire Configuration Items
+  - name: Payload & Map Template Flow
+  - name: Evaluate Audience
+  - name: Update Password Reset Request Status
+  - name: Workday Learning User Mapping
+  - name: 'On-Call: New Trigger Engine Handler'
+  - name: Wait for a event and check trigger
+  - name: 'Flow Template: Post a weekly message from Gmail'
+  - name: Request Multi-Level Approval
+  - name: Service Fulfillment Steps - Task
+  - name: Delete Related Entry Configuration Item
+  - name: HR Activity Set Trigger Check
+  - name: Run Incident Record User permission action
+  - name: ATF Suite Start With ID
+  - name: Service Catalog Request
+  - name: Learning - Insta Publish Flow
+  - name: Change - Normal - Implement
+  - name: Transfer Order
+  - name: Check Intake Status on Development Instance
+  - name: Object Template - Portal Starter Experience Template
+  - name: Step based request fulfillment
+  - name: Knowledge - Instant Publish
+  - name: Object Template - Create a new issue in Jira when an SN record is created
+      v1
+  - name: HR service activities
+  - name: Knowledge Article
+  - name: Auto-Resolution Start Simulation Run
+  - name: 'Flow Template: Send a notification to an email address'
+  - name: Object Template - Create an approval for a requested catalog item
+  - name: Password Reset Master Subflow
+  - name: Checklist Task from Template Activity
+  - name: Attach article to interaction
+  - name: 'On-Call: Escalations By Email Per Rota'
+  - name: Upload Attachment to Slack
+  - name: Batch Results
+  - name: One API - Feature Executor
+  - name: Requested Item Email Notification
+  - name: Checklist Task Activity
+  - name: Simple Instruction
+  - name: Pull User Activity from Workday Learning
+  - name: Change - Unauthorized - Authorize
+  - name: HRI Case User Acceptance
+  - name: Change - Normal - Authorize
+  - name: Catalog Builder - Item review base flow
+  - name: Request Manager Approval
+  - name: Collect Data Activity
+  - name: One API - Service Plan Runner
+  - name: Service Catalog item request
+  - name: KPI Signals Reminder Notification Flow
+  - name: 'Template: Service Fulfillment Steps'
+  - name: VTB Sample Flow
+  - name: 'On-Call: Assign and Notify SNC'
+  - name: Commit Retrieved Update Set
+  - name: Guidance Automation Flow Executor
+  - name: Object Template - Assign Incidents created by VIPs to a specific group v2
+  - name: Learning - Set Course State
+  - name: Pull Courses from Workday Learning
+  - name: Send Or Edit Chat Message
+  - name: Create task
+  - name: Archive Dependent CIs
+  - name: 'Flow Template: Create an approval for a requested catalog item'
+  - name: Object Template - Create a new catalog item
+  - name: Show record list
+  - name: Process Decision
+  - name: Delete Orphaned Dependent CIs
+  - name: Check Activity And Wait For Time Interval
+  - name: Deployment Pipeline Environment Order Process
+  - name: Review and attach article
+  - name: Rollback Application With ID
+  - name: 'Flow Template: For new Incidents, create a Zoom call and send the information
+      to Slack'
+  - name: Instance Scan Execute Full Scan
+  - name: Application Template - Performance Review Template
+  - name: Application Template Subflow
+  - name: Create Child Case
+  - name: Service Fulfillment Steps - Custom approval
+  - name: Campaign Approval
+  - name: Template Integration Service
+  - name: Application Template - Scoped app template with roles - DS
+  - name: Link outage to task
+  - name: Learning - Template Publish Flow
+  - name: Apply Changes From Source Control With ID
+  - name: Object Template - Add or import data
+  - name: Software Procurement Flow
+  - name: Learning - Insta Republish Flow
+  - name: Attach Article In Comment
+  - name: Microsoft Receipt Scanner
+  - name: Instance Scan Execute Combo Suite Scan
+  - name: 'Flow Template: Create a new row in Microsoft Excel when a ServiceNow record
+      is created'
+  - name: Install Application With Scope
+  - name: Instance Scan Execute Suite Scan For Scoped App
+  - name: On Call Time Off Approval Update Roster State
+  - name: CMDB Task approval subflow
+  - name: New Hire On boarding Case Trigger Job
+  - name: 'FlowTemplate: Record Create or Update Trigger Empty'
+  - name: Set visibility of Analytics applications(v2)
+  - name: '[Non-ML] Link as parent incident'
+  - name: Link problem to mulitple incidents
+  - name: Grant role_delegator role to user in group
+  - name: Guidance Automation Template Legacy
+  - name: Send Or Edit Slack Message
+  - name: Retrieve Update Set With Instance ID
+  - name: Password Reset
+  - name: Service Fulfillment Steps - Manager approval
+  - name: Docker Webhook Subflow
+  - name: Link incident to task
+  - name: New Request App Approval Flow
+  - name: Archive Configuration Items
+  - name: IAR SLA Reminder
+  - name: 'On-Call: Assign By Acknowledgement'
+  - name: Source Request
+  - name: Collab Chat Subscribe Webhook
+  - name: Wait for timer and check trigger
+  - name: Learning - Republish Course Ask for Approval
+  - name: Dummy Subflow
+  - name: GS Iframe
+  - name: Remediate - server
+  - name: Change - Standard - Proposal
+  - name: HR Case Approval Subflow
+  - name: Knowledge - Approval Publish
+  - name: Run script include as FDIH subflow.
+  - name: Track Approval for Workday Learning
+  - name: Change - Implementation tasks
+  - name: Trigger external interface flow
+  - name: Object Template - Create Integration
+  - name: Request Approval
+  - name: Application Template - Request app
+  - name: Procurement Process Flow - Mobile
+  - name: Wait For Create Record
+  - name: Link change request
+  - name: Publish app if version is not yet published
+  - name: Trigger Workday Learning Integration
+  - name: Content Approvals
+  - name: Password Expiration Details Master Subflow
+  - name: Create Record Activity
+  - name: Change - Emergency - Authorize
+  - name: 'On-Call: Assign By Ack Per Rota Catch-All'
+  - name: HR Activity Set Launcher
+  - name: Knowledge - Approval Ownership Group
+  - name: Pipeline Runner
+  - name: Request new Knowledge Base
+  - name: Create Collaboration Chat
+  - name: Assign Task
+  - name: Document Management Default
+  - name: Guided Setup Activate Plugin
+  - name: 'Flow Template: Post a weekly message via SMS with Twilio'
+  - name: Check activity and wait for event
+  - name: KPI Signals Task Create/Update Workflow
+  - name: IAR Analysis in NLU WB
+  - name: Object Template - Create a new Process template
+  - name: Install Application With ID
+  - name: Instance Scan Execute Suite Scan For Update Sets
+  - name: Password Change
+  - name: Process Client Role Rule Change
+  - name: Batch Rollback
+  - name: 'Flow Template: Create a new row in Google Sheets when a ServiceNow record
+      updates'
+  - name: Validate Environments Job
+  - name: IAR Send Email Notification
+  - name: Switch primary job
+  - name: Apply Changes From Source Control With Scope
+  - name: Change - Standard - Implement
+  - name: Create Child Task
+  - name: Default SLA flow
+  - name: Publish Application With ID
+  - name: Object Template - Classic UI
+  - name: Ask For Collaboration Approval
+  - name: HR Activity Launcher
+  - name: Attach article to task
+  - name: CMDB Task Due Date Notifications
+  - name: Procurement Process Flow - DEFAULT
+  - name: Add a Pause
+  - name: Contract Approval Flow
+  - name: Learning - Publish Course Ask for Approval
+  - name: Knowledge - Approval Retire
+  - name: Service Catalog Request Price Approval
+  - name: Application Intake Request V2
+  - name: Cancel remedial action playbook
+  - name: Request Ad hoc Approval
+  - name: Import Application from Source Control
+  - name: Object Template - When an incident is closed, post a message to Twitter
+  - name: CCCIF Link Unfurling
+  - name: Force use report designer when Next Experience is ON
+  - name: Employee Profile Update
+  - name: 'TEMPLATE: Integration Gateway'
+  - name: User approval - device
+  - name: 'Flow Template: For new Incidents, create a Zoom call and send the information
+      to an email address'
+  - name: Check if Deployment Pipeline is Active on Instance
+  - name: Learning - Publish Course
+  - name: External interface template
+  - name: 'Flow Template: Send a notification to Slack'
+  - name: 'Flow Template: Post a weekly message to Microsoft Teams'
+  - name: Create ReleaseOps deployment request
+  - name: Toggle PAR Pie/Bar Context Menus
+  - name: Run SC Notifications
+  - name: 'On-Call: Time off approval'
+  - name: FlowTemplate_Empty
+  - name: Password Connection Test
+  - name: Object Template - Create an empty flow with triggers
+  - name: Transform Job Records
+  - name: OneExtend Dynamic Translation Subflow
+  - name: Rollback Plugin
+  - name: Get Deployment Request Subflow
+  - name: Register Business Application
+  - name: Pipeline Connection Validation
+  - name: 'Inbound Email Flow Example: handling email replies'
+  - name: Lifecycle Event Case Approval Flow
+  - name: Object Template - Create a Zoom meeting and notify a workspace when an ServiceNow
+      record is created v1
+  - name: Ready To Publish
+  - name: Account Notification Flow
+  - name: Create Task Activity
+  - name: 'Scheduled Deployment: Install Application with ID'
+  - name: Password Lock State
+  - name: 'Flow Template: Send a notification from a Gmail account'
+  - name: Object Template - Create a new row in a spreadsheet from a record update
+      v1
+  - name: Analytics List Dashboard Widget Migration
+  - name: KPI Signals Configuration Update Flow
+  - name: Application Template - Scoped App Template
+  - name: VA Telemetry Daily Rollup
+  - name: Two Step Instruction
+  - name: Send an email
+  - name: Remediate - device
+  - name: Commit Multiple Retrieved Update Sets
+  - name: Docker Sample Outbound Flow
+  - name: 'On-Call: Assign'
+  - name: External Links
+  - name: Add Role to User Or Group
+  - name: Application Template - Scoped app template with roles
+  - name: Update Record Activity
+  - name: Change - Conflict Detection
+  - name: Retrieve Update Set With Update Set Source ID
+  - name: Application Template - Time Off Template
+  - name: Multiple ATF Suites Start With IDs
+  - name: Send Email After Change Password
+  - name: Launch Activities
+  - name: Link Unfurling
+  - name: Create CMDB CI if not present
+  - name: Create Slack Chat
+  - name: Add article in work notes
+  - name: Schedule change request
+  - name: Object Template Subflow
+  - name: Activate Plugin
+  - name: Case Trigger Custom Condition
+  - name: Application Template - Document Approval Template
+  - name: Change - Emergency - Review
+  - name: Lifecycle Event Notification Flow
+  - name: Publish Application With Scope
+  - name: Guidance Automation Template
+  - name: Wait Until Template Is Finished Running
+  - name: Transfer Order Line
+  - name: 'Flow Template: Send a notification via SMS with Twilio'
+  - name: Add User or Group to Collaboration Descriptor
+  - name: Run Service Flow
+  - name: 'Flow Template: Create a new issue in JIRA when a record is created'
+  - name: Copy resolution notes to incident
+  - name: Object Template - Create a new row in a spreadsheet from a record v1
+  - name: Integrate Change Management for deployment pipelines
+  - name: New Application Task State Updated
+  - name: Batch Install
+  - name: Multi Record Associator Flow
+  - name: 'On-Call: Assign By Acknowledgement Per Rota'
+  - name: Create role and ACL
+  - name: Back Out Update Set
+  - name: Deploy to Environment if not Present
+  - name: Logout and Send Notification in Mobile
+  - name: Run Create App Template
+  - name: Password Unlock
+  - name: Add groups to discussion
+  - name: '[Non-ML] Link problem as parent'
+  - name: Manual Activity
+  - name: Add User or Group to additional role
+  - name: Send Email Activity
+  - name: Link problem to task
+  - name: Process external interface
+  - name: 'On-Call: Send Notifications'
+  - name: Change - Unauthorized - Review
+  - name: 'On-Call: Escalations By Email Per Rota - Notifications'
+  - name: NLU Train Subflow
+  - name: Validate Environments And Set Instance Id
+  - name: ATF Suite Start With Name
+  - name: Deploy to Test Environment
+  - name: Create change request
+  - name: Critical Update Instruction Flow
+  - name: One API - Async Feature Executor
+  - name: Requested Item Manager Approval
+  - name: Wait for Email Reply Activity
+  - name: Enable Unified Analytics Workspace
+  - name: Send Email for Knowledge Base Request
+  - name: Complete Multiple Update Set
+  - name: Trigger Service Fulfillment Step Subflow
+  - name: Send Email with user input Activity
+  - name: Requested Item Dept Head Approval
+  - name: Business process approval flow
+  - name: Update Case and External Interface Record Status
+  - name: Validate Development Instance and User
+  - name: 'Flow Template: When an incident is updated, send a tweet'
+  - name: Flow Template - Assign Incidents created by VIPs to a specific group
+  - name: Procurement Process Flow - Hardware
+  - name: Check Intake Status on Instance For User
+  - name: Assign Course to Workday Learning
+  - name: Application Intake Request Flow (Deprecated)
+  - name: Deprecate Homepages when Polaris is ON
+  - name: IAR Task Update
+  - name: Macroponent loader
+  - name: Collaboration Request Flow
+  - name: Create new request app flow task
+  - name: Object Template - Mobile
+  - name: Wait for Condition Activity
+  - name: Deployment Pipeline Template - Environment
+  - name: Retrieve and Auto Preview Multiple Update Sets
+  - name: Enable Unified Analytics
+  - name: Check if Collaboration Request is Active on Instance
+  - name: GenAI Semantic Filter Matcher
+  - name: Password Change Master Subflow
+  - name: Change - Emergency - Implement
+  - name: Case Trigger Custom Date Check
+  - name: Grant role_delegator role
+  - name: Send article in chat
+  - name: Get Unfurl Data
+  - name: 'Flow Template: Send a notification to Microsoft Teams'
+  - name: Guidance Automation Flow Executor Legacy
+  - name: Learning - Retire Course
+  - name: New Application Admin Task State Updated
+  - name: Change - Standard
+  - name: Rollback Application With Scope
+  - name: Change - Cloud Infrastructure - Authorize
+  - name: Publication - Publish With Approval
+  - name: Validate Connection and Set Instance Id
+  - name: Knowledge - Instant Retire
+  - name: Application Template - Scoped App IDE
+  - name: Integration Gateway
+  - name: Publication - Instant Publish
+  - name: Application Template - Emergency Alert Template
+  - name: Check User Exists and For Latest Intake
+  - name: Preview Retrieved Update Set
+  - name: Change - Normal - Assess
+  - name: 'On-Call: Escalations by Email'
+  - name: 'FlowTemplate: Record Update Trigger Empty'
+  - name: Object Template - Send a notification to a workspace v1
+  - name: Object Template - Mobile v2
+  - name: 'Flow Template: Create a new row in Microsoft Excel when a ServiceNow record
+      is updated'
+  - name: Advanced Instruction
+  - name: Post Deployment Request Subflow
+  - name: Object Template - Post a weekly reminder to a workspace v1
+  - name: Execute CI action for a standard change
+  - name: Benchmark Recommendation Evaluator
+  - name: Learning - Set User activity to Expired
+  - name: Deployment Type Pipeline
+  - name: Service Fulfillment Steps base flow
+  - name: 'Template: Create CMDB CI if not present'
+  - name: 'Template: Catalog Builder - Item review'
+  - name: Pipeline Type Template
+  - name: Sidebar - Upload Attachment to Sharepoint
+  - name: Deploy to Environment Default
+  - name: 'Flow Template: Post a weekly message to Slack'
+  - name: HR Case Approval Step
+  - name: One API - Feature (TEMPLATE)
+  - name: User Form Activity
+  - name: Object Template - FlowTemplate_CreateEmptyFlow v1
+  - name: Run Job by ID
+  - name: Report Access Request Flow
+  - name: Delegate Roles
+  - name: Instance Scan Execute Point Scan
+  scripts:
+  - name: direct_deposit_current
+    type: '17'
+  - name: what_is_your_question
+    type: '2'
+  - name: start
+    type: '19'
+  - name: introduction
+    type: '5'
+  - name: first_name
+    type: '6'
+  - name: middle_name
+    type: '6'
+  - name: last_name
+    type: '6'
+  - name: formatter
+    type: '24'
+  - name: marital_status
+    type: '5'
+  - name: country_of_birth
+    type: '8'
+  - name: ethnicity
+    type: '6'
+  - name: gender
+    type: '5'
+  - name: formatter2
+    type: '20'
+  - name: contact_information
+    type: '19'
+  - name: address
+    type: '6'
+  - name: city
+    type: '6'
+  - name: state
+    type: '6'
+  - name: zip
+    type: '6'
+  - name: country
+    type: '8'
+  - name: formatter3
+    type: '24'
+  - name: personal_email
+    type: '26'
+  - name: mobile_phone
+    type: '6'
+  - name: work_mobile
+    type: '6'
+  - name: home_phone
+    type: '6'
+  - name: formatter4
+    type: '20'
+  - name: anonymous_section
+    type: '19'
+  - name: anonymous_text
+    type: '32'
+  - name: description_of_incident
+    type: '2'
+  - name: incident_date
+    type: '9'
+  - name: location_incident
+    type: '2'
+  - name: preferred_contact_method
+    type: '5'
+  - name: beneficiaries_current
+    type: '17'
+  - name: instruction_text
+    type: '17'
+  - name: benefit_provider
+    type: '8'
+  - name: beneficiary_forms
+    type: '17'
+  - name: completed_form_attached
+    type: '7'
+  - name: container_start
+    type: '19'
+  - name: relocation_reason
+    type: '5'
+  - name: office_location
+    type: '8'
+  - name: relocation_address
+    type: '2'
+  - name: relocation_city
+    type: '6'
+  - name: relocation_state
+    type: '6'
+  - name: relocation_zip
+    type: '6'
+  - name: relocation_country
+    type: '8'
+  - name: relocation_date
+    type: '9'
+  - name: work_visa_required
+    type: '1'
+  - name: first_day_of_leave
+    type: '9'
+  - name: estimated_last_day_of_leave
+    type: '9'
+  - name: leave_type
+    type: '8'
+  - name: retirement_plan_current
+    type: '17'
+  - name: retirement_forms
+    type: '17'
+  - name: dental_current
+    type: '17'
+  - name: dental_forms
+    type: '17'
+  - name: subject_person
+    type: '8'
+  - name: manager_name
+    type: '6'
+  - name: business_justification
+    type: '6'
+  - name: pharmacy_current
+    type: '17'
+  - name: pharmacy_forms
+    type: '17'
+  - name: medical_current
+    type: '17'
+  - name: medical_forms
+    type: '17'
+  - name: vision_current
+    type: '17'
+  - name: vision_forms
+    type: '17'
+  - name: visa_fields
+    type: '19'
+  - name: birth_country
+    type: '8'
+  - name: country_travelling_to
+    type: '8'
+  - name: date_needed_by
+    type: '9'
+  - name: trip_duration
+    type: '6'
+  - name: pay_discrepancy_type
+    type: '3'
+  - name: pay_dependancy_inquiry
+    type: '2'
+  - name: pay_stub_attached
+    type: '7'
+  - name: hr_system
+    type: '18'
+  - name: user_name
+    type: '6'
+  - name: selected_pii_data
+    type: '2'
+  - name: selected_hr_cases
+    type: '21'
+  - name: selected_case_data_option
+    type: '3'
+  - name: email_id
+    type: '26'
+  - name: reason_for_deletion
+    type: '2'
+  - name: additional_comments
+    type: '2'
+  - name: location_type
+    type: '22'
+  - name: department
+    type: '8'
+  - name: position
+    type: '8'
+  - name: employment_type
+    type: '5'
+  - name: op_access_request
+    type: '2'
+  - name: support_type
+    type: '3'
+  - name: support_browser
+    type: '5'
+  - name: account_nickname
+    type: '6'
+  - name: routing_number
+    type: '6'
+  - name: account_number
+    type: '6'
+  - name: account_type
+    type: '3'
+  - name: deposit_type
+    type: '3'
+  - name: deposit_percent
+    type: '6'
+  - name: deposit_amount
+    type: '6'
+  - name: which_system
+    type: '18'
+  - name: op_report_report_type
+    type: '18'
+  - name: op_report_justification
+    type: '2'
+  - name: op_report_description
+    type: '2'
+  - name: op_report_frequency
+    type: '18'
+  - name: pip_start_date
+    type: '9'
+  - name: pip_end_date
+    type: '9'
+  - name: pip_rationale
+    type: '2'
+  - name: pip_improvement_areas
+    type: '2'
+  - name: submitted_tuition_reimbursements
+    type: '17'
+  - name: reimbursement_fields
+    type: '19'
+  - name: school_program_name
+    type: '6'
+  - name: course_title
+    type: '6'
+  - name: course_start_date
+    type: '9'
+  - name: course_end_date
+    type: '9'
+  - name: course_cost
+    type: '6'
+  - name: course_justification
+    type: '2'
+  - name: dental_plan_attachment
+    type: '33'
+  - name: type_of_accommodation
+    type: '2'
+  - name: time_sensitive_request
+    type: '1'
+  - name: part_of_job_improvement
+    type: '2'
+  - name: accessible_benefits
+    type: '2'
+  - name: previous_accommodations
+    type: '1'
+  - name: previous_accommodation_effectiveness
+    type: '2'
+  - name: anything_else
+    type: '2'
+  - name: left_column
+    type: '19'
+  - name: employment_information_section
+    type: '19'
+  - name: employment_start_date
+    type: '9'
+  - name: manager
+    type: '8'
+  - name: location
+    type: '8'
+  - name: formatter5
+    type: '12'
+  - name: additional_needs
+    type: '11'
+  - name: needs_work_visa
+    type: '7'
+  - name: needs_transfer_work_visa
+    type: '7'
+  - name: needs_relocation_assistance
+    type: '7'
+  - name: employee_id
+    type: '6'
+  - name: subject_person_email
+    type: '6'
+  - name: reason_for_request
+    type: '2'
+summary:
+  table_count: 43
+  workflow_count: 391
+  script_count: 130
+  total_objects: 564
