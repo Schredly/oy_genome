@@ -1,0 +1,56 @@
+{
+  "prompt": "Use the JSON below to create a service catalog and incorporate AI chat capabilities.",
+  "data": {
+    "application": "Human Resources Catalog",
+    "vendor_source": "servicenow",
+    "tenant": "acme",
+    "captured_date": "2026-03-18",
+    "objects": [
+      {
+        "name": "Direct Deposit Inquiry",
+        "type": "table",
+        "fields": [
+          {
+            "id": "direct_deposit_current",
+            "name": "direct_deposit_current",
+            "required": false,
+            "reference": null
+          },
+          {
+            "id": "deposit_type",
+            "name": "deposit_type",
+            "required": false,
+            "reference": null
+          }
+        ],
+        "workflows": [
+          "direct_deposit_inquiry_request"
+        ],
+        "relationships": [
+          "rel_0"
+        ]
+      },
+      {
+        "name": "HR Report Inquiry",
+        "type": "table",
+        "fields": [
+          {
+            "id": "hr_system",
+            "name": "hr_system",
+            "required": false,
+            "reference": null
+          }
+        ],
+        "workflows": [
+          "hr_report_inquiry_request"
+        ],
+        "relationships": [
+          "rel_1"
+        ]
+      }
+    ],
+    "workflows": [
+      "On-Call: Send Notification - Email"
+    ]
+  }
+}
