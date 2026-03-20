@@ -1,0 +1,5 @@
+run = "python app.py"
+
+# .replit configurations for the application
+[interpreter]
+  python3
