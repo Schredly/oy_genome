@@ -1,0 +1,26 @@
+{
+  "application_name": "Technical Catalog",
+  "categories": [
+    "Service Management",
+    "Infrastructure",
+    "Emergency Changes"
+  ],
+  "services": [
+    "Application Server (Standard)",
+    "Database Server & Oracle License",
+    "VM Provisioning"
+  ],
+  "fields": [
+    {"name": "name", "mandatory": true},
+    {"name": "category", "mandatory": true},
+    {"name": "description", "mandatory": false}
+  ],
+  "workflows": [
+    {"name": "service_search"},
+    {"name": "order_process"},
+    {"name": "category_filter"}
+  ],
+  "relationships": [
+    "service → category"
+  ]
+}
