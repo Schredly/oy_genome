@@ -1,0 +1,30 @@
+application_name: ''
+vendor: ''
+source_platform: ''
+category: ''
+genome_document:
+  objects: []
+  fields: []
+  workflows: []
+  relationships: []
+structured_objects: []
+structured_fields: []
+structured_workflows: []
+structured_relationships: []
+design_tokens:
+  colors: []
+confidence: 0
+summary: 'Application genome for '
+_extraction_metadata:
+  pipeline: multi-agent-v1
+  frame_count: 13
+  unique_screens: 13
+  has_audio: true
+  audio_duration_sec: 0
+  total_latency_ms: 96616
+  stage_latencies:
+    frame_intelligence: 2771
+    ui_extraction_and_audio: 54125
+    app_structure: 19850
+    synthesis: 19870
+  user_notes: ''
