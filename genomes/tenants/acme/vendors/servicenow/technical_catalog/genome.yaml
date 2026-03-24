@@ -1,7 +1,7 @@
 application: Technical Catalog
 vendor_source: servicenow
 tenant: acme
-captured_date: '2026-03-22'
+captured_date: '2026-03-23'
 objects:
   tables:
   - name: Server Reboot
@@ -14,6 +14,9 @@ objects:
     description: '<p style="margin: 0px;"><font size="3" face="arial,helvetica,sans-serif">Please
       fill in the information below to request a restore of a database. Please be
       aware that restores of a production instance will require additional approvals.</font></p>'
+  - name: Beach Equipment Rental
+    description: Use this form to rent beach chairs, umbrellas, surfboards, boogie
+      boards, towels, and more from Beach Bum.
   - name: Request Knowledge Base
     description: <p>Here you can request a new Knowledge Base to be used. A Knowledge
       Base can be used to store Knowledge in an organization and anyone can request
@@ -494,6 +497,36 @@ objects:
     type: '8'
   - name: restore_pit
     type: '10'
+  - name: customer_info_start
+    type: '19'
+  - name: customer_name
+    type: '6'
+  - name: customer_phone
+    type: '6'
+  - name: customer_info_split
+    type: '24'
+  - name: customer_email
+    type: '26'
+  - name: rental_date
+    type: '9'
+  - name: customer_info_end
+    type: '20'
+  - name: equipment_start
+    type: '19'
+  - name: equipment_type
+    type: '5'
+  - name: quantity
+    type: '6'
+  - name: equipment_split
+    type: '24'
+  - name: rental_duration
+    type: '5'
+  - name: return_date
+    type: '9'
+  - name: equipment_end
+    type: '20'
+  - name: special_requests
+    type: '2'
   - name: request_reason
     type: '2'
   - name: requested_title
@@ -517,7 +550,7 @@ objects:
   - name: storage
     type: '5'
 summary:
-  table_count: 8
+  table_count: 9
   workflow_count: 391
-  script_count: 19
-  total_objects: 418
+  script_count: 34
+  total_objects: 434
