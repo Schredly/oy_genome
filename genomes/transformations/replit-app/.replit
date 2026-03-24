@@ -1,0 +1,6 @@
+run = "python app.py"
+entrypoint = "app.py"
+persistentLogs = true
+
+[env]
+  SOME_ENV_VAR = "value"
