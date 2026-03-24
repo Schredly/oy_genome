@@ -1,0 +1,13 @@
+{
+  "items": [
+    {
+      "name": "Server Reboot",
+      "description": "Request a server reboot with specified additional documentation for production servers."
+    },
+    {
+      "name": "Database Restore",
+      "description": "Submit a request to restore a database with necessary approvals for production instances."
+    },
+    // Additional entries here...
+  ]
+}
