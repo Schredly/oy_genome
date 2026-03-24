@@ -97,6 +97,103 @@
       ]
     },
     {
+      "name": "Beach Equipment Rental",
+      "sys_id": "5e4d7dadc37b7610d58fb53ed4013139",
+      "description": "Use this form to rent beach chairs, umbrellas, surfboards, boogie boards, towels, and more from Beach Bum.",
+      "variables": [
+        {
+          "name": "customer_info_start",
+          "question_text": "Customer Information",
+          "type": "19",
+          "mandatory": false
+        },
+        {
+          "name": "customer_name",
+          "question_text": "Customer Name",
+          "type": "6",
+          "mandatory": true
+        },
+        {
+          "name": "customer_phone",
+          "question_text": "Phone Number",
+          "type": "6",
+          "mandatory": true
+        },
+        {
+          "name": "customer_info_split",
+          "question_text": null,
+          "type": "24",
+          "mandatory": false
+        },
+        {
+          "name": "customer_email",
+          "question_text": "Email Address",
+          "type": "26",
+          "mandatory": false
+        },
+        {
+          "name": "rental_date",
+          "question_text": "Rental Date",
+          "type": "9",
+          "mandatory": true
+        },
+        {
+          "name": "customer_info_end",
+          "question_text": null,
+          "type": "20",
+          "mandatory": false
+        },
+        {
+          "name": "equipment_start",
+          "question_text": "Equipment Selection",
+          "type": "19",
+          "mandatory": false
+        },
+        {
+          "name": "equipment_type",
+          "question_text": "Equipment Type",
+          "type": "5",
+          "mandatory": true
+        },
+        {
+          "name": "quantity",
+          "question_text": "Quantity",
+          "type": "6",
+          "mandatory": true
+        },
+        {
+          "name": "equipment_split",
+          "question_text": null,
+          "type": "24",
+          "mandatory": false
+        },
+        {
+          "name": "rental_duration",
+          "question_text": "Rental Duration",
+          "type": "5",
+          "mandatory": true
+        },
+        {
+          "name": "return_date",
+          "question_text": "Expected Return Date",
+          "type": "9",
+          "mandatory": true
+        },
+        {
+          "name": "equipment_end",
+          "question_text": null,
+          "type": "20",
+          "mandatory": false
+        },
+        {
+          "name": "special_requests",
+          "question_text": "Special Requests or Notes",
+          "type": "2",
+          "mandatory": false
+        }
+      ]
+    },
+    {
       "name": "Request Knowledge Base",
       "sys_id": "81c887819f203100d8f8700c267fcfb5",
       "description": "<p>Here you can request a new Knowledge Base to be used. A Knowledge Base can be used to store Knowledge in an organization and anyone can request for a new one to be created.</p>",
