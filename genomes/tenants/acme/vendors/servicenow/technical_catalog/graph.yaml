@@ -36,6 +36,56 @@ objects:
   - database_restore_request
   relationships:
   - rel_1
+- id: beach_equipment_rental
+  name: Beach Equipment Rental
+  type: table
+  fields:
+  - id: rental_date
+    name: rental_date
+    object_name: Beach Equipment Rental
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: equipment_start
+    name: equipment_start
+    object_name: Beach Equipment Rental
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: equipment_type
+    name: equipment_type
+    object_name: Beach Equipment Rental
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: equipment_split
+    name: equipment_split
+    object_name: Beach Equipment Rental
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: rental_duration
+    name: rental_duration
+    object_name: Beach Equipment Rental
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: equipment_end
+    name: equipment_end
+    object_name: Beach Equipment Rental
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  workflows:
+  - beach_equipment_rental_request
+  relationships:
+  - rel_2
 - id: request_knowledge_base
   name: Request Knowledge Base
   type: table
@@ -50,7 +100,7 @@ objects:
   workflows:
   - request_knowledge_base_request
   relationships:
-  - rel_2
+  - rel_3
 - id: application_server_standard
   name: Application Server (Standard)
   type: table
@@ -58,7 +108,7 @@ objects:
   workflows:
   - application_server_standard_request
   relationships:
-  - rel_3
+  - rel_4
 - id: application_server_large
   name: Application Server (Large)
   type: table
@@ -66,7 +116,7 @@ objects:
   workflows:
   - application_server_large_request
   relationships:
-  - rel_4
+  - rel_5
 - id: database_server_oracle_license
   name: Database Server & Oracle License
   type: table
@@ -74,7 +124,7 @@ objects:
   workflows:
   - database_server_oracle_license_request
   relationships:
-  - rel_5
+  - rel_6
 - id: email_account_old
   name: Email Account (old)
   type: table
@@ -82,7 +132,7 @@ objects:
   workflows:
   - email_account_old_request
   relationships:
-  - rel_6
+  - rel_7
 - id: vm_provisioning
   name: VM Provisioning
   type: table
@@ -90,7 +140,7 @@ objects:
   workflows:
   - vm_provisioning_request
   relationships:
-  - rel_7
+  - rel_8
 - id: global
   name: global
   type: virtual
@@ -125,6 +175,69 @@ objects:
     metadata: {}
   - id: backup_source
     name: backup_source
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: customer_info_start
+    name: customer_info_start
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: customer_name
+    name: customer_name
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: customer_phone
+    name: customer_phone
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: customer_info_split
+    name: customer_info_split
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: customer_email
+    name: customer_email
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: customer_info_end
+    name: customer_info_end
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: quantity
+    name: quantity
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: return_date
+    name: return_date
+    object_name: global
+    type: ''
+    required: false
+    reference: null
+    metadata: {}
+  - id: special_requests
+    name: special_requests
     object_name: global
     type: ''
     required: false
@@ -209,6 +322,10 @@ workflows:
   steps: []
 - id: database_restore_request
   name: Database Restore request
+  trigger: ''
+  steps: []
+- id: beach_equipment_rental_request
+  name: Beach Equipment Rental request
   trigger: ''
   steps: []
 - id: request_knowledge_base_request
@@ -1819,31 +1936,36 @@ relationships:
   relationship_type: reference
   cardinality: 1:N
 - id: rel_2
-  source_object: Request Knowledge Base
+  source_object: Beach Equipment Rental
   target_object: variables
   relationship_type: reference
   cardinality: 1:N
 - id: rel_3
-  source_object: Application Server (Standard)
+  source_object: Request Knowledge Base
   target_object: variables
   relationship_type: reference
   cardinality: 1:N
 - id: rel_4
-  source_object: Application Server (Large)
+  source_object: Application Server (Standard)
   target_object: variables
   relationship_type: reference
   cardinality: 1:N
 - id: rel_5
-  source_object: Database Server & Oracle License
+  source_object: Application Server (Large)
   target_object: variables
   relationship_type: reference
   cardinality: 1:N
 - id: rel_6
-  source_object: Email Account (old)
+  source_object: Database Server & Oracle License
   target_object: variables
   relationship_type: reference
   cardinality: 1:N
 - id: rel_7
+  source_object: Email Account (old)
+  target_object: variables
+  relationship_type: reference
+  cardinality: 1:N
+- id: rel_8
   source_object: VM Provisioning
   target_object: variables
   relationship_type: reference
