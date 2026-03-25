@@ -1,0 +1,28 @@
+{
+  "modules": [
+    {
+      "name": "Active Checkouts",
+      "table": "x_beachbum_checkout",
+      "type": "list",
+      "filter": "status=checked_out"
+    },
+    {
+      "name": "All Checkouts",
+      "table": "x_beachbum_checkout",
+      "type": "list",
+      "filter": null
+    },
+    {
+      "name": "Add Equipment",
+      "table": "x_beachbum_equipment",
+      "type": "module",
+      "filter": null
+    },
+    {
+      "name": "All Equipment",
+      "table": "x_beachbum_equipment",
+      "type": "list",
+      "filter": null
+    }
+  ]
+}
