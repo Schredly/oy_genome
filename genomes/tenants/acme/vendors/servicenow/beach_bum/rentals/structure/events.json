@@ -1,0 +1,12 @@
+[
+  {
+    "name": "checkout_created_event",
+    "trigger": "A new checkout record is created",
+    "downstream_effects": "Triggers inventory decrement logic"
+  },
+  {
+    "name": "equipment_returned_event",
+    "trigger": "Equipment is returned and record updated",
+    "downstream_effects": "Triggers inventory increment logic"
+  }
+]
