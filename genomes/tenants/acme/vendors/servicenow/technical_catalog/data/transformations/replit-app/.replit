@@ -1,0 +1,8 @@
+run = "npm start"
+
+[env]
+  REPLIT_DB_URL=<default_db_url_based_on_runtime>
+
+environmentVariables = [
+  "NODE_ENV=development"
+]
