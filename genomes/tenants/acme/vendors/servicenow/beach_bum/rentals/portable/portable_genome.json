@@ -1,0 +1,96 @@
+{
+  "domain_model": {
+    "entities": [
+      {
+        "name": "Beach Equipment",
+        "attributes": [
+          "available_quantity",
+          "condition",
+          "daily_rate"
+        ]
+      }
+    ]
+  },
+  "application_services": [
+    {
+      "name": "Rental Service",
+      "responsibilities": "Manage beach equipment inventory and customer checkouts",
+      "inputs": "Customer rental requests",
+      "outputs": "Rental records and updated inventory levels"
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Rental Process",
+      "steps": [
+        {
+          "name": "Initiate Rental Request",
+          "actor": "Customer",
+          "action": "Choose equipment and rental duration",
+          "system_behavior": "Display rental options"
+        },
+        {
+          "name": "Equipment Checkout",
+          "actor": "System",
+          "action": "Create checkout record",
+          "system_behavior": "Decrease inventory"
+        },
+        {
+          "name": "Rental Completion",
+          "actor": "Customer",
+          "action": "Return equipment",
+          "system_behavior": "Increase inventory"
+        }
+      ]
+    }
+  ],
+  "api_surface": [
+    {
+      "endpoint": "/api/rental/start",
+      "method": "POST",
+      "purpose": "Initiates a rental request"
+    },
+    {
+      "endpoint": "/api/rental/checkout",
+      "method": "POST",
+      "purpose": "Processes equipment checkout"
+    },
+    {
+      "endpoint": "/api/rental/return",
+      "method": "POST",
+      "purpose": "Handles equipment return"
+    }
+  ],
+  "ui_model": {
+    "screens": [
+      {
+        "name": "Active Checkouts",
+        "components": "Customer's active checkouts list"
+      },
+      {
+        "name": "All Checkouts",
+        "components": "Complete checkouts list"
+      },
+      {
+        "name": "Add Equipment",
+        "components": "Form to input new equipment"
+      },
+      {
+        "name": "All Equipment",
+        "components": "List of all equipment"
+      }
+    ]
+  },
+  "automation_rules": [
+    {
+      "name": "Reduce Inventory on Checkout",
+      "trigger": "Before rental checkout",
+      "action": "Reduce inventory count"
+    },
+    {
+      "name": "Restore Inventory on Return",
+      "trigger": "After equipment return",
+      "action": "Replenish inventory count"
+    }
+  ]
+}
