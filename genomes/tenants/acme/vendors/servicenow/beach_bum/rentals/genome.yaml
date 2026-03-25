@@ -1,0 +1,122 @@
+application:
+  name: Beach Bum
+  scope: x_beachbum
+  description: Manage beach equipment inventory and customer checkouts
+
+entities:
+  - name: Beach Equipment
+    type: Table
+    table: x_beachbum_equipment
+    fields:
+      - available_quantity
+      - condition
+      - daily_rate
+    relationships: []
+
+catalog:
+  items:
+    - name: Beach Equipment Rental
+      variables:
+        - name: customer_info_end
+          type: 20
+          required: false
+          order: 600
+        - name: customer_info_split
+          type: 24
+          required: false
+          order: 350
+        - name: equipment_split
+          type: 24
+          required: false
+          order: 950
+        - name: equipment_end
+          type: 20
+          required: false
+          order: 1200
+
+workflows: []
+
+business_logic:
+  rules:
+    - name: Beach Bum - Reduce Inventory on Checkout
+      table: x_beachbum_checkout
+      trigger: before insert
+      logic_summary: Reduces equipment inventory upon checkout creation
+      external_dependencies: checkout-rules.ts
+    - name: Beach Bum - Restore Inventory on Return
+      table: x_beachbum_checkout
+      trigger: before insert
+      logic_summary: Restores equipment inventory upon return
+      external_dependencies: checkout-rules.ts
+
+ui:
+  modules:
+    - name: Active Checkouts
+      table: x_beachbum_checkout
+      type: list
+      filter: status=checked_out
+    - name: All Checkouts
+      table: x_beachbum_checkout
+      type: list
+      filter:
+    - name: Add Equipment
+      table: x_beachbum_equipment
+      type: module
+      filter:
+    - name: All Equipment
+      table: x_beachbum_equipment
+      type: list
+      filter:
+
+navigation:
+  menu:
+    - name: Beach Bum
+      modules: 
+        - All Equipment
+        - All Checkouts
+        - Active Checkouts
+        - Add Equipment
+
+data_model:
+  tables:
+    - name: x_beachbum_equipment
+      purpose: Stores information about beach rental equipment
+      key_fields: [available_quantity, condition, daily_rate]
+
+integrations: []
+
+logic_patterns:
+  - name: decrement_inventory_on_checkout
+    description: Decreases the inventory count when a new checkout is created.
+    trigger: checkout_created
+    action: Reduce inventory count
+    reusable_pattern: inventory_decrement
+  - name: restore_inventory_on_return
+    description: Increases the inventory count when equipment is returned.
+    trigger: equipment_returned
+    action: Replenish inventory count
+    reusable_pattern: inventory_increment
+
+processes:
+  - name: rental_process
+    steps:
+      - step: Initiate Rental Request
+        actor: Customer
+        action: Choose equipment and rental duration
+        system_behavior: Display rental options
+      - step: Equipment Checkout
+        actor: System
+        action: Create checkout record
+        system_behavior: Decrease inventory
+      - step: Rental Completion
+        actor: Customer
+        action: Return equipment
+        system_behavior: Increase inventory
+
+events:
+  - name: checkout_created_event
+    trigger: A new checkout record is created
+    downstream_effects: Triggers inventory decrement logic
+  - name: equipment_returned_event
+    trigger: Equipment is returned and record updated
+    downstream_effects: Triggers inventory increment logic
