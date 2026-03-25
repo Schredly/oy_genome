@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Beach Equipment",
+    "type": "Table",
+    "table": "x_beachbum_equipment",
+    "fields": [
+      "available_quantity",
+      "condition",
+      "daily_rate"
+    ],
+    "relationships": []
+  }
+]
