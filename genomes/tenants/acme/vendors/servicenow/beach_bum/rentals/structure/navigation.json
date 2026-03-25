@@ -1,0 +1,13 @@
+{
+  "menu": [
+    {
+      "name": "Beach Bum",
+      "modules": [
+        "All Equipment",
+        "All Checkouts",
+        "Active Checkouts",
+        "Add Equipment"
+      ]
+    }
+  ]
+}
