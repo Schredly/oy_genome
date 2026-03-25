@@ -1,0 +1,32 @@
+{
+  "catalog": {
+    "name": "Technical Catalog",
+    "sys_id": "742ce428d7211100f2d224837e61036d"
+  },
+  "items": [
+    {
+      "name": "Server Reboot",
+      "description": "Service Overview: Please use the form below to request a server reboot."
+    },
+    {
+      "name": "Database Restore",
+      "description": "Please fill in the information below to request a restore of a database."
+    },
+    {
+      "name": "Beach Equipment Rental",
+      "description": "Use this form to rent beach equipment."
+    },
+    {
+      "name": "Request Knowledge Base",
+      "description": "Here you can request a new Knowledge Base to be used."
+    },
+    {
+      "name": "Application Server (Standard)",
+      "description": "Corporate application server"
+    },
+    {
+      "name": "Application Server (Large)",
+      "description": "Corporate application server (Large)"
+    }
+  ]
+}
