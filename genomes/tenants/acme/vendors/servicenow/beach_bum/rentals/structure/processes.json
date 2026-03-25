@@ -1,0 +1,25 @@
+[
+  {
+    "name": "rental_process",
+    "steps": [
+      {
+        "step": "Initiate Rental Request",
+        "actor": "Customer",
+        "action": "Choose equipment and rental duration",
+        "system_behavior": "Display rental options"
+      },
+      {
+        "step": "Equipment Checkout",
+        "actor": "System",
+        "action": "Create checkout record",
+        "system_behavior": "Decrease inventory"
+      },
+      {
+        "step": "Rental Completion",
+        "actor": "Customer",
+        "action": "Return equipment",
+        "system_behavior": "Increase inventory"
+      }
+    ]
+  }
+]
