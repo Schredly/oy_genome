@@ -1,0 +1,13 @@
+{
+  "tables": [
+    {
+      "name": "x_beachbum_equipment",
+      "purpose": "Stores information about beach rental equipment",
+      "key_fields": [
+        "available_quantity",
+        "condition",
+        "daily_rate"
+      ]
+    }
+  ]
+}
