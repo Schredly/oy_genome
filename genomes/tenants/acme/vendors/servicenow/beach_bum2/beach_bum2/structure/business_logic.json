@@ -1,0 +1,11 @@
+{
+  "rules": [
+    {
+      "name": "Calculate Discount",
+      "table": "x_beach_bum2_item",
+      "trigger": "before insert",
+      "logic_summary": "Apply a 10% discount for rentals over 3 days.",
+      "external_dependencies": []
+    }
+  ]
+}
