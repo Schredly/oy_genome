@@ -1,0 +1,45 @@
+{
+  "tables": [
+    {
+      "name": "x_beach_bum2_item",
+      "purpose": "Store information about available beach items.",
+      "key_fields": [
+        {
+          "name": "sys_id",
+          "type": "string",
+          "notes": "inferred"
+        },
+        {
+          "name": "created_on",
+          "type": "datetime",
+          "notes": "inferred"
+        },
+        {
+          "name": "created_by",
+          "type": "string",
+          "notes": "inferred"
+        },
+        {
+          "name": "updated_on",
+          "type": "datetime",
+          "notes": "inferred"
+        },
+        {
+          "name": "updated_by",
+          "type": "string",
+          "notes": "inferred"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "notes": "inferred from UI"
+        },
+        {
+          "name": "category",
+          "type": "string",
+          "notes": "inferred from relationships"
+        }
+      ]
+    }
+  ]
+}
