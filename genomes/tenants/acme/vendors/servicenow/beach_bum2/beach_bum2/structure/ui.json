@@ -1,0 +1,16 @@
+{
+  "modules": [
+    {
+      "name": "Beach Items List",
+      "table": "x_beach_bum2_item",
+      "type": "list",
+      "filter": "category=beach"
+    },
+    {
+      "name": "Item Form",
+      "table": "x_beach_bum2_item",
+      "type": "form",
+      "filter": ""
+    }
+  ]
+}
