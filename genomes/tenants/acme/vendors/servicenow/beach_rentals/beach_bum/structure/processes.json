@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Beach Equipment Rental Process",
+    "steps": [
+      {
+        "step": "Verify customer eligibility",
+        "actor": "System",
+        "action": "Verify membership status based on historical data",
+        "system_behavior": "Fetch data from customer database and validate"
+      },
+      {
+        "step": "Calculate rental price",
+        "actor": "System",
+        "action": "Determine cost based on item type and rental duration",
+        "system_behavior": "Calculate total price and apply any discounts"
+      },
+      {
+        "step": "Confirm rental",
+        "actor": "Customer",
+        "action": "Accepts the rental terms and submits payment",
+        "system_behavior": "Trigger payment processing through Gateway"
+      },
+      {
+        "step": "Update inventory",
+        "actor": "System",
+        "action": "Adjust item availability upon checkout",
+        "system_behavior": "Execute inventory decrement logic"
+      }
+    ]
+  }
+]
