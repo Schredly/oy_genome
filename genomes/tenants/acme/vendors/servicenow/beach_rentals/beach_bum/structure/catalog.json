@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "name": "Beach Rental Service",
+      "variables": [
+        {
+          "name": "Item Type",
+          "type": "choice",
+          "required": true,
+          "order": 1
+        },
+        {
+          "name": "Rental Duration",
+          "type": "integer",
+          "required": true,
+          "order": 2
+        }
+      ]
+    }
+  ]
+}
