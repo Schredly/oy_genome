@@ -1,0 +1,16 @@
+{
+  "modules": [
+    {
+      "name": "Rental Management",
+      "table": "Rentals",
+      "type": "module",
+      "filter": "status=new OR status=in_progress"
+    },
+    {
+      "name": "Customer Management",
+      "table": "Customers",
+      "type": "module",
+      "filter": "membership_status=active"
+    }
+  ]
+}
