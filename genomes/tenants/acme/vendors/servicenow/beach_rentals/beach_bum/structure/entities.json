@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Rentals",
+    "type": "table",
+    "table": "x_beach_bum_rentals",
+    "fields": [
+      "customer_id",
+      "rental_date",
+      "return_date",
+      "item",
+      "price",
+      "status"
+    ],
+    "relationships": [
+      "customers",
+      "items"
+    ]
+  },
+  {
+    "name": "Customers",
+    "type": "table",
+    "table": "x_beach_bum_customers",
+    "fields": [
+      "name",
+      "contact_information",
+      "membership_status"
+    ],
+    "relationships": [
+      "rentals"
+    ]
+  },
+  {
+    "name": "Items",
+    "type": "table",
+    "table": "x_beach_bum_items",
+    "fields": [
+      "item_name",
+      "item_code",
+      "category",
+      "availability"
+    ],
+    "relationships": [
+      "rentals"
+    ]
+  }
+]
