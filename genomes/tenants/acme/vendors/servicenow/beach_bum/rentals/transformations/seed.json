@@ -1,0 +1,14 @@
+{
+  "beach_equipment": [
+    {
+      "available_quantity": 10,
+      "condition": "New",
+      "daily_rate": 15.00
+    },
+    {
+      "available_quantity": 5,
+      "condition": "Used - Good",
+      "daily_rate": 10.00
+    }
+  ]
+}
