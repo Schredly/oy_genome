@@ -1,0 +1,11 @@
+{
+  "menu": [
+    {
+      "name": "Beach Bum2 Menu",
+      "modules": [
+        "Beach Items List",
+        "Item Form"
+      ]
+    }
+  ]
+}
