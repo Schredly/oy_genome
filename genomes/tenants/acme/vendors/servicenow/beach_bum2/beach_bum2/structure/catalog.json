@@ -1,0 +1,30 @@
+{
+  "items": [
+    {
+      "name": "Rent Beach Equipment",
+      "description": "Rent various beach equipment for your vacation.",
+      "variables": [
+        {
+          "name": "equipment_type",
+          "label": "Equipment Type",
+          "type": "select",
+          "required": true,
+          "order": 1,
+          "choices": [
+            "Surfboard",
+            "Kayak",
+            "Umbrella"
+          ]
+        },
+        {
+          "name": "rental_days",
+          "label": "Number of Days",
+          "type": "numeric",
+          "required": true,
+          "order": 2,
+          "choices": []
+        }
+      ]
+    }
+  ]
+}
