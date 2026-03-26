@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Checkout Created",
+    "trigger": "On Checkout Form Submission",
+    "downstream_effects": "Initiates Inventory Checkout Process"
+  },
+  {
+    "name": "Item Returned",
+    "trigger": "On Item Return",
+    "downstream_effects": "Starts Equipment Return Process"
+  }
+]
