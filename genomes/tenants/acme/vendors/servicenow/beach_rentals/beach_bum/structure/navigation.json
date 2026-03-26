@@ -1,0 +1,11 @@
+{
+  "menu": [
+    {
+      "name": "Beach Bum Application",
+      "modules": [
+        "Rental Management",
+        "Customer Management"
+      ]
+    }
+  ]
+}
