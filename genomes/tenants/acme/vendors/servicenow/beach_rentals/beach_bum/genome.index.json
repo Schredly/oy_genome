@@ -1,0 +1,47 @@
+{
+  "entities": {
+    "forms": [
+      {
+        "id": "form_rentals",
+        "name": "Rentals",
+        "file_path": "genomes/tenants/acme/vendors/servicenow/beach_rentals/beach_bum/structure/entities.json"
+      },
+      {
+        "id": "form_customers",
+        "name": "Customers",
+        "file_path": "genomes/tenants/acme/vendors/servicenow/beach_rentals/beach_bum/structure/entities.json"
+      },
+      {
+        "id": "form_items",
+        "name": "Items",
+        "file_path": "genomes/tenants/acme/vendors/servicenow/beach_rentals/beach_bum/structure/entities.json"
+      }
+    ],
+    "workflows": [
+      {
+        "id": "wf_process_beach_rental",
+        "name": "Process Beach Rental",
+        "file_path": "genomes/tenants/acme/vendors/servicenow/beach_rentals/beach_bum/structure/workflows.json"
+      }
+    ],
+    "tables": [],
+    "ui_components": []
+  },
+  "relationships": {},
+  "summaries": {
+    "form_rentals": "Form: Rentals. Contains 6 fields.",
+    "form_customers": "Form: Customers. Contains 3 fields.",
+    "form_items": "Form: Items. Contains 4 fields.",
+    "wf_process_beach_rental": "Workflow: Process Beach Rental."
+  },
+  "metadata": {
+    "application_name": "Beach Bum",
+    "source_system": "ServiceNow",
+    "entity_counts": {
+      "forms": 3,
+      "workflows": 1,
+      "tables": 0,
+      "ui_components": 0
+    }
+  }
+}
