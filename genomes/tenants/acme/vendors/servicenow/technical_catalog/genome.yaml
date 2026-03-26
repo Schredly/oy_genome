@@ -1,7 +1,7 @@
 application: Technical Catalog
 vendor_source: servicenow
 tenant: acme
-captured_date: '2026-03-23'
+captured_date: '2026-03-25'
 objects:
   tables:
   - name: Server Reboot
