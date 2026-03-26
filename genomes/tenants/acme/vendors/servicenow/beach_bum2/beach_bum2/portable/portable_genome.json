@@ -1,0 +1,112 @@
+{
+  "domain_model": {
+    "entities": [
+      {
+        "name": "BeachItem",
+        "fields": [
+          {
+            "name": "name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "category",
+            "type": "choice",
+            "required": false,
+            "choices": [
+              "Category 1",
+              "Category 2"
+            ]
+          },
+          {
+            "name": "price",
+            "type": "decimal",
+            "required": true
+          }
+        ]
+      }
+    ]
+  },
+  "application_services": [
+    {
+      "name": "InventoryService",
+      "responsibilities": [
+        "Manage inventory for equipment rentals"
+      ],
+      "inputs": [
+        "equipment_type",
+        "rental_days"
+      ],
+      "outputs": [
+        "availability_status",
+        "reservation_confirmation"
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Equipment Rental Process",
+      "steps": [
+        {
+          "step": "Submit Equipment Rental Form",
+          "action": "Check availability"
+        },
+        {
+          "step": "Check availability",
+          "action": "Reserve equipment"
+        },
+        {
+          "step": "Reserve equipment",
+          "action": "Send confirmation email"
+        }
+      ]
+    }
+  ],
+  "api_surface": [
+    {
+      "endpoint": "/api/v1/payment-processing",
+      "method": "POST",
+      "purpose": "Process payments for equipment rentals"
+    }
+  ],
+  "ui_model": {
+    "screens": [
+      {
+        "name": "BeachItemsList",
+        "components": [
+          {
+            "type": "list",
+            "data_source": "BeachItem",
+            "filter": "category=beach"
+          }
+        ]
+      },
+      {
+        "name": "ItemForm",
+        "components": [
+          {
+            "type": "form",
+            "data_source": "BeachItem"
+          }
+        ]
+      }
+    ]
+  },
+  "automation_rules": [
+    {
+      "name": "Calculate Discount",
+      "trigger": "before_insert_on_BeachItem",
+      "action": "Apply a 10% discount for rentals over 3 days."
+    },
+    {
+      "name": "Decrement Inventory on Checkout",
+      "trigger": "checkout_created",
+      "action": "Reduce inventory count by one"
+    },
+    {
+      "name": "Restore Inventory on Return",
+      "trigger": "checkout_returned",
+      "action": "Increase inventory count by one"
+    }
+  ]
+}
