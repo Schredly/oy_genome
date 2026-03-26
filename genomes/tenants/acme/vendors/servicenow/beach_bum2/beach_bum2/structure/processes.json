@@ -1,0 +1,60 @@
+[
+  {
+    "name": "Inventory Checkout",
+    "steps": [
+      {
+        "step": "Initiate checkout",
+        "actor": "Customer",
+        "action": "Fill out rental form",
+        "system_behavior": "Form submission triggers availability check"
+      },
+      {
+        "step": "Confirm availability",
+        "actor": "System",
+        "action": "Check item availability",
+        "system_behavior": "Reserves the item if available"
+      },
+      {
+        "step": "Payment processing",
+        "actor": "Customer",
+        "action": "Provide payment details",
+        "system_behavior": "Process payment"
+      },
+      {
+        "step": "Inventory update",
+        "actor": "System",
+        "action": "Decrement inventory",
+        "system_behavior": "Reduce item count in database"
+      }
+    ]
+  },
+  {
+    "name": "Equipment Return",
+    "steps": [
+      {
+        "step": "Initiate return",
+        "actor": "Customer",
+        "action": "Return item",
+        "system_behavior": "Triggers return process"
+      },
+      {
+        "step": "Confirm return",
+        "actor": "System",
+        "action": "Check item return",
+        "system_behavior": "Verify item status"
+      },
+      {
+        "step": "Inventory update",
+        "actor": "System",
+        "action": "Increment inventory",
+        "system_behavior": "Increase item count in database"
+      },
+      {
+        "step": "Close transaction",
+        "actor": "System",
+        "action": "Finalize return",
+        "system_behavior": "End transaction and send confirmation"
+      }
+    ]
+  }
+]
