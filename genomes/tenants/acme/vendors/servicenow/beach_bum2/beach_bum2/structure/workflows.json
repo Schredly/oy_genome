@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Equipment Rental Process",
+    "trigger": "Submit Equipment Rental Form",
+    "conditions": [
+      {
+        "condition": "equipment_type is not empty"
+      }
+    ],
+    "actions": [
+      {
+        "action": "Check availability"
+      },
+      {
+        "action": "Reserve equipment"
+      },
+      {
+        "action": "Send confirmation email"
+      }
+    ]
+  }
+]
