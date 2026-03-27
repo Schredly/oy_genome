@@ -1,0 +1,41 @@
+{
+  "entities": {
+    "forms": [
+      {
+        "id": "form_service_request",
+        "name": "service_request",
+        "file_path": "genomes/tenants/acme/vendors/replit/catalog/hr/structure/objects.json"
+      },
+      {
+        "id": "form_application_server",
+        "name": "application_server",
+        "file_path": "genomes/tenants/acme/vendors/replit/catalog/hr/structure/objects.json"
+      }
+    ],
+    "workflows": [
+      {
+        "id": "wf_service_request_approval",
+        "name": "Service Request Approval",
+        "file_path": "genomes/tenants/acme/vendors/replit/catalog/hr/structure/workflows.json"
+      }
+    ],
+    "tables": [],
+    "ui_components": []
+  },
+  "relationships": {},
+  "summaries": {
+    "form_service_request": "Form: service_request.",
+    "form_application_server": "Form: application_server.",
+    "wf_service_request_approval": "Workflow: Service Request Approval."
+  },
+  "metadata": {
+    "application_name": "Self Service",
+    "source_system": "Replit",
+    "entity_counts": {
+      "forms": 2,
+      "workflows": 1,
+      "tables": 0,
+      "ui_components": 0
+    }
+  }
+}
