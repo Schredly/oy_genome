@@ -1,0 +1,136 @@
+{
+  "server_reboot": [
+    {
+      "cmdb_ci": "Server01",
+      "reboot_date": "2023-12-20T10:00:00",
+      "reason": "Scheduled Maintenance",
+      "reason_details": "Routine server patching and updates"
+    },
+    {
+      "cmdb_ci": "Server02",
+      "reboot_date": "2023-12-21T14:00:00",
+      "reason": "Urgent Security Patch",
+      "reason_details": "Applying critical security update"
+    },
+    {
+      "cmdb_ci": "Server03",
+      "reboot_date": "2023-12-22T22:00:00",
+      "reason": "Performance Tuning",
+      "reason_details": "Reboot required to apply performance configurations"
+    }
+  ],
+  "database_restore": [
+    {
+      "cmdb_ci": "Database01",
+      "backup_source": "Daily Backup",
+      "restore_pit": "2023-12-19T10:00:00",
+      "reason": "Data Corruption",
+      "reason_details": "Restoring due to corrupted data detected"
+    },
+    {
+      "cmdb_ci": "Database02",
+      "backup_source": "Weekly Full Backup",
+      "restore_pit": "2023-12-18T03:00:00",
+      "reason": "User Error",
+      "reason_details": "User accidentally deleted data"
+    }
+  ],
+  "beach_equipment_rental": [
+    {
+      "customer_name": "John Doe",
+      "customer_phone": "+1234567890",
+      "customer_email": "john.doe@example.com",
+      "rental_date": "2023-12-25T09:00:00",
+      "equipment_type": "chair",
+      "quantity": 2,
+      "rental_duration": 1,
+      "return_date": "2023-12-26T09:00:00",
+      "special_requests": "Near the beach"
+    },
+    {
+      "customer_name": "Jane Smith",
+      "customer_phone": "+0987654321",
+      "customer_email": "jane.smith@example.com",
+      "rental_date": "2023-12-27T10:00:00",
+      "equipment_type": "surfboard",
+      "quantity": 1,
+      "rental_duration": 3,
+      "return_date": "2023-12-30T10:00:00",
+      "special_requests": "Include wax"
+    }
+  ],
+  "request_knowledge_base": [
+    {
+      "request_reason": "New Project Documentation",
+      "requested_title": "Project Phoenix Knowledge Base"
+    },
+    {
+      "request_reason": "Organizational Process Repository",
+      "requested_title": "HR Processes Knowledge Base"
+    }
+  ],
+  "application_server_standard": [
+    {
+      "project_code": "Proj123",
+      "budget_code": "Budget001",
+      "OS": "Linux",
+      "san": 200
+    },
+    {
+      "project_code": "Proj456",
+      "budget_code": "Budget002",
+      "OS": "Windows",
+      "san": 100
+    }
+  ],
+  "application_server_large": [
+    {
+      "project_code": "Proj789",
+      "budget_code": "Budget003",
+      "OS": "Linux",
+      "san": 400
+    },
+    {
+      "project_code": "Proj101",
+      "budget_code": "Budget004",
+      "OS": "Windows",
+      "san": 300
+    }
+  ],
+  "database_server_oracle_license": [
+    {
+      "project_code": "ProjA",
+      "budget_code": "BudgetA",
+      "OS": "Linux",
+      "san": 800
+    },
+    {
+      "project_code": "ProjB",
+      "budget_code": "BudgetB",
+      "OS": "Windows",
+      "san": 500
+    }
+  ],
+  "email_account_old": [
+    {
+      "is_this_a_new_account": true,
+      "special_requirements": "Needs access to the marketing distribution list"
+    },
+    {
+      "is_this_a_new_account": false,
+      "special_requirements": "Enable archiving feature"
+    }
+  ],
+  "vm_provisioning": [
+    {
+      "cpu": 4,
+      "ram": 16,
+      "storage": 100
+    },
+    {
+      "cpu": 8,
+      "ram": 32,
+      "storage": 200
+    }
+  ]
+}
