@@ -1,0 +1,69 @@
+[
+    {
+        "model": "x_beachbum_equipment",
+        "records": [
+            {
+                "id": 1,
+                "available_quantity": 5,
+                "condition": "New",
+                "daily_rate": 20.0
+            },
+            {
+                "id": 2,
+                "available_quantity": 2,
+                "condition": "Used - Good",
+                "daily_rate": 15.0
+            },
+            {
+                "id": 3,
+                "available_quantity": 0,
+                "condition": "Used - Fair",
+                "daily_rate": 10.0
+            }
+        ]
+    },
+    {
+        "model": "x_beachbum_checkout",
+        "records": [
+            {
+                "id": 1,
+                "equipment_id": 1,
+                "customer_name": "John Doe",
+                "customer_email": "john.doe@example.com",
+                "rental_start": "2023-10-01",
+                "rental_end": "2023-10-05",
+                "return_date": "2023-10-05",
+                "status": "returned",
+                "notes": "No issues",
+                "created_at": "2023-10-01T08:00:00",
+                "updated_at": "2023-10-05T17:00:00"
+            },
+            {
+                "id": 2,
+                "equipment_id": 2,
+                "customer_name": "Jane Smith",
+                "customer_email": "jane.smith@example.com",
+                "rental_start": "2023-10-10",
+                "rental_end": "2023-10-12",
+                "return_date": null,
+                "status": "checked_out",
+                "notes": "Requested extra paddles",
+                "created_at": "2023-10-10T09:00:00",
+                "updated_at": "2023-10-10T09:00:00"
+            },
+            {
+                "id": 3,
+                "equipment_id": 3,
+                "customer_name": "Paul Brown",
+                "customer_email": "paul.brown@example.com",
+                "rental_start": "2023-10-15",
+                "rental_end": "2023-10-16",
+                "return_date": null,
+                "status": "pending",
+                "notes": "Wants a condition check",
+                "created_at": "2023-10-14T15:00:00",
+                "updated_at": "2023-10-14T15:00:00"
+            }
+        ]
+    }
+]
