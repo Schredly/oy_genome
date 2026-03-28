@@ -2,137 +2,156 @@
 
 ## Section 1: Project Overview
 
-The Beach Bum2 application is designed to facilitate the rental process of beach equipment. It replaces any legacy systems or manual processes previously used for managing beach rentals. The application manages beach items, processes rentals, calculates discounts, and updates inventory accordingly.
+**App Name**: Beach Bum Rentals  
+**Description**: This application manages the rental process for beach equipment, handling inventory, checkouts, and returns. It replaces manual processes with an automated system for tracking equipment availability and rental history.  
+**Entities**:
+- Beach Equipment
+- Checkouts
 
-### Entities
-- Beach Item
-- Rental
-
-### Workflows
-- Equipment Rental Process
-- Inventory Checkout
-- Equipment Return
+**Workflows**:
+- Rental Process
 
 ## Section 2: Tech Stack
 
 - **Backend**: Python 3.11, FastAPI, Pydantic v2, SQLAlchemy 2.0, SQLite
 - **Frontend**: React 19, TypeScript, Vite, TailwindCSS, shadcn/ui
 
-## Section 3: Data Models — WRITE ACTUAL PYTHON CODE
+## Section 3: Data Models
 
 ```python
 from enum import Enum
-from datetime import datetime
+from pydantic import BaseModel
+from sqlalchemy import Column, Integer, String, Float, Enum as SQLAEnum, Date, ForeignKey
+from sqlalchemy.orm import declarative_base
 from typing import Optional
-from pydantic import BaseModel, Field, condecimal
-from sqlalchemy import Column, String, DateTime, ForeignKey, Enum as SQLAEnum, DECIMAL
-from sqlalchemy.ext.declarative import declarative_base
+from datetime import datetime
 
 Base = declarative_base()
 
-class CategoryChoice(str, Enum):
-    CATEGORY_1 = "Category 1"
-    CATEGORY_2 = "Category 2"
+# Enums
+class CheckoutStatus(str, Enum):
+    pending = 'pending'
+    checked_out = 'checked_out'
+    returned = 'returned'
+    cancelled = 'cancelled'
 
-class EquipmentTypeChoice(str, Enum):
-    SURFBOARD = "Surfboard"
-    KAYAK = "Kayak"
-    UMBRELLA = "Umbrella"
+# SQLAlchemy Models
+class Equipment(Base):
+    __tablename__ = 'x_beachbum_equipment'
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    available_quantity = Column(Integer, nullable=False)
+    condition = Column(String, nullable=False)
+    daily_rate = Column(Float, nullable=False)
 
-class BeachItem(Base):
-    __tablename__ = 'beach_items'
-    sys_id = Column(String, primary_key=True)
-    created_on = Column(DateTime, default=datetime.utcnow)
-    created_by = Column(String)
-    updated_on = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
-    updated_by = Column(String)
-    name = Column(String, nullable=False)
-    category = Column(SQLAEnum(CategoryChoice))
-    price = Column(DECIMAL, nullable=False)
+class Checkout(Base):
+    __tablename__ = 'x_beachbum_checkout'
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    equipment_id = Column(Integer, ForeignKey('x_beachbum_equipment.id'), nullable=False)
+    customer_name = Column(String, nullable=False)
+    customer_email = Column(String, nullable=False)
+    rental_start = Column(Date, nullable=False)
+    rental_end = Column(Date, nullable=False)
+    return_date = Column(Date, nullable=True)
+    status = Column(SQLAEnum(CheckoutStatus), default=CheckoutStatus.pending)
+    notes = Column(String, nullable=True)
+    created_at = Column(Date, default=datetime.utcnow)
+    updated_at = Column(Date, onupdate=datetime.utcnow)
 
-class BeachItemModel(BaseModel):
-    sys_id: str
-    created_on: datetime
-    created_by: str
-    updated_on: datetime
-    updated_by: str
-    name: str = Field(..., description="The name of the beach item")
-    category: CategoryChoice
-    price: condecimal(max_digits=10, decimal_places=2)
+# Pydantic Models
+class EquipmentModel(BaseModel):
+    id: int
+    available_quantity: int
+    condition: str
+    daily_rate: float
 
-class CreateBeachItem(BaseModel):
-    name: str
-    category: CategoryChoice
-    price: condecimal(max_digits=10, decimal_places=2)
+class CheckoutModel(BaseModel):
+    id: int
+    equipment_id: int
+    customer_name: str
+    customer_email: str
+    rental_start: datetime
+    rental_end: datetime
+    return_date: Optional[datetime] = None
+    status: CheckoutStatus = CheckoutStatus.pending
+    notes: Optional[str] = None
+    created_at: datetime
+    updated_at: datetime
 
-class UpdateBeachItem(BaseModel):
-    name: Optional[str] = None
-    category: Optional[CategoryChoice] = None
-    price: Optional[condecimal(max_digits=10, decimal_places=2)] = None
+class CreateCheckoutModel(BaseModel):
+    equipment_id: int
+    customer_name: str
+    customer_email: str
+    rental_start: datetime
+    rental_end: datetime
+    notes: Optional[str] = None
+
+class UpdateCheckoutStatusModel(BaseModel):
+    status: CheckoutStatus
+
 ```
 
-## Section 4: API Endpoints — WRITE ACTUAL FASTAPI SIGNATURES
+## Section 4: API Endpoints
 
 ```python
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
 
 router = APIRouter()
 
-@router.get('/beach_items', response_model=list[BeachItemModel])
-async def list_beach_items(db: Session = Depends(get_db)): ...
-
-@router.post('/beach_items', response_model=BeachItemModel)
-async def create_beach_item(body: CreateBeachItem, db: Session = Depends(get_db)): ...
-
-@router.put('/beach_items/{sys_id}', response_model=BeachItemModel)
-async def update_beach_item(sys_id: str, body: UpdateBeachItem, db: Session = Depends(get_db)): ...
-
-@router.delete('/beach_items/{sys_id}', status_code=204)
-async def delete_beach_item(sys_id: str, db: Session = Depends(get_db)): ...
-```
-
-## Section 5: Business Logic — WRITE ACTUAL FUNCTION SIGNATURES
-
-```python
-async def calculate_discount(item_price: float, rental_days: int) -> float:
-    '''Apply a 10% discount for rentals over 3 days.'''
-    if rental_days > 3:
-        return item_price * 0.9
-    return item_price
-
-async def decrement_inventory(db: Session, item_id: str, qty: int = 1) -> BeachItem:
-    '''Reduce available_quantity when item is reserved.
-    Raises ValueError if qty exceeds available inventory.'''
+@router.get('/equipment', response_model=list[EquipmentModel])
+async def list_equipment(db: Session = Depends(get_db)):
     ...
 
-async def restore_inventory(db: Session, item_id: str, qty: int = 1) -> BeachItem:
-    '''Increase available_quantity when item is returned.'''
+@router.get('/checkouts', response_model=list[CheckoutModel])
+async def list_checkouts(status: CheckoutStatus | None = None, db: Session = Depends(get_db)):
+    ...
+
+@router.post('/checkouts', response_model=CheckoutModel)
+async def create_checkout(body: CreateCheckoutModel, db: Session = Depends(get_db)):
+    ...
+
+@router.post('/checkouts/{id}/return', response_model=CheckoutModel)
+async def return_checkout(id: int, db: Session = Depends(get_db)):
+    ...
+
+```
+
+## Section 5: Business Logic
+
+```python
+async def decrement_inventory(db: Session, equipment_id: int, qty: int = 1) -> Equipment:
+    '''Reduce available_quantity when checkout is created.
+    Raises ValueError if qty > available_quantity.'''
+    ...
+
+async def restore_inventory(db: Session, equipment_id: int, qty: int = 1) -> Equipment:
+    '''Increase available_quantity when checkout is returned.'''
     ...
 ```
 
 ## Section 6: Workflows
 
 ```python
-EQUIPMENT_RENTAL_WORKFLOW = [
-    Step('request', actor='customer', action='submit_rental_form', validates=['equipment_type is not empty'], emits='checkout_created'),
-    Step('availability', actor='system', action='check_availability', calls=['decrement_inventory']),
-    Step('reserve', actor='system', action='reserve_equipment'),
-    Step('confirmation', actor='system', action='send_confirmation_email'),
-]
+from typing import List
 
-INVENTORY_CHECKOUT_WORKFLOW = [
-    Step('initiate', actor='customer', action='fill_rental_form', emits='initiate_checkout'),
-    Step('availability', actor='system', action='check_availability', calls=['decrement_inventory']),
-    Step('payment', actor='customer', action='process_payment'),
-    Step('update', actor='system', action='decrement_inventory', calls=['decrement_inventory']),
-]
+class Step:
+    def __init__(self, step: str, actor: str, action: str, validates: List[str] = [], calls: List[str] = [], emits: str = ""):
+        self.step = step
+        self.actor = actor
+        self.action = action
+        self.validates = validates
+        self.calls = calls
+        self.emits = emits
 
-EQUIPMENT_RETURN_WORKFLOW = [
-    Step('initiate', actor='customer', action='return_item', emits='item_returned'),
-    Step('confirm', actor='system', action='check_item_return', calls=['restore_inventory']),
-    Step('update', actor='system', action='restore_inventory', calls=['restore_inventory']),
-    Step('close', actor='system', action='finalize_return', emits='transaction_closed'),
+RENTAL_WORKFLOW = [
+    Step('request', actor='customer', action='submit_rental_form',
+         validates=['equipment_available'], emits='checkout_created'),
+    Step('checkout', actor='system', action='create_checkout_record',
+         calls=['decrement_inventory']),
+    Step('return', actor='customer', action='mark_returned',
+         calls=['restore_inventory'], emits='equipment_returned'),
 ]
 ```
 
@@ -140,57 +159,54 @@ EQUIPMENT_RETURN_WORKFLOW = [
 
 ```python
 @on_event('checkout_created')
-async def on_checkout_created(beach_item: BeachItemModel, db: Session):
-    await decrement_inventory(db, beach_item.sys_id)
+async def on_checkout_created(checkout: Checkout, db: Session):
+    await decrement_inventory(db, checkout.equipment_id)
 
-@on_event('item_returned')
-async def on_item_returned(beach_item: BeachItemModel, db: Session):
-    await restore_inventory(db, beach_item.sys_id)
+@on_event('equipment_returned')
+async def on_equipment_returned(checkout: Checkout, db: Session):
+    await restore_inventory(db, checkout.equipment_id)
 ```
 
 ## Section 8: UI Pages
 
-- **Beach Items List**
-  - **Route**: `/beach-items`
-  - **Component**: `BeachItemsList`
-  - **Data Source**: `GET /api/beach_items`
-  - **Key Features**: Display list of beach items, filter by category
+```
+Active Checkouts fields:
+  status: Enum, required (status=checked_out)
 
-- **Item Form**
-  - **Route**: `/beach-items/{id}`
-  - **Component**: `ItemForm`
-  - **Data Source**: `GET /api/beach_items/{id}`
-  - **Key Features**: Edit existing items, form validation
-
-### Rental Form Fields
-- **equipment_type**: Select, required, choices: ["Surfboard", "Kayak", "Umbrella"]
-- **rental_days**: Numeric, required, validation for positive integer
+RentalRequestForm fields:
+  customer_name:    TextInput, required
+  customer_email:   EmailInput, required
+  equipment_id:     Select (GET /api/equipment?available=true), required
+  rental_start:     DatePicker, required
+  rental_end:       DatePicker, required, must be after rental_start
+  notes:            Textarea, optional
+```
 
 ## Section 9: Navigation
 
-Map genome navigation.menu directly to sidebar routes and icons.
-
-- **Main Menu**
-  - - Beach Items List
-  - - Item Form
+- **Beach Bum**
+  - All Equipment
+  - All Checkouts
+  - Active Checkouts
+  - Add Equipment
 
 ## Section 10: Architecture Rules
 
-- **Entity pattern**: `models.py` → `database.py` → `services/{name}.py` → `routers/{name}.py`
-- All routes return `{status, data}` envelope
-- Business logic lives in `services/`, never in `routers`
-- DB session via FastAPI `Depends(get_db)`
+- Entity pattern: models.py → database.py → services/{name}.py → routers/{name}.py
+- All routes return {status, data} envelope
+- Business logic lives in services/, never in routers
+- DB session via FastAPI Depends(get_db)
 
 ## Section 11: Build Order
 
-1. Scaffold: create `backend/` and `frontend/` with `venv` + `package.json`
-2. `backend/models.py` — all Pydantic models and enums from Section 3
-3. `backend/database.py` — SQLAlchemy engine + Base + `get_db` + `create_tables()`
-4. `backend/services/{entity}.py` — all service functions from Section 5
-5. `backend/workflows.py` — `Step` dataclass + workflow definitions from Section 6
-6. `backend/events.py` — event bus + handlers from Section 7
-7. `backend/routers/{entity}.py` — all FastAPI routes from Section 4
-8. `backend/main.py` — app factory, CORS, lifespan (`create_tables`), router includes
-9. `frontend/src/api/` — typed fetch hooks for each endpoint
-10. `frontend/src/pages/` — all pages from Section 8
-11. Run `seed.json` through POST endpoints to populate the DB
+1. Scaffold: create backend/ and frontend/ with venv + package.json
+2. backend/models.py — all Pydantic models and enums from Section 3
+3. backend/database.py — SQLAlchemy engine + Base + get_db + create_tables()
+4. backend/services/{entity}.py — all service functions from Section 5
+5. backend/workflows.py — Step dataclass + workflow definitions from Section 6
+6. backend/events.py — event bus + handlers from Section 7
+7. backend/routers/{entity}.py — all FastAPI routes from Section 4
+8. backend/main.py — app factory, CORS, lifespan (create_tables), router includes
+9. frontend/src/api/ — typed fetch hooks for each endpoint
+10. frontend/src/pages/ — all pages from Section 8
+11. Run seed.json through POST endpoints to populate the DB
