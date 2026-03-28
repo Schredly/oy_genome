@@ -1,0 +1,52 @@
+[
+    {
+        "sys_id": "item001",
+        "created_on": "2023-10-01T12:00:00",
+        "created_by": "admin",
+        "updated_on": "2023-10-01T12:00:00",
+        "updated_by": "admin",
+        "name": "Surfboard",
+        "category": "Category 1",
+        "price": 100.00
+    },
+    {
+        "sys_id": "item002",
+        "created_on": "2023-10-02T12:00:00",
+        "created_by": "admin",
+        "updated_on": "2023-10-02T12:00:00",
+        "updated_by": "admin",
+        "name": "Kayak",
+        "category": "Category 2",
+        "price": 150.00
+    },
+    {
+        "sys_id": "item003",
+        "created_on": "2023-10-03T12:00:00",
+        "created_by": "admin",
+        "updated_on": "2023-10-03T12:00:00",
+        "updated_by": "admin",
+        "name": "Umbrella",
+        "category": "Category 1",
+        "price": 25.00
+    },
+    {
+        "sys_id": "item004",
+        "created_on": "2023-10-04T12:00:00",
+        "created_by": "admin",
+        "updated_on": "2023-10-04T12:00:00",
+        "updated_by": "admin",
+        "name": "Beach Chair",
+        "category": "Category 2",
+        "price": 30.00
+    },
+    {
+        "sys_id": "item005",
+        "created_on": "2023-10-05T12:00:00",
+        "created_by": "admin",
+        "updated_on": "2023-10-05T12:00:00",
+        "updated_by": "admin",
+        "name": "Sun Tent",
+        "category": "Category 1",
+        "price": 60.00
+    }
+]
