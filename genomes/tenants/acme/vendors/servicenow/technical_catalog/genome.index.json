@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "forms": [],
+    "workflows": [],
+    "tables": [],
+    "ui_components": []
+  },
+  "relationships": {},
+  "summaries": {
+    "app": "Technical Catalog genome captured from servicenow."
+  },
+  "metadata": {
+    "application_name": "Technical Catalog",
+    "source_system": "servicenow",
+    "entity_counts": {
+      "forms": 0,
+      "workflows": 0,
+      "tables": 0,
+      "ui_components": 0
+    }
+  }
+}
