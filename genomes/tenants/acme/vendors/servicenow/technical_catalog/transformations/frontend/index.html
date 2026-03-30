@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME Technical Catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>ACME Technical Catalog Dashboard</h1>
+    <div id="entities">
+        <h2>Available Services</h2>
+        <ul>
+            <li>
+                <a href="#" onclick="loadEntity('server-reboot')">Server Reboot</a>
+            </li>
+            <li>
+                <a href="#" onclick="loadEntity('database-restore')">Database Restore</a>
+            </li>
+            <li>
+                <a href="#" onclick="loadEntity('beach-equipment-rental')">Beach Equipment Rental</a>
+            </li>
+            <li>
+                <a href="#" onclick="loadEntity('request-knowledge-base')">Request Knowledge Base</a>
+            </li>
+            <li>
+                <a href="#" onclick="loadEntity('application-server-standard')">Application Server (Standard)</a>
+            </li>
+            <li>
+                <a href="#" onclick="loadEntity('application-server-large')">Application Server (Large)</a>
+            </li>
+            <li>
+                <a href="#" onclick="loadEntity('database-server-oracle-license')">Database Server & Oracle License</a>
+            </li>
+            <li>
+                <a href="#" onclick="loadEntity('email-account-old')">Email Account (old)</a>
+            </li>
+        </ul>
+    </div>
+    <div id="entity-details">
+        <!-- Entity specific form or details will load here -->
+    </div>
+    <script>
+        function loadEntity(entity) {
+            // Placeholder for loading entity-specific forms or data
+            document.getElementById('entity-details').innerHTML = `<h3>Loading ${entity} details...</h3>`;
+            // Implement AJAX call to an API endpoint to fetch and render the form or details for the selected entity
+        }
+    </script>
+</body>
+</html>
