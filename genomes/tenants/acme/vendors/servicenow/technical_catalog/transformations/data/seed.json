@@ -1,0 +1,69 @@
+{
+    "server_reboot": [
+        {
+            "server_details": "Web Server 01",
+            "cmdb_ci": "WS01",
+            "reboot_date": "2026-04-01T08:00:00",
+            "reason": "Scheduled maintenance",
+            "reason_details": "Part of monthly patching"
+        }
+    ],
+    "database_restore": [
+        {
+            "cmdb_ci": "DB01",
+            "backup_source": "Backup Server 01",
+            "restore_pit": "2026-03-01T08:00:00",
+            "reason": "Data corruption",
+            "reason_details": "Urgent recovery due to corruption detected"
+        }
+    ],
+    "beach_equipment_rental": [
+        {
+            "customer_name": "John Doe",
+            "customer_phone": "555-1234",
+            "customer_email": "john.doe@example.com",
+            "rental_date": "2026-06-15",
+            "equipment_type": "Surfboard",
+            "quantity": "2",
+            "rental_duration": "4 hours",
+            "return_date": "2026-06-15",
+            "special_requests": "Need delivery to Main Beach"
+        }
+    ],
+    "request_knowledge_base": [
+        {
+            "request_reason": "Departmental project collaboration",
+            "requested_title": "Project Knowledge Base"
+        }
+    ],
+    "application_server_standard": [
+        {
+            "project_code": "PROJ01",
+            "budget_code": "BUD01",
+            "OS": "Linux",
+            "san": "100GB"
+        }
+    ],
+    "application_server_large": [
+        {
+            "project_code": "PROJ02",
+            "budget_code": "BUD02",
+            "OS": "Windows XP",
+            "san": "250GB"
+        }
+    ],
+    "database_server_oracle_license": [
+        {
+            "project_code": "PROJ03",
+            "budget_code": "BUD03",
+            "OS": "Linux",
+            "san": "500GB"
+        }
+    ],
+    "email_account_old": [
+        {
+            "is_this_a_new_account": "Yes",
+            "special_requirements": "Configure with advanced security settings"
+        }
+    ]
+}
