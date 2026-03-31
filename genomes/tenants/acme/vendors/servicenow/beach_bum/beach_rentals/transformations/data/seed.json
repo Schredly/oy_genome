@@ -1,0 +1,29 @@
+[
+    {
+        "sys_id": "update_set_1",
+        "sys_created_by": "admin",
+        "sys_created_on": "2023-10-01T12:00:00Z",
+        "sys_updated_by": "admin",
+        "sys_updated_on": "2023-10-02T12:00:00Z",
+        "name": "Initial Setup",
+        "state": "completed"
+    },
+    {
+        "sys_id": "update_set_2",
+        "sys_created_by": "user_a",
+        "sys_created_on": "2023-10-05T09:30:00Z",
+        "sys_updated_by": "user_a",
+        "sys_updated_on": "2023-10-05T10:30:00Z",
+        "name": "Feature Enhancement A",
+        "state": "in_progress"
+    },
+    {
+        "sys_id": "update_set_3",
+        "sys_created_by": "user_b",
+        "sys_created_on": "2023-10-07T14:15:00Z",
+        "sys_updated_by": "user_b",
+        "sys_updated_on": "2023-10-08T08:45:00Z",
+        "name": "Bug Fix B",
+        "state": "planned"
+    }
+]
