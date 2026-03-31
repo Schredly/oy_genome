@@ -1,7 +1,0 @@
-[
-  {
-    "name": "deployment_completed",
-    "trigger": "tools_deployed_successfully",
-    "downstream_effects": "initiate inventory update and status change to completed"
-  }
-]
