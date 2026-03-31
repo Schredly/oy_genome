@@ -1,0 +1,52 @@
+{
+  "app_name": "OY Self-deploying Extraction Infrastructure",
+  "description": "Infrastructure for self-deploying of extraction tools",
+  "data": {
+    "inventory": [],
+    "deployments": [],
+    "statuses": []
+  },
+  "logic_patterns": [
+    {
+      "name": "inventory_decrement_on_deployment",
+      "trigger": "deployment_initiated",
+      "action": "reduce inventory count",
+      "pattern": "inventory_decrement"
+    },
+    {
+      "name": "status_transition_on_completion",
+      "trigger": "deployment_process_ended",
+      "action": "update status to completed",
+      "pattern": "status_transition"
+    }
+  ],
+  "processes": [
+    {
+      "name": "tool_deployment_process",
+      "steps": [
+        {
+          "step": 1,
+          "action": "verify tool readiness",
+          "behavior": "checks if tools are ready for deployment"
+        },
+        {
+          "step": 2,
+          "action": "deploy tools",
+          "behavior": "initiates the deployment sequence"
+        },
+        {
+          "step": 3,
+          "action": "update inventory",
+          "behavior": "reduces the inventory count of deployed tools"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "deployment_completed",
+      "trigger": "tools_deployed_successfully",
+      "effects": "initiate inventory update and status change to completed"
+    }
+  ]
+}
