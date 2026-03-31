@@ -1,0 +1,73 @@
+application:
+  name: OY Self-deploying Extraction Infrastructure
+  scope: global
+  description: A component of the Beach Bum area designed to streamline beach rental operations.
+
+entities: []
+
+catalog:
+  items: [] # All variables were layout containers — check for associated sc_cat_item records
+
+workflows: []
+
+business_logic:
+  rules: []
+
+ui:
+  modules: []
+
+navigation:
+  menu: []
+
+data_model:
+  tables: 
+    - name: sys_update_set
+      purpose: Track update sets details for applications.
+      key_fields:
+        - name: sys_id
+          type: string
+          notes: standard field
+        - name: sys_created_by
+          type: string
+          notes: standard field
+        - name: sys_created_on
+          type: datetime
+          notes: standard field
+        - name: sys_updated_by
+          type: string
+          notes: standard field
+        - name: sys_updated_on
+          type: datetime
+          notes: standard field
+        - name: name
+          type: string
+          notes: inferred from context
+        - name: state
+          type: string
+          notes: inferred from context
+
+integrations: []
+
+logic_patterns:
+  - name: transition_update_set_state
+    description: Handles the transition of update set states within the application lifecycle.
+    trigger: state_change_requested
+    action: transition update set state
+    reusable_pattern: state_transition_logic
+
+processes:
+  - name: update_set_management
+    steps:
+      - step: initiate_update_set
+        actor: admin
+        action: create new update set
+        system_behavior: records metadata and initial settings
+      - step: complete_update_set
+        actor: admin
+        action: finalizes update set
+        system_behavior: marks update set as complete
+
+events:
+  - name: update_set_transition
+    trigger: onStateChange
+    downstream_effects: updates the state in the application lifecycle, enabling further actions or transitions
