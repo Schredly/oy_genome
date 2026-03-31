@@ -1,0 +1,19 @@
+[
+  {
+    "name": "update_set_management",
+    "steps": [
+      {
+        "step": "initiate_update_set",
+        "actor": "admin",
+        "action": "create new update set",
+        "system_behavior": "records metadata and initial settings"
+      },
+      {
+        "step": "complete_update_set",
+        "actor": "admin",
+        "action": "finalizes update set",
+        "system_behavior": "marks update set as complete"
+      }
+    ]
+  }
+]
