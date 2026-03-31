@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "service_name": "Application Server Provision",
+    "description": "Provision a new application server",
+    "category": "Application Server",
+    "status": "available"
+  },
+  {
+    "id": 2,
+    "service_name": "Database Management",
+    "description": "Setup and maintain databases",
+    "category": "Database",
+    "status": "available"
+  },
+  {
+    "id": 3,
+    "service_name": "VM Provisioning",
+    "description": "Provision virtual machines on demand",
+    "category": "VM Provisioning",
+    "status": "unavailable"
+  },
+  {
+    "id": 4,
+    "service_name": "Email Account Setup",
+    "description": "Set up company email accounts",
+    "category": "Email Account",
+    "status": "available"
+  },
+  {
+    "id": 5,
+    "service_name": "Technical Support",
+    "description": "Receive technical support for IT issues",
+    "category": "IT Support",
+    "status": "available"
+  }
+]
