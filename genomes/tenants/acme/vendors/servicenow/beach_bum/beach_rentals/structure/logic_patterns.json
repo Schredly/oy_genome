@@ -1,0 +1,9 @@
+[
+  {
+    "name": "transition_update_set_state",
+    "description": "Handles the transition of update set states within the application lifecycle.",
+    "trigger": "state_change_requested",
+    "action": "transition update set state",
+    "reusable_pattern": "state_transition_logic"
+  }
+]
