@@ -1,8 +1,0 @@
-[
-  {
-    "name": "Payment Processing API",
-    "type": "REST",
-    "direction": "outbound",
-    "description": "Process payments for equipment rentals."
-  }
-]
