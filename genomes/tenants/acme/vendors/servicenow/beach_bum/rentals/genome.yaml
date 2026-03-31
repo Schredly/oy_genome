@@ -1,0 +1,174 @@
+application:
+  name: OY Self-deploying Extraction Infrastructure
+  scope: beach_bum.rentals
+  description: An infrastructure for self-deploying extraction capabilities focused on rentals.
+
+entities:
+  - name: Rental Contract
+    type: Contract
+    table: u_rental_contract
+    fields:
+      - name: contract_id
+        type: string
+        required: true
+      - name: start_date
+        type: date
+        required: true
+      - name: end_date
+        type: date
+        required: true
+      - name: status
+        type: choice
+        required: true
+        choices: [active, past_due, completed]
+    relationships:
+      - target_table: u_customer
+        type: belongs_to
+        via_field: customer_id
+
+catalog:
+  items:
+    - name: Rent a Beach House
+      description: Service catalog item for renting a beach house.
+      variables:
+        - name: renter_name
+          label: Renter Name
+          type: text
+          required: true
+          order: 1
+          choices: []
+        - name: rental_date
+          label: Rental Date
+          type: date
+          required: true
+          order: 2
+          choices: []
+        - name: rental_duration
+          label: Duration (Days)
+          type: numeric
+          required: true
+          order: 3
+          choices: []
+        - name: agree_to_terms
+          label: Agree to Terms?
+          type: checkbox
+          required: true
+          order: 4
+          choices: []
+
+workflows:
+  - name: Beach Rental Process
+    trigger: Rent a Beach House request
+    conditions: Rental date is in the future
+    actions:
+      - Validate rental duration with status update.
+      - Notify user upon contract initiation.
+
+business_logic:
+  rules:
+    - name: Validate Contract Status
+      table: u_rental_contract
+      trigger: before insert
+      logic_summary: Validates the contract status and updates the related customer record.
+      external_dependencies: []
+
+ui:
+  modules:
+    - name: Rental Contracts List
+      table: u_rental_contract
+      type: list
+      filter: status=active
+    - name: Contract Details
+      table: u_rental_contract
+      type: form
+      filter: contract_id=current
+
+navigation:
+  menu:
+    - name: Rentals
+      modules:
+        - Rental Contracts List
+        - Contract Details
+
+data_model:
+  tables:
+    - name: u_rental_contract
+      purpose: Stores information about rental contracts.
+      key_fields:
+        - name: sys_id
+          type: string
+          notes: "inferred"
+        - name: created_on
+          type: datetime
+          notes: "inferred"
+        - name: created_by
+          type: string
+          notes: "inferred"
+        - name: updated_on
+          type: datetime
+          notes: "inferred"
+        - name: updated_by
+          type: string
+          notes: "inferred"
+        - name: contract_id
+          type: string
+          notes: "primary key"
+        - name: start_date
+          type: date
+          notes: ""
+        - name: end_date
+          type: date
+          notes: ""
+        - name: status
+          type: choice
+          notes: "active, past_due, completed"
+    - name: u_customer
+      purpose: Holds customer data related to rental contracts.
+      key_fields:
+        - name: sys_id
+          type: string
+          notes: "inferred"
+        - name: name
+          type: string
+          notes: "inferred"
+
+integrations:
+  - name: External Beach Availability Service
+    type: REST API
+    direction: outbound
+    description: Checks the availability of beach houses for rental.
+
+logic_patterns:
+  - name: validate_rental_dates
+    description: Ensures that the rental start date is after the current date and the end date is after the start date.
+    trigger: creation of a rental contract
+    action: check date validity
+    reusable_pattern: date_validation
+  - name: update_customer_record_on_contract_status_change
+    description: Updates the customer record whenever the related rental contract status changes.
+    trigger: change in rental contract status
+    action: update customer record
+    reusable_pattern: customer_record_update_on_status_change
+
+processes:
+  - name: Rental Contract Lifecycle
+    steps:
+      - step: Contract Creation
+        actor: System
+        action: Create a new rental contract
+        system_behavior: Create entry in rental contract table
+      - step: Contract Status Update
+        actor: System
+        action: Modify contract status based on rental timeline
+        system_behavior: Update status field in the contract record
+      - step: Customer Notification
+        actor: System
+        action: Notify customer about the contract status
+        system_behavior: Send a notification email to the customer
+
+events:
+  - name: Contract Status Change
+    trigger: modification of contract status field
+    downstream_effects:
+      - update related customer record
+      - possibly trigger notifications to involved parties
