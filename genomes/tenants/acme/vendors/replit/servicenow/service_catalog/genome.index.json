@@ -1,0 +1,35 @@
+{
+  "entities": {
+    "forms": [
+      {
+        "id": "form_service",
+        "name": "service",
+        "file_path": "genomes/tenants/acme/vendors/replit/servicenow/service_catalog/structure/objects.json"
+      }
+    ],
+    "workflows": [
+      {
+        "id": "wf_service_request",
+        "name": "Service Request",
+        "file_path": "genomes/tenants/acme/vendors/replit/servicenow/service_catalog/structure/workflows.json"
+      }
+    ],
+    "tables": [],
+    "ui_components": []
+  },
+  "relationships": {},
+  "summaries": {
+    "form_service": "Form: service.",
+    "wf_service_request": "Workflow: Service Request."
+  },
+  "metadata": {
+    "application_name": "Technical Catalog",
+    "source_system": "Replit",
+    "entity_counts": {
+      "forms": 1,
+      "workflows": 1,
+      "tables": 0,
+      "ui_components": 0
+    }
+  }
+}
