@@ -1,0 +1,16 @@
+[
+  {
+    "name": "validate_rental_dates",
+    "description": "Ensures that the rental start date is after the current date and the end date is after the start date.",
+    "trigger": "creation of a rental contract",
+    "action": "check date validity",
+    "reusable_pattern": "date_validation"
+  },
+  {
+    "name": "update_customer_record_on_contract_status_change",
+    "description": "Updates the customer record whenever the related rental contract status changes.",
+    "trigger": "change in rental contract status",
+    "action": "update customer record",
+    "reusable_pattern": "customer_record_update_on_status_change"
+  }
+]
