@@ -1,0 +1,114 @@
+{
+  "domain_model": {
+    "entities": [
+      {
+        "name": "UpdateSet",
+        "attributes": [
+          {
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "name": "created_by",
+            "type": "string"
+          },
+          {
+            "name": "created_on",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_by",
+            "type": "string"
+          },
+          {
+            "name": "updated_on",
+            "type": "datetime"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "state",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  },
+  "application_services": [
+    {
+      "name": "UpdateSetManagementService",
+      "responsibilities": [
+        "Manage the lifecycle of update sets",
+        "Ensure correct transitions between states"
+      ],
+      "inputs": [
+        {
+          "actor": "admin"
+        }
+      ],
+      "outputs": [
+        "update_set_status"
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "UpdateSetManagementWorkflow",
+      "steps": [
+        {
+          "name": "InitiateUpdateSet",
+          "actor": "admin",
+          "action": "create new update set",
+          "system_behavior": "records metadata and initial settings"
+        },
+        {
+          "name": "CompleteUpdateSet",
+          "actor": "admin",
+          "action": "finalize update set",
+          "system_behavior": "marks update set as complete"
+        }
+      ]
+    }
+  ],
+  "api_surface": [
+    {
+      "endpoint": "/api/update_set/initiate",
+      "method": "POST",
+      "purpose": "Create a new update set"
+    },
+    {
+      "endpoint": "/api/update_set/complete",
+      "method": "POST",
+      "purpose": "Finalize an update set"
+    }
+  ],
+  "ui_model": {
+    "screens": [
+      {
+        "name": "UpdateSetDashboard",
+        "components": [
+          {
+            "type": "table",
+            "source": "UpdateSet",
+            "display_attributes": [
+              "id",
+              "name",
+              "state",
+              "created_by",
+              "created_on"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "automation_rules": [
+    {
+      "name": "TransitionUpdateSetState",
+      "trigger": "state_change_requested",
+      "action": "Transition update set state"
+    }
+  ]
+}
