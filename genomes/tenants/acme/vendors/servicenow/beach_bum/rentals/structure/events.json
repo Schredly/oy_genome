@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Contract Status Change",
+    "trigger": "modification of contract status field",
+    "downstream_effects": [
+      "update related customer record",
+      "possibly trigger notifications to involved parties"
+    ]
+  }
+]
