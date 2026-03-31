@@ -1,0 +1,141 @@
+application_name: Service Catalog
+vendor: Repl.it
+source_platform: Website
+category: IT Service Management
+summary: The Service Catalog application by Repl.it is a comprehensive IT Service
+  Management tool that allows users to request various IT services like application
+  server provisioning, database management, VM provisioning, and more. It features
+  a structured process for service request submission and approval, and facilitates
+  clear communication between IT staff and users through a user-friendly interface.
+confidence: 0.95
+genome_document:
+  objects:
+  - service
+  fields:
+  - service_name
+  - description
+  - category
+  - status
+  workflows:
+  - Service Request
+  relationships: []
+structured_objects:
+- name: service
+  description: Represents an available IT service or resource
+  key_fields:
+  - service_name
+  - description
+  - category
+  - status
+structured_fields:
+- name: service_name
+  type: string
+  object: service
+  required: true
+- name: description
+  type: text
+  object: service
+  required: false
+- name: category
+  type: choice
+  object: service
+  options:
+  - Application Server
+  - Database
+  - VM Provisioning
+  - Email Account
+  required: true
+- name: status
+  type: string
+  object: service
+  required: true
+  validation_rules:
+  - available
+  - unavailable
+structured_workflows:
+- name: Service Request
+  steps:
+  - Select Service
+  - Provide Details
+  - Submit Request
+  - Approval
+  - Provisioning
+  - Complete
+  description: Process for requesting and provisioning IT services
+structured_relationships: []
+design_tokens:
+  colors:
+  - hex: '#FFFFFF'
+    usage: background
+    css_var: --color-background
+  - hex: '#1E1E1E'
+    usage: header text
+    css_var: --color-header-text
+  - hex: '#E5E5E5'
+    usage: card border
+    css_var: --color-card-border
+  - hex: '#4285F4'
+    usage: active tab background
+    css_var: --color-active-tab
+  - hex: '#000000'
+    usage: card text
+    css_var: --color-card-text
+  typography:
+  - size: xl
+    weight: bold
+    usage: header
+  - size: md
+    weight: normal
+    usage: card title
+  - size: sm
+    weight: normal
+    usage: card description
+  spacing: Standardized margins and paddings create balance and improve readability;
+    uses a grid system aligned with the card layout.
+  layout_patterns:
+  - header-main
+navigation_map:
+- label: Technical Catalog
+  type: menu_item
+  children:
+  - label: All
+    type: tab
+    children: []
+  - label: Can We Help You?
+    type: tab
+    children: []
+  - label: Emergency Changes
+    type: tab
+    children: []
+  - label: Infrastructure
+    type: tab
+    children: []
+  - label: Services
+    type: tab
+    children: []
+screen_count: 4
+validation_notes:
+- Duplicate entries for colors and typography were found and consolidated.
+reasoning:
+- 'Step 1: Validate the consistency and uniqueness of application structure, including
+  objects, fields, and navigation map.'
+- 'Step 2: Compile the UI design tokens and eliminate any duplicate entries.'
+- 'Step 3: Merge the information gathered from the structure, design tokens, and HTML
+  skeleton data.'
+- 'Step 4: Enrich with inferred connections and standardized nomenclature.'
+- 'Step 5: Compile the genome document, ensuring backward compatibility with flat
+  lists.'
+- 'Step 6: Assign confidence score based on data consistency and validation results.'
+_extraction_metadata:
+  pipeline: multi-agent-v1
+  frame_count: 13
+  unique_screens: 13
+  has_audio: true
+  audio_duration_sec: 57.5
+  total_latency_ms: 58031
+  stage_latencies:
+    frame_intelligence: 3036
+    ui_extraction_and_audio: 36451
+    app_structure: 6471
+    synthesis: 12071
+  user_notes: ''
