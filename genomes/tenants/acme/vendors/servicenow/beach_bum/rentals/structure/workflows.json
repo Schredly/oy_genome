@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Beach Rental Process",
+    "trigger": "Rent a Beach House request",
+    "conditions": "Rental date is in the future",
+    "actions": [
+      "Validate rental duration with status update.",
+      "Notify user upon contract initiation."
+    ]
+  }
+]
