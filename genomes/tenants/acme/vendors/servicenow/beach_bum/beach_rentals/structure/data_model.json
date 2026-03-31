@@ -1,0 +1,45 @@
+{
+  "tables": [
+    {
+      "name": "sys_update_set",
+      "purpose": "Track update sets details for applications.",
+      "key_fields": [
+        {
+          "name": "sys_id",
+          "type": "string",
+          "notes": "standard field"
+        },
+        {
+          "name": "sys_created_by",
+          "type": "string",
+          "notes": "standard field"
+        },
+        {
+          "name": "sys_created_on",
+          "type": "datetime",
+          "notes": "standard field"
+        },
+        {
+          "name": "sys_updated_by",
+          "type": "string",
+          "notes": "standard field"
+        },
+        {
+          "name": "sys_updated_on",
+          "type": "datetime",
+          "notes": "standard field"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "notes": "inferred from context"
+        },
+        {
+          "name": "state",
+          "type": "string",
+          "notes": "inferred from context"
+        }
+      ]
+    }
+  ]
+}
