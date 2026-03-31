@@ -1,8 +1,0 @@
-[
-  {
-    "name": "External Beach Availability Service",
-    "type": "REST API",
-    "direction": "outbound",
-    "description": "Checks the availability of beach houses for rental."
-  }
-]
