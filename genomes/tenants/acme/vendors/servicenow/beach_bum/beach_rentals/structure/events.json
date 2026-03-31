@@ -1,0 +1,7 @@
+[
+  {
+    "name": "update_set_transition",
+    "trigger": "onStateChange",
+    "downstream_effects": "updates the state in the application lifecycle, enabling further actions or transitions"
+  }
+]
