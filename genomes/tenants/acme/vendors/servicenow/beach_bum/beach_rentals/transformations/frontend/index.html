@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach Rentals Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Beach Rentals Dashboard</h1>
+    </header>
+    <main>
+        <section id="update-sets">
+            <h2>Update Sets</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>System ID</th>
+                        <th>Name</th>
+                        <th>State</th>
+                        <th>Created By</th>
+                        <th>Created On</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="update-sets-table-body">
+                    <!-- Filled dynamically -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script>
+        async function fetchUpdateSets() {
+            const response = await fetch('/api/update_set');
+            const updateSets = await response.json();
+            const tableBody = document.getElementById('update-sets-table-body');
+            tableBody.innerHTML = '';
+
+            updateSets.forEach((set) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${set.sys_id}</td>
+                    <td>${set.name}</td>
+                    <td>${set.state}</td>
+                    <td>${set.sys_created_by}</td>
+                    <td>${new Date(set.sys_created_on).toLocaleString()}</td>
+                    <td>
+                        <button onclick="transitionState('${set.sys_id}', 'in_progress')">Start</button>
+                        <button onclick="transitionState('${set.sys_id}', 'completed')">Complete</button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        async function transitionState(sysId, newState) {
+            await fetch('/api/agent/execute', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    task: 'transition_update_set_state',
+                    payload: { sys_id: sysId, new_state: newState }
+                })
+            });
+            fetchUpdateSets();
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchUpdateSets);
+    </script>
+</body>
+</html>
