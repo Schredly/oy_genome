@@ -1,0 +1,42 @@
+{
+  "items": [
+    {
+      "name": "Rent a Beach House",
+      "description": "Service catalog item for renting a beach house.",
+      "variables": [
+        {
+          "name": "renter_name",
+          "label": "Renter Name",
+          "type": "text",
+          "required": true,
+          "order": 1,
+          "choices": []
+        },
+        {
+          "name": "rental_date",
+          "label": "Rental Date",
+          "type": "date",
+          "required": true,
+          "order": 2,
+          "choices": []
+        },
+        {
+          "name": "rental_duration",
+          "label": "Duration (Days)",
+          "type": "numeric",
+          "required": true,
+          "order": 3,
+          "choices": []
+        },
+        {
+          "name": "agree_to_terms",
+          "label": "Agree to Terms?",
+          "type": "checkbox",
+          "required": true,
+          "order": 4,
+          "choices": []
+        }
+      ]
+    }
+  ]
+}
