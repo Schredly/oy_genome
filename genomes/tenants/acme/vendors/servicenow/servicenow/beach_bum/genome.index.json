@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "forms": [],
+    "workflows": [],
+    "tables": [],
+    "ui_components": []
+  },
+  "relationships": {},
+  "summaries": {
+    "app": "OY Self-deploying Extraction Infrastructure genome captured from ServiceNow."
+  },
+  "metadata": {
+    "application_name": "OY Self-deploying Extraction Infrastructure",
+    "source_system": "ServiceNow",
+    "entity_counts": {
+      "forms": 0,
+      "workflows": 0,
+      "tables": 0,
+      "ui_components": 0
+    }
+  }
+}
