@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Rental Contract Lifecycle",
+    "steps": [
+      {
+        "step": "Contract Creation",
+        "actor": "System",
+        "action": "Create a new rental contract",
+        "system_behavior": "Create entry in rental contract table"
+      },
+      {
+        "step": "Contract Status Update",
+        "actor": "System",
+        "action": "Modify contract status based on rental timeline",
+        "system_behavior": "Update status field in the contract record"
+      },
+      {
+        "step": "Customer Notification",
+        "actor": "System",
+        "action": "Notify customer about the contract status",
+        "system_behavior": "Send a notification email to the customer"
+      }
+    ]
+  }
+]
