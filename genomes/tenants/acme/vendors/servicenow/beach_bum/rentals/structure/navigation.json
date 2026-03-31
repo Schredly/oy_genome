@@ -1,0 +1,11 @@
+{
+  "menu": [
+    {
+      "name": "Rentals",
+      "modules": [
+        "Rental Contracts List",
+        "Contract Details"
+      ]
+    }
+  ]
+}
