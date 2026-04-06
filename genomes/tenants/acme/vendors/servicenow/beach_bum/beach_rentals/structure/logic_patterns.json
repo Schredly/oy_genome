@@ -1,9 +1,16 @@
 [
   {
-    "name": "transition_update_set_state",
-    "description": "Handles the transition of update set states within the application lifecycle.",
-    "trigger": "state_change_requested",
-    "action": "transition update set state",
-    "reusable_pattern": "state_transition_logic"
+    "name": "decrement_inventory_on_checkout",
+    "description": "Reduces inventory count when a new checkout is created.",
+    "trigger": "checkout_created",
+    "action": "reduce inventory count",
+    "reusable_pattern": "inventory_decrement"
+  },
+  {
+    "name": "increment_inventory_on_return",
+    "description": "Restores inventory count when equipment is returned.",
+    "trigger": "checkout_returned",
+    "action": "increase inventory count",
+    "reusable_pattern": "inventory_increment"
   }
 ]
