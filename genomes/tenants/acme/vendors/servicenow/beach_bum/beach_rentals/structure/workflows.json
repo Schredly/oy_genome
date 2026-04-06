@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Beach Rental Approval",
+    "trigger": "on_checkout",
+    "conditions": "rental_duration > 0",
+    "actions": [
+      "Check customer database for rental eligibility",
+      "Approve or reject request"
+    ]
+  }
+]
