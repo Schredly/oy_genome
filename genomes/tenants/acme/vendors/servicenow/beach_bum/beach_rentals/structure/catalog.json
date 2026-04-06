@@ -1,3 +1,38 @@
 {
-  "items": []
+  "items": [
+    {
+      "name": "Rent a Kayak",
+      "description": "Rent a top-quality kayak for your beach adventure.",
+      "variables": [
+        {
+          "name": "rental_duration",
+          "label": "Rental Duration",
+          "type": "numeric",
+          "required": true,
+          "order": 1,
+          "choices": []
+        },
+        {
+          "name": "customer_name",
+          "label": "Customer Name",
+          "type": "text",
+          "required": true,
+          "order": 2,
+          "choices": []
+        },
+        {
+          "name": "rental_type",
+          "label": "Rental Type",
+          "type": "select",
+          "required": true,
+          "order": 3,
+          "choices": [
+            "Kayak",
+            "Jet Ski",
+            "Surfboard"
+          ]
+        }
+      ]
+    }
+  ]
 }
