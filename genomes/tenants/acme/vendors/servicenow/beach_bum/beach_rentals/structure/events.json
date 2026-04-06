@@ -1,7 +1,12 @@
 [
   {
-    "name": "update_set_transition",
-    "trigger": "onStateChange",
-    "downstream_effects": "updates the state in the application lifecycle, enabling further actions or transitions"
+    "name": "Inventory Adjustment on Checkout",
+    "trigger": "New checkout is created",
+    "downstream_effects": "Inventory is decremented"
+  },
+  {
+    "name": "Inventory Adjustment on Return",
+    "trigger": "Equipment is returned",
+    "downstream_effects": "Inventory is incremented"
   }
 ]
