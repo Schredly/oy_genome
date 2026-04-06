@@ -1,5 +1,3 @@
-# This package provides the service layer for the Beach Rentals application.
-# Business logic related to various processes and operations will be implemented here,
-# with each process or operation having a dedicated module for organization.
-
-__all__ = ["logic", "workflows"]
+# This file is intentionally left empty.
+# It serves as an initializer for the services package.
+# Business logic implementations are found in other modules within this package.
