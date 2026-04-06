@@ -1,3 +1,16 @@
 {
-  "modules": []
+  "modules": [
+    {
+      "name": "Beach Rentals List",
+      "table": "u_beach_rental",
+      "type": "list",
+      "filter": "active=true"
+    },
+    {
+      "name": "Rental Form",
+      "table": "u_beach_rental",
+      "type": "form",
+      "filter": null
+    }
+  ]
 }
