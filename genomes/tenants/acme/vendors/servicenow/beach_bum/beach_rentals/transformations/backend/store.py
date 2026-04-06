@@ -1,26 +1,34 @@
-from typing import Dict, List
-from .models import UpdateSet
+from typing import List, Optional
+from .models import BeachRental
 
-class InMemoryStore:
-    def __init__(self):
-        self.data = {}
+# In-memory store for simplicity
+beach_rental_store: List[BeachRental] = []
 
-    def create(self, item: Dict):
-        self.data[item['sys_id']] = item
+def create_beach_rental(beach_rental: BeachRental) -> BeachRental:
+    beach_rental.sys_id = str(len(beach_rental_store) + 1)
+    beach_rental_store.append(beach_rental)
+    return beach_rental
 
-    def get_by_id(self, item_id: str) -> Dict:
-        return self.data.get(item_id, None)
+def get_beach_rental_by_id(rental_id: str) -> Optional[BeachRental]:
+    for rental in beach_rental_store:
+        if rental.sys_id == rental_id:
+            return rental
+    return None
 
-    def list_all(self) -> List[Dict]:
-        return list(self.data.values())
+def list_all_beach_rentals() -> List[BeachRental]:
+    return beach_rental_store
 
-    def update(self, item_id: str, item: Dict):
-        if item_id in self.data:
-            self.data[item_id].update(item)
+def update_beach_rental(rental_id: str, update: BeachRental) -> Optional[BeachRental]:
+    for idx, rental in enumerate(beach_rental_store):
+        if rental.sys_id == rental_id:
+            beach_rental_store[idx] = update
+            beach_rental_store[idx].sys_id = rental_id
+            return beach_rental_store[idx]
+    return None
 
-    def delete(self, item_id: str):
-        if item_id in self.data:
-            del self.data[item_id]
-
-# Initialize store for update sets
-update_set_store = InMemoryStore()
+def delete_beach_rental(rental_id: str) -> bool:
+    for idx, rental in enumerate(beach_rental_store):
+        if rental.sys_id == rental_id:
+            del beach_rental_store[idx]
+            return True
+    return False
