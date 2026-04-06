@@ -1,73 +1,162 @@
 application:
-  name: OY Self-deploying Extraction Infrastructure
-  scope: global
-  description: A component of the Beach Bum area designed to streamline beach rental operations.
+  name: Beach Bum
+  scope: beach_bum
+  description: 
 
-entities: []
+entities:
+  - name: Beach Rental
+    type: table
+    table: u_beach_rental
+    fields:
+      - name: u_rental_duration
+        type: integer
+        required: true
+      - name: u_customer_name
+        type: string
+        required: true
+      - name: u_rental_type
+        type: choice
+        required: true
+        choices: [Kayak, Jet Ski, Surfboard]
+    relationships:
+      - target_table: u_customer
+        type: belongs_to
+        via_field: u_customer_name
 
 catalog:
-  items: [] # All variables were layout containers — check for associated sc_cat_item records
+  items:
+    - name: Rent a Kayak
+      description: Rent a top-quality kayak for your beach adventure.
+      variables:
+        - name: rental_duration
+          label: Rental Duration
+          type: numeric
+          required: true
+          order: 1
+          choices: []
+        - name: customer_name
+          label: Customer Name
+          type: text
+          required: true
+          order: 2
+          choices: []
+        - name: rental_type
+          label: Rental Type
+          type: select
+          required: true
+          order: 3
+          choices: [Kayak, Jet Ski, Surfboard]
 
-workflows: []
+workflows:
+  - name: Beach Rental Approval
+    trigger: on_checkout
+    conditions: rental_duration > 0
+    actions:
+      - Check customer database for rental eligibility
+      - Approve or reject request
 
 business_logic:
-  rules: []
+  rules:
+    - name: Validate Rental Duration
+      table: u_beach_rental
+      trigger: before_insert
+      logic_summary: Ensure the rental duration is greater than zero and customer is eligible.
+      external_dependencies: u_customer
 
 ui:
-  modules: []
+  modules:
+    - name: Beach Rentals List
+      table: u_beach_rental
+      type: list
+      filter: active=true
+    - name: Rental Form
+      table: u_beach_rental
+      type: form
+      filter: 
 
 navigation:
-  menu: []
+  menu:
+    - name: Beach Rentals
+      modules: [Beach Rentals List, Rental Form]
 
 data_model:
-  tables: 
-    - name: sys_update_set
-      purpose: Track update sets details for applications.
+  tables:
+    - name: u_beach_rental
+      purpose: Store records of beach rentals
+      key_fields:
+        - name: u_rental_duration
+          type: integer
+          notes: 
+        - name: u_customer_name
+          type: string
+          notes:
+        - name: u_rental_type
+          type: choice
+          notes: [Kayak, Jet Ski, Surfboard]
+        - name: sys_id
+          type: string
+          notes: system field
+        - name: created_on
+          type: datetime
+          notes: system field
+        - name: created_by
+          type: reference
+          notes: system field
+        - name: updated_on
+          type: datetime
+          notes: system field
+        - name: updated_by
+          type: reference
+          notes: system field
+    - name: u_customer
+      purpose: Store customer information
       key_fields:
         - name: sys_id
           type: string
-          notes: standard field
-        - name: sys_created_by
-          type: string
-          notes: standard field
-        - name: sys_created_on
-          type: datetime
-          notes: standard field
-        - name: sys_updated_by
-          type: string
-          notes: standard field
-        - name: sys_updated_on
-          type: datetime
-          notes: standard field
+          notes: system field
         - name: name
           type: string
-          notes: inferred from context
-        - name: state
-          type: string
-          notes: inferred from context
+          notes: 
 
-integrations: []
+integrations:
+  - name: External Customer Database Check
+    type: database
+    direction: outbound
+    description: Verifies if customer exists in external system before rental approval
 
 logic_patterns:
-  - name: transition_update_set_state
-    description: Handles the transition of update set states within the application lifecycle.
-    trigger: state_change_requested
-    action: transition update set state
-    reusable_pattern: state_transition_logic
+  - name: decrement_inventory_on_checkout
+    description: Reduces inventory count when a new checkout is created.
+    trigger: checkout_created
+    action: reduce inventory count
+    reusable_pattern: inventory_decrement
+  - name: increment_inventory_on_return
+    description: Restores inventory count when equipment is returned.
+    trigger: checkout_returned
+    action: increase inventory count
+    reusable_pattern: inventory_increment
 
 processes:
-  - name: update_set_management
+  - name: Equipment Rental Process
     steps:
-      - step: initiate_update_set
-        actor: admin
-        action: create new update set
-        system_behavior: records metadata and initial settings
-      - step: complete_update_set
-        actor: admin
-        action: finalizes update set
-        system_behavior: marks update set as complete
+      - step: 1
+        actor: Customer
+        action: Submit rental request
+        system_behavior: Validate and process request
+      - step: 2
+        actor: System
+        action: Check customer eligibility
+        system_behavior: Connect to external database, validate customer status
+      - step: 3
+        actor: System
+        action: Approve or reject rental request
+        system_behavior: Update rental status based on eligibility check
 
 events:
-  - name: update_set_transition
-    trigger: onStateChange
-    downstream_effects: updates the state in the application lifecycle, enabling further actions or transitions
+  - name: Inventory Adjustment on Checkout
+    trigger: New checkout is created
+    downstream_effects: Inventory is decremented
+
+  - name: Inventory Adjustment on Return
+    trigger: Equipment is returned
+    downstream_effects: Inventory is incremented
