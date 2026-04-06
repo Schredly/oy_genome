@@ -1,43 +1,68 @@
 {
   "tables": [
     {
-      "name": "sys_update_set",
-      "purpose": "Track update sets details for applications.",
+      "name": "u_beach_rental",
+      "purpose": "Store records of beach rentals",
+      "key_fields": [
+        {
+          "name": "u_rental_duration",
+          "type": "integer",
+          "notes": null
+        },
+        {
+          "name": "u_customer_name",
+          "type": "string",
+          "notes": null
+        },
+        {
+          "name": "u_rental_type",
+          "type": "choice",
+          "notes": [
+            "Kayak",
+            "Jet Ski",
+            "Surfboard"
+          ]
+        },
+        {
+          "name": "sys_id",
+          "type": "string",
+          "notes": "system field"
+        },
+        {
+          "name": "created_on",
+          "type": "datetime",
+          "notes": "system field"
+        },
+        {
+          "name": "created_by",
+          "type": "reference",
+          "notes": "system field"
+        },
+        {
+          "name": "updated_on",
+          "type": "datetime",
+          "notes": "system field"
+        },
+        {
+          "name": "updated_by",
+          "type": "reference",
+          "notes": "system field"
+        }
+      ]
+    },
+    {
+      "name": "u_customer",
+      "purpose": "Store customer information",
       "key_fields": [
         {
           "name": "sys_id",
           "type": "string",
-          "notes": "standard field"
-        },
-        {
-          "name": "sys_created_by",
-          "type": "string",
-          "notes": "standard field"
-        },
-        {
-          "name": "sys_created_on",
-          "type": "datetime",
-          "notes": "standard field"
-        },
-        {
-          "name": "sys_updated_by",
-          "type": "string",
-          "notes": "standard field"
-        },
-        {
-          "name": "sys_updated_on",
-          "type": "datetime",
-          "notes": "standard field"
+          "notes": "system field"
         },
         {
           "name": "name",
           "type": "string",
-          "notes": "inferred from context"
-        },
-        {
-          "name": "state",
-          "type": "string",
-          "notes": "inferred from context"
+          "notes": null
         }
       ]
     }
