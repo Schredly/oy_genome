@@ -1,18 +1,24 @@
 [
   {
-    "name": "update_set_management",
+    "name": "Equipment Rental Process",
     "steps": [
       {
-        "step": "initiate_update_set",
-        "actor": "admin",
-        "action": "create new update set",
-        "system_behavior": "records metadata and initial settings"
+        "step": 1,
+        "actor": "Customer",
+        "action": "Submit rental request",
+        "system_behavior": "Validate and process request"
       },
       {
-        "step": "complete_update_set",
-        "actor": "admin",
-        "action": "finalizes update set",
-        "system_behavior": "marks update set as complete"
+        "step": 2,
+        "actor": "System",
+        "action": "Check customer eligibility",
+        "system_behavior": "Connect to external database, validate customer status"
+      },
+      {
+        "step": 3,
+        "actor": "System",
+        "action": "Approve or reject rental request",
+        "system_behavior": "Update rental status based on eligibility check"
       }
     ]
   }
