@@ -1,20 +1,33 @@
 {
   "entities": {
-    "forms": [],
-    "workflows": [],
+    "forms": [
+      {
+        "id": "form_beach_rental",
+        "name": "Beach Rental",
+        "file_path": "genomes/tenants/acme/vendors/servicenow/beach_bum/beach_rentals/structure/entities.json"
+      }
+    ],
+    "workflows": [
+      {
+        "id": "wf_beach_rental_approval",
+        "name": "Beach Rental Approval",
+        "file_path": "genomes/tenants/acme/vendors/servicenow/beach_bum/beach_rentals/structure/workflows.json"
+      }
+    ],
     "tables": [],
     "ui_components": []
   },
   "relationships": {},
   "summaries": {
-    "app": "OY Self-deploying Extraction Infrastructure genome captured from ServiceNow."
+    "form_beach_rental": "Form: Beach Rental. Contains 3 fields.",
+    "wf_beach_rental_approval": "Workflow: Beach Rental Approval."
   },
   "metadata": {
-    "application_name": "OY Self-deploying Extraction Infrastructure",
+    "application_name": "Beach Bum",
     "source_system": "ServiceNow",
     "entity_counts": {
-      "forms": 0,
-      "workflows": 0,
+      "forms": 1,
+      "workflows": 1,
       "tables": 0,
       "ui_components": 0
     }
