@@ -1,3 +1,11 @@
 {
-  "rules": []
+  "rules": [
+    {
+      "name": "Validate Rental Duration",
+      "table": "u_beach_rental",
+      "trigger": "before_insert",
+      "logic_summary": "Ensure the rental duration is greater than zero and customer is eligible.",
+      "external_dependencies": "u_customer"
+    }
+  ]
 }
