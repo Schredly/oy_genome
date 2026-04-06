@@ -11,64 +11,46 @@
         <h1>Beach Rentals Dashboard</h1>
     </header>
     <main>
-        <section id="update-sets">
-            <h2>Update Sets</h2>
+        <section id="rental-list">
+            <h2>Available Rentals</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>System ID</th>
-                        <th>Name</th>
-                        <th>State</th>
-                        <th>Created By</th>
-                        <th>Created On</th>
-                        <th>Actions</th>
+                        <th>ID</th>
+                        <th>Duration</th>
+                        <th>Customer</th>
+                        <th>Type</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
-                <tbody id="update-sets-table-body">
-                    <!-- Filled dynamically -->
+                <tbody>
+                    <!-- Dynamic content will be loaded here -->
                 </tbody>
             </table>
         </section>
+        <section id="rental-form">
+            <h2>Rent a Kayak</h2>
+            <form id="rental-request-form">
+                <label for="customer_name">Customer Name</label>
+                <input type="text" id="customer_name" name="customer_name" required>
+                
+                <label for="rental_duration">Rental Duration</label>
+                <input type="number" id="rental_duration" name="rental_duration" required>
+                
+                <label for="rental_type">Rental Type</label>
+                <select id="rental_type" name="rental_type" required>
+                    <option value="Kayak">Kayak</option>
+                    <option value="Jet Ski">Jet Ski</option>
+                    <option value="Surfboard">Surfboard</option>
+                </select>
+                
+                <button type="submit">Submit Rental Request</button>
+            </form>
+        </section>
     </main>
-    <script>
-        async function fetchUpdateSets() {
-            const response = await fetch('/api/update_set');
-            const updateSets = await response.json();
-            const tableBody = document.getElementById('update-sets-table-body');
-            tableBody.innerHTML = '';
-
-            updateSets.forEach((set) => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${set.sys_id}</td>
-                    <td>${set.name}</td>
-                    <td>${set.state}</td>
-                    <td>${set.sys_created_by}</td>
-                    <td>${new Date(set.sys_created_on).toLocaleString()}</td>
-                    <td>
-                        <button onclick="transitionState('${set.sys_id}', 'in_progress')">Start</button>
-                        <button onclick="transitionState('${set.sys_id}', 'completed')">Complete</button>
-                    </td>
-                `;
-                tableBody.appendChild(row);
-            });
-        }
-
-        async function transitionState(sysId, newState) {
-            await fetch('/api/agent/execute', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    task: 'transition_update_set_state',
-                    payload: { sys_id: sysId, new_state: newState }
-                })
-            });
-            fetchUpdateSets();
-        }
-
-        document.addEventListener('DOMContentLoaded', fetchUpdateSets);
-    </script>
+    <footer>
+        <p>© 2023 Beach Bum Rentals</p>
+    </footer>
+    <script src="main.js"></script>
 </body>
 </html>
