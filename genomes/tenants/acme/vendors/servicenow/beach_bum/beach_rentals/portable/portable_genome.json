@@ -2,35 +2,33 @@
   "domain_model": {
     "entities": [
       {
-        "name": "UpdateSet",
+        "name": "Beach Rental",
         "attributes": [
           {
-            "name": "id",
-            "type": "string"
+            "name": "rental_duration",
+            "type": "integer",
+            "required": true
           },
           {
-            "name": "created_by",
-            "type": "string"
+            "name": "customer_name",
+            "type": "string",
+            "required": true
           },
           {
-            "name": "created_on",
-            "type": "datetime"
-          },
+            "name": "rental_type",
+            "type": "enum",
+            "required": true,
+            "choices": [
+              "Kayak",
+              "Jet Ski",
+              "Surfboard"
+            ]
+          }
+        ],
+        "relationships": [
           {
-            "name": "updated_by",
-            "type": "string"
-          },
-          {
-            "name": "updated_on",
-            "type": "datetime"
-          },
-          {
-            "name": "name",
-            "type": "string"
-          },
-          {
-            "name": "state",
-            "type": "string"
+            "entity": "Customer",
+            "type": "belongs_to"
           }
         ]
       }
@@ -38,66 +36,84 @@
   },
   "application_services": [
     {
-      "name": "UpdateSetManagementService",
+      "name": "Validate Rental Duration",
       "responsibilities": [
-        "Manage the lifecycle of update sets",
-        "Ensure correct transitions between states"
+        "Ensure the rental duration is greater than zero.",
+        "Verify customer eligibility."
       ],
       "inputs": [
-        {
-          "actor": "admin"
-        }
+        "rental_duration",
+        "customer_name"
       ],
       "outputs": [
-        "update_set_status"
+        "validation_status"
       ]
     }
   ],
   "workflows": [
     {
-      "name": "UpdateSetManagementWorkflow",
+      "name": "Beach Rental Approval",
       "steps": [
         {
-          "name": "InitiateUpdateSet",
-          "actor": "admin",
-          "action": "create new update set",
-          "system_behavior": "records metadata and initial settings"
+          "action": "Check customer eligibility",
+          "condition": "rental_duration > 0"
         },
         {
-          "name": "CompleteUpdateSet",
-          "actor": "admin",
-          "action": "finalize update set",
-          "system_behavior": "marks update set as complete"
+          "action": "Approve or reject rental request"
         }
       ]
     }
   ],
   "api_surface": [
     {
-      "endpoint": "/api/update_set/initiate",
+      "endpoint": "/api/rentals",
       "method": "POST",
-      "purpose": "Create a new update set"
+      "purpose": "Submit a new rental request"
     },
     {
-      "endpoint": "/api/update_set/complete",
-      "method": "POST",
-      "purpose": "Finalize an update set"
+      "endpoint": "/api/rentals/eligibility",
+      "method": "GET",
+      "purpose": "Check customer rental eligibility"
     }
   ],
   "ui_model": {
     "screens": [
       {
-        "name": "UpdateSetDashboard",
+        "name": "Beach Rentals List",
         "components": [
           {
             "type": "table",
-            "source": "UpdateSet",
-            "display_attributes": [
-              "id",
-              "name",
-              "state",
-              "created_by",
-              "created_on"
+            "data_source": "Beach Rental",
+            "filter": "active=true"
+          }
+        ]
+      },
+      {
+        "name": "Rental Form",
+        "components": [
+          {
+            "type": "form",
+            "fields": [
+              {
+                "name": "rental_duration",
+                "type": "integer",
+                "required": true
+              },
+              {
+                "name": "customer_name",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "rental_type",
+                "type": "select",
+                "choices": [
+                  "Kayak",
+                  "Jet Ski",
+                  "Surfboard"
+                ],
+                "required": true
+              }
             ]
           }
         ]
@@ -106,9 +122,14 @@
   },
   "automation_rules": [
     {
-      "name": "TransitionUpdateSetState",
-      "trigger": "state_change_requested",
-      "action": "Transition update set state"
+      "name": "decrement_inventory_on_checkout",
+      "trigger": "checkout_created",
+      "action": "reduce inventory count"
+    },
+    {
+      "name": "increment_inventory_on_return",
+      "trigger": "checkout_returned",
+      "action": "increase inventory count"
     }
   ]
 }
