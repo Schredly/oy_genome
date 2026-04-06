@@ -1,0 +1,8 @@
+[
+  {
+    "name": "External Customer Database Check",
+    "type": "database",
+    "direction": "outbound",
+    "description": "Verifies if customer exists in external system before rental approval"
+  }
+]
