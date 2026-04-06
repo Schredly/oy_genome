@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Beach Rental",
+    "type": "table",
+    "table": "u_beach_rental",
+    "fields": [
+      {
+        "name": "u_rental_duration",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "name": "u_customer_name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "u_rental_type",
+        "type": "choice",
+        "required": true,
+        "choices": [
+          "Kayak",
+          "Jet Ski",
+          "Surfboard"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "target_table": "u_customer",
+        "type": "belongs_to",
+        "via_field": "u_customer_name"
+      }
+    ]
+  }
+]
