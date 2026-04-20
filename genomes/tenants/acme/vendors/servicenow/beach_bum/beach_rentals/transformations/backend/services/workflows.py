@@ -1,29 +1,20 @@
-from fastapi import HTTPException
-from ..store import get_beach_rental_by_id, update_beach_rental
-from .logic import validate_rental_duration, approve_or_reject_rental
+from ..store import BeachRentalStore
+from .logic import check_customer_eligibility
 
-WORKFLOWS = {
-    "beach_rental_approval": [
-        {"action": "validate_rental_duration"},
-        {"action": "approve_or_reject_rental"}
-    ]
-}
+store = BeachRentalStore()
 
-async def execute_workflow(workflow_name: str, rental_id: str) -> dict:
-    if workflow_name not in WORKFLOWS:
-        raise HTTPException(status_code=404, detail="Workflow not found")
-    
-    steps = WORKFLOWS[workflow_name]
-    context = {"rental_id": rental_id}
-    
-    for step in steps:
-        action = step.get("action")
-        if action == "validate_rental_duration":
-            await validate_rental_duration(rental_id)
-        elif action == "approve_or_reject_rental":
-            result = await approve_or_reject_rental(rental_id)
-            context.update(result)
-        else:
-            raise HTTPException(status_code=400, detail=f"Unknown action: {action}")
-    
-    return context
+async def check_customer_eligibility_for_workflow(customer_name: str) -> bool:
+    return check_customer_eligibility(customer_name)
+
+async def approve_or_reject_rental_request(rental_id: str) -> dict:
+    rental = store.get_by_id(rental_id)
+    if not rental:
+        return {"status": "error", "message": "Rental not found"}
+
+    eligible = await check_customer_eligibility_for_workflow(rental.customer_name)
+    if eligible:
+        # Logic to approve the rental request
+        return {"status": "approved", "message": f"Rental {rental_id} approved"}
+    else:
+        # Logic to reject the rental request
+        return {"status": "rejected", "message": f"Rental {rental_id} rejected: customer not eligible"}
