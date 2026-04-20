@@ -1,61 +1,58 @@
-# Beach Bum Rentals - Replit AI App
+# Beach Bum Rentals
 
-This application is a transformation of a ServiceNow application into a Replit AI application using FastAPI. It provides an API for managing beach rentals and implements business workflows for rental approvals.
+Welcome to the Beach Bum Rentals API and Frontend application. This project allows you to manage beach equipment rentals through a FastAPI-based backend and a simple HTML/CSS frontend.
+
+## Project Structure
+
+- `backend/`: Contains the FastAPI application implementation.
+  - `main.py`: The FastAPI entry point and configuration.
+  - `routes.py`: Defines RESTful API endpoints for beach rentals.
+  - `models.py`: Pydantic models representing the data structure.
+  - `store.py`: In-memory data store for managing rentals.
+  - `services/`: Business logic and workflows.
+    - `logic.py`: Contains validation rules and business logic functions.
+    - `workflows.py`: Implements workflows for rental approvals.
+
+- `frontend/`: Simple HTML/CSS for user interfacing.
+  - `index.html`: Main page displaying rental forms and data.
+  - `style.css`: Styling for the frontend.
+
+- `data/`: Contains seed data to initialize the rental store.
+  - `seed.json`: Sample data for beach rentals.
+  
+- `requirements.txt`: Python package requirements.
+- `.replit`: Replit configuration file.
+- `replit.nix`: Replit environment setup.
+  
+## Requirements
+
+- Python 3.11
+- FastAPI
+- Uvicorn
+- Pydantic
+- SQLAlchemy
+- aioredis
+
+## How to Run
+
+1. **Install Dependencies**:
+   Make sure you have Python 3.11 and the required packages installed. You can use the `replit.nix` file with Replit to set up the environment automatically.
+
+2. **Start the Application**:
+   Run the following command to start the backend server:
+   ```
+   uvicorn backend.main:app --host 0.0.0.0 --port 8080
+   ```
+
+3. **Access the Frontend**:
+   Open `frontend/index.html` in your browser to interact with the application.
 
 ## Features
 
-- **API for Beach Rentals**: Create, read, update, and delete rental entries.
-- **Business Logic**: Automated approval processes for rental requests.
-- **Frontend**: Simple HTML/CSS frontend for interacting with the rental services.
-- **Agent Integration**: Task and workflow execution with history tracking.
-
-## Setup
-
-1. **Clone the Repository**:
-   ```bash
-   git clone <repository-url>
-   cd <repository-directory>
-   ```
-
-2. **Run on Replit**:
-   Ensure you have a Replit account and open the repository using Replit. The application is configured to run using the provided `.replit` and `replit.nix` configurations.
-
-3. **Local Development**:
-   If you prefer local development, ensure you have Python and the necessary packages installed. You can install dependencies with:
-   ```bash
-   pip install -r transformations/requirements.txt
-   ```
-
-4. **Start the Server**:
-   Run the server using Uvicorn:
-   ```bash
-   uvicorn transformations.backend.main:app --host 0.0.0.0 --port 8080
-   ```
-
-5. **Access the Application**:
-   Visit `http://localhost:8080` to interact with the API and the frontend interface.
-
-## API Endpoints
-
-- **Beach Rentals**:
-  - `GET /api/beach_rentals`: List all rentals.
-  - `GET /api/beach_rentals/{id}`: Retrieve a specific rental.
-  - `POST /api/beach_rentals`: Create a new rental.
-  - `PUT /api/beach_rentals/{id}`: Update an existing rental.
-  - `DELETE /api/beach_rentals/{id}`: Delete a rental.
-
-- **Agent**:
-  - `POST /api/agent/execute`: Execute a specific task.
-  - `POST /api/agent/workflow`: Execute a defined workflow.
-  - `GET /api/agent/history`: Retrieve task execution history.
-
-## Data Seeding
-
-For demonstration purposes, an initial data seed is provided in `transformations/data/seed.json`.
-
-## Customization
-
-Feel free to extend and customize the application to fit your needs. The modular structure makes it easier to integrate additional features or connect to different data sources.
+- **List Rentals**: View all active beach rentals.
+- **Create Rentals**: Submit a form to create a new rental.
+- **Manage Rentals**: Edit or delete existing rentals.
+- **Workflow Automation**: Process approval workflows for rental requests.
 
 ## License
 
