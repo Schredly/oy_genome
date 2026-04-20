@@ -1,7 +1,5 @@
 fastapi
 uvicorn
 pydantic
-aiofiles  # For handling file operations in FastAPI
-jinja2    # For rendering HTML templates if needed in future extensions
-httpx     # For making HTTP requests, useful for integrations
-sqlalchemy # Optional: If you wish to use a database instead of in-memory storage
+aioredis
+sqlalchemy
