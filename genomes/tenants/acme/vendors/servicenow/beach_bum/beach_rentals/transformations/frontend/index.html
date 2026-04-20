@@ -8,49 +8,52 @@
 </head>
 <body>
     <header>
-        <h1>Beach Rentals Dashboard</h1>
+        <h1>Beach Bum Rentals</h1>
+        <nav>
+            <ul>
+                <li><a href="#rentals">Rentals</a></li>
+                <li><a href="#form">New Rental</a></li>
+                <li><a href="#history">Task History</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section id="rental-list">
+        <section id="rentals">
             <h2>Available Rentals</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Duration</th>
-                        <th>Customer</th>
-                        <th>Type</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Dynamic content will be loaded here -->
-                </tbody>
-            </table>
+            <div id="rental-list">
+                <!-- Rental items will be dynamically loaded here -->
+            </div>
         </section>
-        <section id="rental-form">
-            <h2>Rent a Kayak</h2>
-            <form id="rental-request-form">
-                <label for="customer_name">Customer Name</label>
-                <input type="text" id="customer_name" name="customer_name" required>
-                
-                <label for="rental_duration">Rental Duration</label>
+        <section id="form">
+            <h2>New Beach Rental</h2>
+            <form id="rental-form">
+                <label for="rental_duration">Rental Duration:</label>
                 <input type="number" id="rental_duration" name="rental_duration" required>
-                
-                <label for="rental_type">Rental Type</label>
+
+                <label for="customer_name">Customer Name:</label>
+                <input type="text" id="customer_name" name="customer_name" required>
+
+                <label for="rental_type">Rental Type:</label>
                 <select id="rental_type" name="rental_type" required>
+                    <option value="">Select an option</option>
                     <option value="Kayak">Kayak</option>
                     <option value="Jet Ski">Jet Ski</option>
                     <option value="Surfboard">Surfboard</option>
                 </select>
-                
-                <button type="submit">Submit Rental Request</button>
+
+                <button type="submit">Submit Rental</button>
             </form>
+        </section>
+        <section id="history">
+            <h2>Task History</h2>
+            <div id="task-history">
+                <!-- Task history will be dynamically loaded here -->
+            </div>
         </section>
     </main>
     <footer>
-        <p>© 2023 Beach Bum Rentals</p>
+        <p>&copy; 2023 Beach Bum Rentals</p>
     </footer>
-    <script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
