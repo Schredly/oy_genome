@@ -1,41 +1,56 @@
 from fastapi import APIRouter, HTTPException
+from pydantic import BaseModel
 from typing import List
-from .store import (
-    create_beach_rental,
-    get_beach_rental_by_id,
-    list_all_beach_rentals,
-    update_beach_rental,
-    delete_beach_rental,
-)
-from .models import BeachRental
+from .store import BeachRentalStore
+from .models import BeachRental, BeachRentalCreate, BeachRentalUpdate
 
 router = APIRouter()
 
+class BeachRentalCreateRequest(BaseModel):
+    rental_duration: int
+    customer_name: str
+    rental_type: str
+
+class BeachRentalUpdateRequest(BaseModel):
+    rental_duration: int
+    rental_type: str
+
+# Simulated database / store
+beach_rental_store = BeachRentalStore()
+
 @router.get("/api/beach_rentals", response_model=List[BeachRental])
-async def get_beach_rentals():
-    return list_all_beach_rentals()
+async def list_beach_rentals():
+    return beach_rental_store.list_all()
 
 @router.get("/api/beach_rentals/{rental_id}", response_model=BeachRental)
 async def get_beach_rental(rental_id: str):
-    beach_rental = get_beach_rental_by_id(rental_id)
-    if not beach_rental:
+    rental = beach_rental_store.get_by_id(rental_id)
+    if rental is None:
         raise HTTPException(status_code=404, detail="Beach Rental not found")
-    return beach_rental
+    return rental
 
 @router.post("/api/beach_rentals", response_model=BeachRental)
-async def post_beach_rental(beach_rental: BeachRental):
-    return create_beach_rental(beach_rental)
+async def create_beach_rental(rental: BeachRentalCreateRequest):
+    new_rental = BeachRentalCreate(
+        rental_duration=rental.rental_duration,
+        customer_name=rental.customer_name,
+        rental_type=rental.rental_type
+    )
+    return beach_rental_store.create(new_rental)
 
 @router.put("/api/beach_rentals/{rental_id}", response_model=BeachRental)
-async def put_beach_rental(rental_id: str, beach_rental: BeachRental):
-    updated_rental = update_beach_rental(rental_id, beach_rental)
-    if not updated_rental:
-        raise HTTPException(status_code=404, detail="Beach Rental not found for update")
-    return updated_rental
+async def update_beach_rental(rental_id: str, rental: BeachRentalUpdateRequest):
+    if not beach_rental_store.exists(rental_id):
+        raise HTTPException(status_code=404, detail="Beach Rental not found")
+    updated_rental = BeachRentalUpdate(
+        rental_duration=rental.rental_duration,
+        rental_type=rental.rental_type
+    )
+    return beach_rental_store.update(rental_id, updated_rental)
 
-@router.delete("/api/beach_rentals/{rental_id}")
-async def delete_beach_rental_endpoint(rental_id: str):
-    success = delete_beach_rental(rental_id)
-    if not success:
-        raise HTTPException(status_code=404, detail="Beach Rental not found for deletion")
-    return {"detail": "Beach Rental deleted successfully"}
+@router.delete("/api/beach_rentals/{rental_id}", response_model=dict)
+async def delete_beach_rental(rental_id: str):
+    if not beach_rental_store.exists(rental_id):
+        raise HTTPException(status_code=404, detail="Beach Rental not found")
+    beach_rental_store.delete(rental_id)
+    return {"status": "deleted"}
