@@ -1,32 +1,32 @@
 [
     {
-        "u_rental_duration": 2,
-        "u_customer_name": "John Doe",
-        "u_rental_type": "Kayak",
         "sys_id": "1",
+        "rental_duration": 2,
+        "customer_name": "Jane Doe",
+        "rental_type": "Kayak",
         "created_on": "2023-10-01T10:00:00Z",
-        "created_by": "admin",
-        "updated_on": "2023-10-01T12:00:00Z",
-        "updated_by": "admin"
+        "created_by": "system",
+        "updated_on": "2023-10-01T10:00:00Z",
+        "updated_by": "system"
     },
     {
-        "u_rental_duration": 4,
-        "u_customer_name": "Jane Smith",
-        "u_rental_type": "Jet Ski",
         "sys_id": "2",
+        "rental_duration": 4,
+        "customer_name": "John Smith",
+        "rental_type": "Jet Ski",
         "created_on": "2023-10-01T11:00:00Z",
-        "created_by": "admin",
-        "updated_on": "2023-10-01T13:00:00Z",
-        "updated_by": "admin"
+        "created_by": "system",
+        "updated_on": "2023-10-01T11:00:00Z",
+        "updated_by": "system"
     },
     {
-        "u_rental_duration": 1,
-        "u_customer_name": "Sam Green",
-        "u_rental_type": "Surfboard",
         "sys_id": "3",
-        "created_on": "2023-10-01T14:00:00Z",
-        "created_by": "admin",
-        "updated_on": "2023-10-01T15:00:00Z",
-        "updated_by": "admin"
+        "rental_duration": 1,
+        "customer_name": "Alice Johnson",
+        "rental_type": "Surfboard",
+        "created_on": "2023-10-01T12:00:00Z",
+        "created_by": "system",
+        "updated_on": "2023-10-01T12:00:00Z",
+        "updated_by": "system"
     }
 ]
