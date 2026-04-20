@@ -1,54 +1,47 @@
-from typing import Callable, Dict, Any, List
-from fastapi import APIRouter, HTTPException
-from .services.logic import validate_rental_duration, approve_or_reject_rental
-from .services.workflows import execute_workflow
+from typing import Dict, List
+from .services.logic import validate_rental_duration
+from .services.workflows import approve_or_reject_rental_request
 
-router = APIRouter()
-
-# --- FUNCTION REGISTRY ---
-FUNCTIONS: Dict[str, Callable[..., Any]] = {
-    "validate_rental_duration": validate_rental_duration,
-    "approve_or_reject_rental": approve_or_reject_rental
+# Function Registry
+FUNCTIONS = {
+    'validate_rental_duration': validate_rental_duration,
+    'approve_or_reject_rental_request': approve_or_reject_rental_request,
 }
 
-# --- TASK HISTORY MEMORY ---
-TASK_HISTORY: List[Dict[str, Any]] = []
-
-def log_task(task_name: str, payload: Dict[str, Any], result: Dict[str, Any]):
-    TASK_HISTORY.append({
-        "task_name": task_name,
-        "payload": payload,
-        "result": result
-    })
-
-def get_history(limit: int = 10) -> List[Dict[str, Any]]:
-    return TASK_HISTORY[-limit:]
-
-# --- TASK ROUTER ---
-async def route_task(task_name: str, payload: Dict[str, Any]) -> Dict[str, Any]:
+# Task Router
+async def route_task(task_name: str, payload: dict) -> dict:
     fn = FUNCTIONS.get(task_name)
     if not fn:
-        return {"error": f"Unknown task: {task_name}"}
-    result = await fn(**payload)
-    log_task(task_name, payload, result)
-    return result
+        return {'error': f'Unknown task: {task_name}'}
+    return await fn(**payload)
 
-# --- API ENDPOINTS ---
-@router.post("/api/agent/execute")
-async def execute_task(task: str, payload: Dict[str, Any]):
-    result = await route_task(task, payload)
-    if "error" in result:
-        raise HTTPException(status_code=400, detail=result["error"])
-    return result
+# Simple Memory
+TASK_HISTORY: List[dict] = []
 
-@router.post("/api/agent/workflow")
-async def execute_agent_workflow(workflow: str, payload: Dict[str, Any]):
-    rental_id = payload.get("rental_id")
-    if not rental_id:
-        raise HTTPException(status_code=400, detail="Rental ID is required for workflow execution")
-    result = await execute_workflow(workflow, rental_id)
-    return result
+def log_task(task_name: str, payload: dict, result: dict):
+    TASK_HISTORY.append({
+        'task_name': task_name,
+        'payload': payload,
+        'result': result,
+    })
 
-@router.get("/api/agent/history")
-async def get_task_history(limit: int = 10):
-    return get_history(limit)
+def get_history(limit: int = 10) -> List[dict]:
+    return TASK_HISTORY[-limit:]
+
+# Workflow Executor
+WORKFLOWS = {
+    'beach_rental_approval': [
+        {'action': 'validate_rental_duration'},
+        {'action': 'approve_or_reject_rental_request'}
+    ]
+}
+
+async def execute_workflow(workflow_name: str, context: dict) -> dict:
+    steps = WORKFLOWS.get(workflow_name)
+    if not steps:
+        return {'error': f'Unknown workflow: {workflow_name}'}
+    for step in steps:
+        result = await route_task(step['action'], context)
+        log_task(step['action'], context, result)
+        context.update(result)
+    return context
