@@ -1,34 +1,56 @@
 from typing import List, Optional
-from .models import BeachRental
+from datetime import datetime
+from .models import BeachRental, BeachRentalCreate, BeachRentalUpdate
 
-# In-memory store for simplicity
-beach_rental_store: List[BeachRental] = []
+class BeachRentalStore:
+    _rentals: List[BeachRental] = []
+    _current_id: int = 1
 
-def create_beach_rental(beach_rental: BeachRental) -> BeachRental:
-    beach_rental.sys_id = str(len(beach_rental_store) + 1)
-    beach_rental_store.append(beach_rental)
-    return beach_rental
+    @classmethod
+    def _generate_id(cls) -> str:
+        result = str(cls._current_id)
+        cls._current_id += 1
+        return result
 
-def get_beach_rental_by_id(rental_id: str) -> Optional[BeachRental]:
-    for rental in beach_rental_store:
-        if rental.sys_id == rental_id:
+    def create(self, rental: BeachRentalCreate) -> BeachRental:
+        rental_id = self._generate_id()
+        now = datetime.utcnow()
+        new_rental = BeachRental(
+            sys_id=rental_id,
+            rental_duration=rental.rental_duration,
+            customer_name=rental.customer_name,
+            rental_type=rental.rental_type,
+            created_on=now,
+            created_by="system",
+            updated_on=now,
+            updated_by="system"
+        )
+        self._rentals.append(new_rental)
+        return new_rental
+
+    def get_by_id(self, rental_id: str) -> Optional[BeachRental]:
+        for rental in self._rentals:
+            if rental.sys_id == rental_id:
+                return rental
+        return None
+
+    def list_all(self) -> List[BeachRental]:
+        return self._rentals
+
+    def update(self, rental_id: str, rental_update: BeachRentalUpdate) -> BeachRental:
+        rental = self.get_by_id(rental_id)
+        if rental:
+            if rental_update.rental_duration is not None:
+                rental.rental_duration = rental_update.rental_duration
+            if rental_update.rental_type is not None:
+                rental.rental_type = rental_update.rental_type
+            rental.updated_on = datetime.utcnow()
+            rental.updated_by = "system"
             return rental
-    return None
+        raise ValueError("Rental not found")
 
-def list_all_beach_rentals() -> List[BeachRental]:
-    return beach_rental_store
+    def delete(self, rental_id: str) -> None:
+        self._rentals = [rental for rental in self._rentals if rental.sys_id != rental_id]
 
-def update_beach_rental(rental_id: str, update: BeachRental) -> Optional[BeachRental]:
-    for idx, rental in enumerate(beach_rental_store):
-        if rental.sys_id == rental_id:
-            beach_rental_store[idx] = update
-            beach_rental_store[idx].sys_id = rental_id
-            return beach_rental_store[idx]
-    return None
-
-def delete_beach_rental(rental_id: str) -> bool:
-    for idx, rental in enumerate(beach_rental_store):
-        if rental.sys_id == rental_id:
-            del beach_rental_store[idx]
-            return True
-    return False
+    def exists(self, rental_id: str) -> bool:
+        return any(rental.sys_id == rental_id for rental in self._rentals)
