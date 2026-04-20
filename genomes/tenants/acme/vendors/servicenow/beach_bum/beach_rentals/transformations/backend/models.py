@@ -1,34 +1,32 @@
 from pydantic import BaseModel
-from typing import Optional, List
+from typing import Optional
+from datetime import datetime
 
-class BeachRental(BaseModel):
-    u_rental_duration: int
-    u_customer_name: str
-    u_rental_type: str
-    sys_id: Optional[str] = None
-    created_on: Optional[str] = None
-    created_by: Optional[str] = None
-    updated_on: Optional[str] = None
-    updated_by: Optional[str] = None
-
-class RentalRequest(BaseModel):
+class BeachRentalBase(BaseModel):
     rental_duration: int
     customer_name: str
     rental_type: str
 
-class WorkflowStep(BaseModel):
-    step: int
-    actor: str
-    action: str
-    system_behavior: str
+class BeachRentalCreate(BeachRentalBase):
+    pass
 
-class EquipmentRentalProcess(BaseModel):
-    name: str
-    steps: List[WorkflowStep]
+class BeachRentalUpdate(BaseModel):
+    rental_duration: Optional[int] = None
+    rental_type: Optional[str] = None
 
-class BusinessLogicRule(BaseModel):
+class BeachRental(BeachRentalBase):
+    sys_id: str
+    created_on: datetime
+    created_by: str
+    updated_on: datetime
+    updated_by: str
+
+    class Config:
+        orm_mode = True
+
+class Customer(BaseModel):
+    sys_id: str
     name: str
-    table: str
-    trigger: str
-    logic_summary: str
-    external_dependencies: Optional[str] = None
+
+    class Config:
+        orm_mode = True
