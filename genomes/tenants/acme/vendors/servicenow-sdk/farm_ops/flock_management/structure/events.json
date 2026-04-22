@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Order Creation",
+    "trigger": "New order record created",
+    "downstream_effects": "Set default values for order_type, fulfillment_status, and delivery_type"
+  },
+  {
+    "name": "Critical Incident Escalation",
+    "trigger": "Incident marked as critical",
+    "downstream_effects": "Increase priority and urgency, notify appropriate staff"
+  }
+]
