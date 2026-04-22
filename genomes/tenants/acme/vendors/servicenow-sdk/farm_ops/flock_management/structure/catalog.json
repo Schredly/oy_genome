@@ -1,0 +1,167 @@
+{
+  "items": [
+    {
+      "name": "Adopt-a-Hen (Annual Sponsorship)",
+      "description": "Become a hen's official sponsor for a year.",
+      "variables": [
+        {
+          "name": "hen",
+          "label": "Choose Your Hen",
+          "type": "reference",
+          "required": true,
+          "order": 500
+        },
+        {
+          "name": "gift_sponsorship",
+          "label": "Is this a gift?",
+          "type": "select",
+          "required": false,
+          "order": 600,
+          "choices": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "name": "recipient_name",
+          "label": "Gift recipient name (optional)",
+          "type": "text",
+          "required": false,
+          "order": 700
+        },
+        {
+          "name": "certificate_message",
+          "label": "Message for the certificate (optional)",
+          "type": "text",
+          "required": false,
+          "order": 800
+        },
+        {
+          "name": "ship_certificate",
+          "label": "Ship a printed photo certificate?",
+          "type": "select",
+          "required": false,
+          "order": 900,
+          "choices": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "name": "newsletter_opt_in",
+          "label": "Opt in to monthly hen updates?",
+          "type": "select",
+          "required": false,
+          "order": 1000,
+          "choices": [
+            "True",
+            "False"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Buy Fresh Eggs",
+      "description": "Our hens roam, forage, and eat organic layer feed. Pick your grade and how many dozens; delivery is $5 within 10 miles of the farm.",
+      "variables": [
+        {
+          "name": "egg_grade",
+          "label": "Egg Grade",
+          "type": "select",
+          "required": true,
+          "order": 600,
+          "choices": [
+            "jumbo",
+            "xlarge",
+            "large",
+            "medium",
+            "mixed"
+          ]
+        },
+        {
+          "name": "egg_dozens",
+          "label": "How many dozens?",
+          "type": "text",
+          "required": true,
+          "order": 700
+        },
+        {
+          "name": "delivery_type",
+          "label": "Pickup or Delivery",
+          "type": "select",
+          "required": true,
+          "order": 800,
+          "choices": [
+            "pickup",
+            "farm_stand",
+            "local_delivery",
+            "farmers_market"
+          ]
+        },
+        {
+          "name": "delivery_date",
+          "label": "Pickup / Delivery Date",
+          "type": "date",
+          "required": true,
+          "order": 1000
+        },
+        {
+          "name": "special_requests",
+          "label": "Special requests (double-yolk preference, coop-tour add-on...)",
+          "type": "text",
+          "required": false,
+          "order": 1100
+        }
+      ]
+    },
+    {
+      "name": "Chick Pre-order",
+      "description": "Heritage and rare-egg breeds go fast. Reserve now and we'll notify you on hatch day. Minimum 3 chicks per order (they need buddies to stay warm).",
+      "variables": [
+        {
+          "name": "breed",
+          "label": "Breed",
+          "type": "reference",
+          "required": true,
+          "order": 500
+        },
+        {
+          "name": "quantity",
+          "label": "Quantity (minimum 3)",
+          "type": "text",
+          "required": true,
+          "order": 600
+        },
+        {
+          "name": "sex_preference",
+          "label": "Sex Preference",
+          "type": "select",
+          "required": true,
+          "order": 700,
+          "choices": [
+            "pullet",
+            "straight",
+            "cockerel"
+          ]
+        },
+        {
+          "name": "target_month",
+          "label": "Target Hatch Month",
+          "type": "select",
+          "required": true,
+          "order": 800,
+          "choices": [
+            "march",
+            "april",
+            "may",
+            "june",
+            "july",
+            "august",
+            "september",
+            "flexible"
+          ]
+        }
+      ]
+    }
+  ]
+}
