@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Cluck Egg Availability API",
+    "type": "REST",
+    "direction": "outbound",
+    "description": "Exposes current egg stock data for integration with external sites and dashboards."
+  }
+]
