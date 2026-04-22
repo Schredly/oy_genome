@@ -1,0 +1,12 @@
+{
+  "menu": [
+    {
+      "name": "Cluckworks",
+      "modules": [
+        "All Flocks",
+        "Breed Catalog",
+        "Today's Egg Log"
+      ]
+    }
+  ]
+}
