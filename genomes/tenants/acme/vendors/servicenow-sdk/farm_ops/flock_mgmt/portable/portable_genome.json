@@ -1,0 +1,202 @@
+{
+  "domain_model": {
+    "entities": [
+      {
+        "name": "Bird"
+      },
+      {
+        "name": "Breed"
+      },
+      {
+        "name": "Coop"
+      },
+      {
+        "name": "Customer"
+      },
+      {
+        "name": "EggLog"
+      },
+      {
+        "name": "Feed"
+      },
+      {
+        "name": "Flock"
+      },
+      {
+        "name": "HealthRecord"
+      },
+      {
+        "name": "Incident"
+      },
+      {
+        "name": "IncubationBatch"
+      },
+      {
+        "name": "Order"
+      },
+      {
+        "name": "CSASubscription"
+      }
+    ]
+  },
+  "application_services": [
+    {
+      "name": "BirdManagementService",
+      "responsibilities": "Manage bird-related data and operations",
+      "inputs": "Bird data payloads",
+      "outputs": "Success/Failure response"
+    },
+    {
+      "name": "EggProductionService",
+      "responsibilities": "Handle egg production logging and statistics",
+      "inputs": "Egg log data payloads",
+      "outputs": "Updated production metrics"
+    },
+    {
+      "name": "CustomerOrderService",
+      "responsibilities": "Process and manage customer orders",
+      "inputs": "Order data payloads",
+      "outputs": "Success/Failure response"
+    },
+    {
+      "name": "InventoryManagementService",
+      "responsibilities": "Manage inventory levels and reorder processes",
+      "inputs": "Feed inventory data payloads",
+      "outputs": "Reorder tasks/alerts"
+    },
+    {
+      "name": "SubscriptionManagementService",
+      "responsibilities": "Handle CSA subscription management",
+      "inputs": "Subscription data payloads",
+      "outputs": "Subscription renewal notifications"
+    }
+  ],
+  "workflows": [
+    {
+      "name": "CSASubscriptionRenewalWorkflow",
+      "steps": [
+        {
+          "trigger": "Subscription status changes to paused"
+        },
+        {
+          "action": "Send reminder email to customer"
+        }
+      ]
+    },
+    {
+      "name": "LowFeedReorderWorkflow",
+      "steps": [
+        {
+          "trigger": "Feed inventory level below threshold"
+        },
+        {
+          "action": "Send reorder alert and creates incident for low feed"
+        }
+      ]
+    }
+  ],
+  "api_surface": [
+    {
+      "endpoint": "/api/v1/eggs/availability",
+      "method": "GET",
+      "purpose": "Provides egg stock data for external use"
+    }
+  ],
+  "ui_model": {
+    "screens": [
+      {
+        "name": "Flocks",
+        "components": [
+          "List"
+        ]
+      },
+      {
+        "name": "Birds",
+        "components": [
+          "List"
+        ]
+      },
+      {
+        "name": "AdoptableHens",
+        "components": [
+          "List"
+        ]
+      },
+      {
+        "name": "Coops",
+        "components": [
+          "List"
+        ]
+      },
+      {
+        "name": "IncubationBatches",
+        "components": [
+          "List"
+        ]
+      },
+      {
+        "name": "HealthRecords",
+        "components": [
+          "List"
+        ]
+      },
+      {
+        "name": "Customers",
+        "components": [
+          "List"
+        ]
+      },
+      {
+        "name": "Orders",
+        "components": [
+          "List"
+        ]
+      },
+      {
+        "name": "CSA",
+        "components": [
+          "List"
+        ]
+      },
+      {
+        "name": "FeedInventory",
+        "components": [
+          "List"
+        ]
+      },
+      {
+        "name": "Incidents",
+        "components": [
+          "List"
+        ]
+      }
+    ]
+  },
+  "automation_rules": [
+    {
+      "name": "CalculateBirdAge",
+      "trigger": "Before bird update",
+      "action": "Update bird age from hatch date"
+    },
+    {
+      "name": "AdjustFlockHeadCount",
+      "trigger": "After bird update",
+      "action": "Adjust flock count based on bird activity status"
+    },
+    {
+      "name": "CalculateOrderTotal",
+      "trigger": "Before order update",
+      "action": "Compute total cost for an order"
+    },
+    {
+      "name": "AwardLoyaltyPoints",
+      "trigger": "After order fulfilled",
+      "action": "Update loyalty points for customer"
+    },
+    {
+      "name": "EscalateCriticalIncident",
+      "trigger": "Before incident update",
+      "action": "Increase priority of critical incidents"
+    }
+  ]
+}
