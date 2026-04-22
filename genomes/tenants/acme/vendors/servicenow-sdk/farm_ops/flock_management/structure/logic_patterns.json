@@ -1,0 +1,16 @@
+[
+  {
+    "name": "decrease_flock_on_status_change",
+    "description": "Reduces the flock count when a bird's status is updated to deceased, processed, escaped, or retired.",
+    "trigger": "bird_status_update",
+    "action": "update flock head count",
+    "reusable_pattern": "status_based_flock_reduction"
+  },
+  {
+    "name": "auto_feed_reorder_trigger",
+    "description": "Initiates a reorder when feed inventory falls below a predefined threshold.",
+    "trigger": "feed_inventory_update",
+    "action": "create reorder incident",
+    "reusable_pattern": "low_inventory_reorder_trigger"
+  }
+]
