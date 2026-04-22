@@ -1,0 +1,1059 @@
+application:
+  name: Cluckworks
+  scope: x_1939459_cluck
+  scope_id: c4500a9e73e7b8cd5f3758b2c33527fe
+  version: 1.0.0
+  description: 'Cluckworks - Farm-ops app for pastured-poultry operations: flock management, egg production, feed inventory, CSA subscriptions, adopt-a-hen program'
+
+entities:
+  - name: Bird
+    type: primary
+    table: x_1939459_cluck_bird
+    fields:
+      - name: tag_id
+        type: string
+        required: true
+      - name: name
+        type: string
+      - name: breed
+        type: reference
+        required: true
+      - name: flock
+        type: reference
+      - name: sex
+        type: choice
+        required: true
+        choices: ['hen', 'rooster', 'pullet', 'cockerel', 'unknown']
+      - name: hatched_date
+        type: date
+      - name: age_days
+        type: integer
+      - name: weight_grams
+        type: integer
+      - name: color_pattern
+        type: string
+      - name: is_breeding_stock
+        type: boolean
+      - name: is_adoptable
+        type: boolean
+      - name: adoption_sponsor
+        type: reference
+      - name: adoption_expires
+        type: date
+      - name: egg_color_observed
+        type: string
+      - name: lifetime_eggs
+        type: integer
+      - name: status
+        type: choice
+        required: true
+        choices: ['active', 'molting', 'brooding', 'injured', 'retired', 'deceased', 'processed', 'escaped']
+      - name: retired_reason
+        type: string
+      - name: photo_url
+        type: string
+      - name: bio
+        type: string
+      - name: personality_score
+        type: decimal
+    relationships:
+      - target_table: x_1939459_cluck_breed
+        type: belongs_to
+        via_field: breed
+      - target_table: x_1939459_cluck_flock
+        type: belongs_to
+        via_field: flock
+      - target_table: x_1939459_cluck_customer
+        type: belongs_to
+        via_field: adoption_sponsor
+    notes: seed_data: true
+  - name: Breed
+    type: lookup
+    table: x_1939459_cluck_breed
+    fields:
+      - name: name
+        type: string
+        required: true
+      - name: purpose
+        type: choice
+        required: true
+        choices: ['layer', 'meat', 'dual', 'ornamental']
+      - name: avg_eggs_per_year
+        type: integer
+      - name: egg_color
+        type: choice
+        choices: ['white', 'brown', 'blue', 'green', 'cream', 'speckled', 'chocolate']
+      - name: temperament
+        type: choice
+        choices: ['docile', 'active', 'broody', 'aggressive']
+      - name: avg_weight_kg
+        type: integer
+      - name: cold_hardy
+        type: boolean
+      - name: heat_tolerant
+        type: boolean
+      - name: heritage
+        type: boolean
+      - name: description
+        type: string
+      - name: image_url
+        type: string
+      - name: active
+        type: boolean
+    relationships: []
+    notes: seed_data: true
+  - name: Coop
+    type: lookup
+    table: x_1939459_cluck_coop
+    fields:
+      - name: name
+        type: string
+        required: true
+      - name: capacity
+        type: integer
+        required: true
+      - name: square_meters
+        type: integer
+      - name: style
+        type: choice
+        choices: ['fixed', 'mobile', 'pasture', 'hoop']
+      - name: heating
+        type: boolean
+      - name: automatic_door
+        type: boolean
+      - name: nest_boxes
+        type: integer
+      - name: roost_length_m
+        type: integer
+      - name: ventilation_rating
+        type: choice
+        choices: ['poor', 'adequate', 'good', 'excellent']
+      - name: location_notes
+        type: string
+      - name: last_cleaned
+        type: date
+      - name: cleaning_due_date
+        type: date
+      - name: active
+        type: boolean
+    relationships: []
+    notes: seed_data: true
+  - name: Customer
+    type: primary
+    table: x_1939459_cluck_customer
+    fields:
+      - name: name
+        type: string
+        required: true
+      - name: email
+        type: string
+        required: true
+      - name: phone
+        type: string
+      - name: street
+        type: string
+      - name: city
+        type: string
+      - name: state
+        type: string
+      - name: postal_code
+        type: string
+      - name: tier
+        type: choice
+        required: true
+        choices: ['regular', 'csa', 'sponsor', 'wholesale', 'vip']
+      - name: preferred_contact
+        type: choice
+        choices: ['email', 'sms', 'phone', 'none']
+      - name: allows_marketing
+        type: boolean
+      - name: lifetime_spend
+        type: decimal
+      - name: loyalty_eggs
+        type: integer
+      - name: first_order_date
+        type: date
+      - name: last_order_date
+        type: date
+      - name: sponsored_hens_count
+        type: integer
+      - name: notes
+        type: string
+      - name: active
+        type: boolean
+    relationships: []
+    notes: seed_data: true
+  - name: Egg Log
+    type: history
+    table: x_1939459_cluck_egg_log
+    fields:
+      - name: log_date
+        type: date
+        required: true
+      - name: flock
+        type: reference
+        required: true
+      - name: coop
+        type: reference
+      - name: count_collected
+        type: integer
+        required: true
+      - name: count_jumbo
+        type: integer
+      - name: count_xlarge
+        type: integer
+      - name: count_large
+        type: integer
+      - name: count_medium
+        type: integer
+      - name: count_small
+        type: integer
+      - name: count_cracked
+        type: integer
+      - name: count_soft_shell
+        type: integer
+      - name: count_double_yolk
+        type: integer
+      - name: time_of_day
+        type: choice
+        choices: ['morning', 'afternoon', 'evening']
+      - name: avg_weight_g
+        type: decimal
+      - name: collector
+        type: reference
+      - name: weather_notes
+        type: string
+      - name: production_rate_pct
+        type: decimal
+    relationships:
+      - target_table: x_1939459_cluck_flock
+        type: belongs_to
+        via_field: flock
+      - target_table: x_1939459_cluck_coop
+        type: belongs_to
+        via_field: coop
+    notes: seed_data: true
+  - name: Feed
+    type: primary
+    table: x_1939459_cluck_feed
+    fields:
+      - name: name
+        type: string
+        required: true
+      - name: sku
+        type: string
+      - name: feed_type
+        type: choice
+        required: true
+        choices: ['starter', 'grower', 'layer', 'broiler', 'scratch', 'treat', 'supplement']
+      - name: supplier
+        type: string
+      - name: bag_size_kg
+        type: decimal
+      - name: cost_per_bag
+        type: decimal
+      - name: protein_pct
+        type: decimal
+      - name: organic
+        type: boolean
+      - name: non_gmo
+        type: boolean
+      - name: on_hand_bags
+        type: integer
+        required: true
+      - name: reorder_threshold
+        type: integer
+      - name: reorder_quantity
+        type: integer
+      - name: last_delivery_date
+        type: string
+      - name: storage_location
+        type: string
+      - name: notes
+        type: string
+      - name: active
+        type: boolean
+    relationships: []
+    notes: seed_data: true
+  - name: Flock
+    type: primary
+    table: x_1939459_cluck_flock
+    fields:
+      - name: name
+        type: string
+        required: true
+      - name: coop
+        type: reference
+        required: true
+      - name: purpose
+        type: choice
+        choices: ['laying', 'breeding', 'meat', 'brooder', 'mixed']
+      - name: current_count
+        type: integer
+      - name: established_date
+        type: date
+      - name: pasture_rotation_days
+        type: integer
+      - name: feed_schedule
+        type: choice
+        choices: ['once_daily', 'twice_daily', 'free_feed', 'pasture_only']
+      - name: status
+        type: choice
+        required: true
+        choices: ['active', 'quarantine', 'molting', 'retired', 'harvested']
+      - name: notes
+        type: string
+      - name: featured
+        type: boolean
+    relationships:
+      - target_table: x_1939459_cluck_coop
+        type: belongs_to
+        via_field: coop
+    notes: seed_data: true
+  - name: Health Record
+    type: history
+    table: x_1939459_cluck_health_record
+    fields:
+      - name: bird
+        type: reference
+      - name: flock
+        type: reference
+      - name: event_type
+        type: choice
+        required: true
+        choices: ['wellness', 'vaccination', 'illness', 'injury', 'parasite', 'broken_egg', 'molt', 'death']
+      - name: diagnosis
+        type: string
+      - name: symptoms
+        type: string
+      - name: treatment
+        type: string
+      - name: medication
+        type: string
+      - name: dosage
+        type: string
+      - name: route
+        type: choice
+        choices: ['oral', 'water', 'feed', 'injection', 'topical', 'none']
+      - name: withdrawal_period_days
+        type: integer
+      - name: withdrawal_ends
+        type: date
+      - name: vet_required
+        type: boolean
+      - name: vet
+        type: reference
+      - name: cost
+        type: decimal
+      - name: outcome
+        type: choice
+        choices: ['ongoing', 'resolved', 'chronic', 'culled', 'deceased']
+    relationships:
+      - target_table: x_1939459_cluck_bird
+        type: belongs_to
+        via_field: bird
+      - target_table: x_1939459_cluck_flock
+        type: belongs_to
+        via_field: flock
+    notes: seed_data: true
+  - name: Incident
+    type: history
+    table: x_1939459_cluck_incident
+    fields:
+      - name: incident_type
+        type: choice
+        required: true
+        choices: ['predator', 'escape', 'disease', 'fencing', 'theft', 'quality', 'delivery', 'other']
+      - name: severity
+        type: choice
+        required: true
+        choices: ['minor', 'moderate', 'major', 'critical']
+      - name: occurred_at
+        type: datetime
+      - name: affected_flock
+        type: reference
+      - name: affected_coop
+        type: reference
+      - name: predator_species
+        type: choice
+        choices: ['hawk', 'owl', 'fox', 'coyote', 'raccoon', 'weasel', 'snake', 'dog', 'rat', 'unknown']
+      - name: birds_lost
+        type: integer
+      - name: birds_injured
+        type: integer
+      - name: eggs_lost
+        type: integer
+      - name: estimated_cost
+        type: integer
+      - name: evidence_notes
+        type: string
+      - name: photo_url
+        type: string
+      - name: preventive_action
+        type: string
+      - name: reported_by_customer
+        type: reference
+    relationships:
+      - target_table: x_1939459_cluck_flock
+        type: belongs_to
+        via_field: affected_flock
+      - target_table: x_1939459_cluck_coop
+        type: belongs_to
+        via_field: affected_coop
+      - target_table: x_1939459_cluck_customer
+        type: belongs_to
+        via_field: reported_by_customer
+    notes: seed_data: true
+  - name: Incubation Batch
+    type: primary
+    table: x_1939459_cluck_incubation
+    fields:
+      - name: batch_name
+        type: string
+        required: true
+      - name: incubator_id
+        type: string
+      - name: parent_flock
+        type: reference
+      - name: breed
+        type: reference
+      - name: start_date
+        type: date
+        required: true
+      - name: expected_hatch_date
+        type: date
+      - name: actual_hatch_date
+        type: date
+      - name: eggs_set
+        type: integer
+        required: true
+      - name: eggs_viable_day_7
+        type: integer
+      - name: eggs_viable_day_14
+        type: integer
+      - name: eggs_pipped
+        type: integer
+      - name: chicks_hatched
+        type: integer
+      - name: chicks_alive_day_3
+        type: integer
+      - name: target_temp_f
+        type: decimal
+      - name: target_humidity_pct
+        type: decimal
+      - name: hatch_rate_pct
+        type: decimal
+      - name: status
+        type: choice
+        required: true
+        choices: ['incubating', 'lockdown', 'hatching', 'complete', 'failed']
+      - name: notes
+        type: string
+    relationships:
+      - target_table: x_1939459_cluck_flock
+        type: belongs_to
+        via_field: parent_flock
+      - target_table: x_1939459_cluck_breed
+        type: belongs_to
+        via_field: breed
+    notes: seed_data: true
+  - name: Order
+    type: primary
+    table: x_1939459_cluck_order
+    fields:
+      - name: customer
+        type: reference
+      - name: customer_name
+        type: string
+        required: true
+      - name: customer_email
+        type: string
+      - name: customer_phone
+        type: string
+      - name: order_type
+        type: choice
+        required: true
+        choices: ['eggs', 'csa', 'chicks', 'tour', 'adoption', 'other']
+      - name: egg_grade
+        type: choice
+        choices: ['jumbo', 'xlarge', 'large', 'medium', 'mixed']
+      - name: egg_dozens
+        type: integer
+      - name: chick_breed
+        type: reference
+      - name: chick_quantity
+        type: integer
+      - name: target_hatch_batch
+        type: reference
+      - name: adopted_hen
+        type: reference
+      - name: tour_date
+        type: datetime
+      - name: tour_party_size
+        type: integer
+      - name: tour_add_egg_hunt
+        type: boolean
+      - name: delivery_type
+        type: choice
+        required: true
+        choices: ['pickup', 'farm_stand', 'local_delivery', 'farmers_market']
+      - name: delivery_address
+        type: string
+      - name: delivery_date
+        type: date
+      - name: fulfillment_status
+        type: choice
+        required: true
+        choices: ['pending', 'ready', 'out_for_delivery', 'delivered', 'picked_up', 'no_show', 'canceled']
+      - name: subtotal
+        type: decimal
+      - name: delivery_fee
+        type: decimal
+      - name: discount
+        type: decimal
+      - name: total
+        type: decimal
+      - name: paid
+        type: boolean
+      - name: loyalty_earned
+        type: integer
+      - name: ritm
+        type: reference
+      - name: special_requests
+        type: string
+    relationships:
+      - target_table: x_1939459_cluck_customer
+        type: belongs_to
+        via_field: customer
+      - target_table: x_1939459_cluck_breed
+        type: belongs_to
+        via_field: chick_breed
+      - target_table: x_1939459_cluck_incubation
+        type: belongs_to
+        via_field: target_hatch_batch
+      - target_table: x_1939459_cluck_bird
+        type: belongs_to
+        via_field: adopted_hen
+    notes: seed_data: true
+  - name: CSA Subscription
+    type: primary
+    table: x_1939459_cluck_subscription
+    fields:
+      - name: customer
+        type: reference
+        required: true
+      - name: frequency
+        type: choice
+        required: true
+        choices: ['weekly', 'biweekly', 'monthly']
+      - name: dozen_count
+        type: integer
+        required: true
+      - name: egg_grade
+        type: choice
+        choices: ['large', 'xlarge', 'mixed']
+      - name: delivery_mode
+        type: choice
+        choices: ['pickup', 'farm_stand', 'delivery', 'market']
+      - name: delivery_day
+        type: choice
+        choices: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+      - name: start_date
+        type: date
+        required: true
+      - name: next_fulfillment_date
+        type: date
+      - name: end_date
+        type: date
+      - name: auto_renew
+        type: boolean
+      - name: status
+        type: choice
+        required: true
+        choices: ['active', 'paused', 'canceled', 'completed']
+      - name: pause_until
+        type: date
+      - name: price_per_delivery
+        type: decimal
+      - name: discount_pct
+        type: decimal
+      - name: deliveries_completed
+        type: integer
+      - name: special_requests
+        type: string
+    relationships:
+      - target_table: x_1939459_cluck_customer
+        type: belongs_to
+        via_field: customer
+    notes: seed_data: true
+
+catalog:
+  items:
+    - name: Adopt-a-Hen (Annual Sponsorship)
+      description: Sponsor one of our named hens for a year — photo updates, her eggs, a farm-visit invite.
+      variables:
+        - name: hen
+          label: Choose Your Hen
+          type: reference
+          required: true
+          order: 500
+          choices: []
+        - name: gift_sponsorship
+          label: Is this a gift?
+          type: select
+          required: false
+          order: 600
+          choices: []
+        - name: recipient_name
+          label: Gift recipient name (optional)
+          type: text
+          required: false
+          order: 700
+          choices: []
+        - name: certificate_message
+          label: Message for the certificate (optional)
+          type: text
+          required: false
+          order: 800
+          choices: []
+        - name: ship_certificate
+          label: Ship a printed photo certificate?
+          type: select
+          required: false
+          order: 900
+          choices: []
+        - name: newsletter_opt_in
+          label: Opt in to monthly hen updates?
+          type: select
+          required: false
+          order: 1000
+          choices: []
+    - name: Buy Fresh Eggs
+      description: Pastured eggs, gathered this morning. Pickup, farm-stand, or local delivery.
+      variables:
+        - name: egg_grade
+          label: Egg Grade
+          type: select
+          required: true
+          order: 600
+          choices: ['Jumbo ($9.50/dozen)', 'X-Large ($8.50/dozen)', 'Large ($7.50/dozen)', 'Medium ($6.50/dozen)', 'Mixed Rainbow Basket ($8.00/dozen)']
+        - name: egg_dozens
+          label: How many dozens?
+          type: text
+          required: true
+          order: 700
+          choices: []
+        - name: delivery_type
+          label: Pickup or Delivery
+          type: select
+          required: true
+          order: 800
+          choices: ['Pick up at the farm (free)', 'Farm stand self-serve (free)', 'Local delivery ($5)', 'Hand off at Saturday market (free)']
+        - name: delivery_date
+          label: Pickup / Delivery Date
+          type: date
+          required: true
+          order: 1000
+          choices: []
+        - name: special_requests
+          label: Special requests (double-yolk preference, coop-tour add-on...)
+          type: text
+          required: false
+          order: 1100
+          choices: []
+    - name: Chick Pre-order
+      description: Reserve newly-hatched chicks of your chosen breed. Pickup at day-of-hatch.
+      variables:
+        - name: breed
+          label: Breed
+          type: reference
+          required: true
+          order: 500
+          choices: []
+        - name: quantity
+          label: Quantity (minimum 3)
+          type: text
+          required: true
+          order: 600
+          choices: []
+        - name: sex_preference
+          label: Sex Preference
+          type: select
+          required: true
+          order: 700
+          choices: ['Pullet (female) only — $2/chick premium', 'Straight run (mixed, day-old sexing unreliable)', 'Cockerel (male) only — discounted']
+        - name: target_month
+          label: Target Hatch Month
+          type: select
+          required: true
+          order: 800
+          choices: ['March', 'April', 'May', 'June', 'July', 'August', 'September', 'Flexible (any upcoming batch)']
+        - name: setup_notes
+          label: Got a brooder set up? Any questions?
+          type: text
+          required: false
+          order: 900
+          choices: []
+    - name: Egg CSA Subscription
+      description: Sign up for weekly or biweekly egg deliveries. Save 10%, never run out.
+      variables:
+        - name: frequency
+          label: Frequency
+          type: select
+          required: true
+          order: 500
+          choices: ['Weekly', 'Biweekly (every 2 weeks)', 'Monthly']
+        - name: dozen_count
+          label: Dozens per delivery
+          type: text
+          required: true
+          order: 600
+          choices: []
+        - name: egg_grade
+          label: Egg Grade
+          type: select
+          required: true
+          order: 700
+          choices: ['Large (standard)', 'X-Large (+$1/dozen)', 'Mixed rainbow basket']
+        - name: delivery_day
+          label: Delivery Day
+          type: select
+          required: true
+          order: 800
+          choices: ['Tuesday', 'Thursday', 'Saturday']
+        - name: delivery_mode
+          label: Delivery Mode
+          type: select
+          required: true
+          order: 900
+          choices: ['Pick up at the farm', 'Farm stand self-serve', 'Local delivery', 'Farmers market hand-off']
+        - name: start_date
+          label: Start Date
+          type: date
+          required: true
+          order: 1000
+          choices: []
+        - name: dietary_notes
+          label: Notes / allergies / gate codes
+          type: text
+          required: false
+          order: 1100
+          choices: []
+    - name: Farm Tour Booking
+      description: Come meet the flock. 45-min guided tour; add the egg-gathering experience for the kids.
+      variables:
+        - name: tour_date
+          label: Preferred date & time
+          type: datetime
+          required: true
+          order: 500
+          choices: []
+        - name: party_size
+          label: Party size
+          type: text
+          required: true
+          order: 600
+          choices: []
+        - name: add_egg_hunt
+          label: Add egg-gathering experience (+$10/person)
+          type: select
+          required: false
+          order: 700
+          choices: []
+        - name: tour_type
+          label: Tour Style
+          type: select
+          required: true
+          order: 800
+          choices: ['General tour (meet the flock)', "Kids' tour (hands-on with chicks)", "Breeder's deep-dive (heritage genetics)", 'Photography tour (golden hour)']
+        - name: accessibility_needs
+          label: Accessibility needs or requests?
+          type: text
+          required: false
+          order: 900
+          choices: []
+    - name: Report an Issue
+      description: Bad egg? Saw a hawk? Something else? Let us know.
+      variables:
+        - name: incident_type
+          label: Issue Type
+          type: select
+          required: true
+          order: 100
+          choices: ['Egg quality issue (cracked, stale, off)', 'Delivery problem', 'Predator sighting near the farm', 'Something else']
+        - name: severity
+          label: Severity
+          type: select
+          required: true
+          order: 200
+          choices: ['Minor (FYI)', "Moderate (I'd like a resolution)", 'Major (urgent)']
+        - name: short_description
+          label: One-line summary
+          type: text
+          required: true
+          order: 300
+          choices: []
+        - name: evidence_notes
+          label: What happened?
+          type: text
+          required: true
+          order: 400
+          choices: []
+        - name: photo_url
+          label: Photo URL (optional)
+          type: text
+          required: false
+          order: 500
+          choices: []
+
+workflows:
+  - name: CSA Subscription Renewal
+    trigger: onRecordUpdate
+    conditions: statusCHANGESTOpaused
+    actions: Sends reminder email to customer when subscription is paused.
+  - name: Low Feed Reorder
+    trigger: onRecordUpdate
+    conditions: on_hand_bagsLESS THANreorder_threshold
+    actions: Sends reorder alert and creates incident for low feed.
+
+business_logic:
+  rules:
+    - name: Cluck - Calculate bird age from hatch date
+      table: x_1939459_cluck_bird
+      trigger: before update
+      logic_summary: Calculates bird age from hatch date; auto-promotes young birds when they reach maturity.
+      external_dependencies: calculateBirdAge
+    - name: Cluck - Adjust flock head count when bird status changes
+      table: x_1939459_cluck_bird
+      trigger: after update
+      logic_summary: Decreases flock count when a bird's status is changed to non-active.
+      external_dependencies: adjustFlockHeadCount
+    - name: Cluck - Compute egg production rate
+      table: x_1939459_cluck_egg_log
+      trigger: before update
+      logic_summary: Computes production rate as collected eggs per flock count, and updates bird's lifetime egg count.
+      external_dependencies: onEggLogSave
+    - name: Cluck - Auto-open feed reorder task
+      table: x_1939459_cluck_feed
+      trigger: after update
+      logic_summary: Automates opening a reorder task when feed inventory falls below the threshold.
+      external_dependencies: checkFeedReorder
+    - name: Cluck - Calculate order total
+      table: x_1939459_cluck_order
+      trigger: before update
+      logic_summary: Calculates order total based on order type, items, delivery fee, and discounts.
+      external_dependencies: calculateOrderTotal
+    - name: Cluck - Award loyalty eggs on fulfillment
+      table: x_1939459_cluck_order
+      trigger: after update
+      logic_summary: Awards loyalty points and updates customer order history when an order is fulfilled.
+      external_dependencies: onOrderFulfilled
+    - name: Cluck - Escalate critical incidents
+      table: x_1939459_cluck_incident
+      trigger: before update
+      logic_summary: Elevates incident priority and urgency when marked as critical.
+      external_dependencies: escalateCriticalIncident
+
+ui:
+  modules:
+    - name: All Flocks
+      table: x_1939459_cluck_flock
+      type: LIST
+      filter: null
+    - name: Coops
+      table: x_1939459_cluck_coop
+      type: LIST
+      filter: null
+    - name: All Birds
+      table: x_1939459_cluck_bird
+      type: LIST
+      filter: null
+    - name: Adoptable Hens
+      table: x_1939459_cluck_bird
+      type: LIST
+      filter: is_adoptable=true^status=active
+    - name: Breeding Stock
+      table: x_1939459_cluck_bird
+      type: LIST
+      filter: is_breeding_stock=true
+    - name: Breed Catalog
+      table: x_1939459_cluck_breed
+      type: LIST
+      filter: null
+    - name: Today's Egg Log
+      table: x_1939459_cluck_egg_log
+      type: LIST
+      filter: log_dateONToday@javascript:gs.beginningOfToday()@javascript:gs.endOfToday()
+    - name: Egg Log (all)
+      table: x_1939459_cluck_egg_log
+      type: LIST
+      filter: null
+    - name: Log Today's Eggs
+      table: x_1939459_cluck_egg_log
+      type: NEW
+      filter: null
+    - name: Feed Inventory
+      table: x_1939459_cluck_feed
+      type: LIST
+      filter: null
+    - name: Low Stock Feed
+      table: x_1939459_cluck_feed
+      type: LIST
+      filter: on_hand_bags<=reorder_threshold
+    - name: Health Records
+      table: x_1939459_cluck_health_record
+      type: LIST
+      filter: null
+    - name: Open Health Cases
+      table: x_1939459_cluck_health_record
+      type: LIST
+      filter: outcome=ongoing
+    - name: Incubation Batches
+      table: x_1939459_cluck_incubation
+      type: LIST
+      filter: null
+    - name: Active Incubations
+      table: x_1939459_cluck_incubation
+      type: LIST
+      filter: statusINincubating,lockdown,hatching
+    - name: All Orders
+      table: x_1939459_cluck_order
+      type: LIST
+      filter: null
+    - name: Orders to Fulfill
+      table: x_1939459_cluck_order
+      type: LIST
+      filter: fulfillment_statusINpending,ready,out_for_delivery
+    - name: Active CSA Subscriptions
+      table: x_1939459_cluck_subscription
+      type: LIST
+      filter: status=active
+    - name: Customers
+      table: x_1939459_cluck_customer
+      type: LIST
+      filter: null
+    - name: Hen Sponsors
+      table: x_1939459_cluck_customer
+      type: LIST
+      filter: tier=sponsor
+    - name: All Incidents
+      table: x_1939459_cluck_incident
+      type: LIST
+      filter: null
+    - name: Open Incidents
+      table: x_1939459_cluck_incident
+      type: LIST
+      filter: active=true
+    - name: Critical Incidents
+      table: x_1939459_cluck_incident
+      type: LIST
+      filter: severity=critical^active=true
+
+navigation:
+  menu:
+    - name: Cluckworks
+      modules:
+        - All Flocks
+        - Coops
+        - All Birds
+        - Adoptable Hens
+        - Breeding Stock
+        - Breed Catalog
+        - Today's Egg Log
+        - Egg Log (all)
+        - Log Today's Eggs
+        - Feed Inventory
+        - Low Stock Feed
+        - Health Records
+        - Open Health Cases
+        - Incubation Batches
+        - Active Incubations
+        - All Orders
+        - Orders to Fulfill
+        - Active CSA Subscriptions
+        - Customers
+        - Hen Sponsors
+        - All Incidents
+        - Open Incidents
+        - Critical Incidents
+
+data_model:
+  tables:
+    - name: x_1939459_cluck_bird
+      purpose: Track individual birds for the Adopt-a-Hen program, breeders, and with special history.
+      key_fields:
+        - name: tag_id
+          type: string
+          notes: Unique tag for bird identification.
+    - name: x_1939459_cluck_breed
+      purpose: Reference for chicken breeds used in operations.
+      key_fields:
+        - name: name
+          type: string
+          notes: Breed name for selection and categorization.
+    - name: x_1939459_cluck_coop
+      purpose: Physical structures for containing flocks.
+      key_fields:
+        - name: name
+          type: string
+          notes: Name of the coop for identification.
+    - name: x_1939459_cluck_customer
+      purpose: Track customer details, purchases, and sponsorships.
+      key_fields:
+        - name: email
+          type: string
+          notes: Unique email for customer contact.
+    - name: x_1939459_cluck_egg_log
+      purpose: Log egg production daily for statistical purposes.
+      key_fields:
+        - name: log_date
+          type: date
+          notes: Date of collection log.
+    - name: x_1939459_cluck_feed
+      purpose: Manage feed inventory and supplier information.
+      key_fields:
+        - name: name
+          type: string
+          notes: Name of the feed for cataloging.
+    - name: x_1939459_cluck_flock
+      purpose: Grouping of birds for collective management.
+      key_fields:
+        - name: name
+          type: string
+          notes: Name assigned to a flock.
+    - name: x_1939459_cluck_health_record
+      purpose: Track health records and interventions for birds and flocks.
+      key_fields:
+        - name: number
+          type: auto_number
+          notes: Unique health record ID generated for tracking.
+    - name: x_1939459_cluck_incident
+      purpose: Log incidents impacting farm operations.
+      key_fields:
+        - name: number
+          type: auto_number
+          notes: Unique incident ID generated for tracking.
+    - name: x_1939459_cluck_incubation
+      purpose: Manage egg incubation batches and progress tracking.
+      key_fields:
+        - name: batch_name
+          type: string
+          notes: Identifies the incubation batch.
+    - name: x_1939459_cluck_order
+      purpose: Capture customer orders for products and services.
+      key_fields:
+        - name: number
+          type: auto_number
+          notes: Unique order ID generated for tracking.
+    - name: x_1939459_cluck_subscription
+      purpose: Track egg CSA subscriptions for recurring delivery.
+      key_fields:
+        - name: customer
+          type: reference
+          notes: Links subscription to a customer.
+
+integrations:
+  - name: Cluck Egg Availability API
+    type: rest_api
+    direction: outbound
+    description: Provides egg stock data for dashboards or external displays.
