@@ -1,0 +1,53 @@
+{
+  "rules": [
+    {
+      "name": "Cluck - Calculate bird age from hatch date",
+      "table": "x_1939459_cluck_bird",
+      "trigger": "before insert",
+      "logic_summary": "Calculates age in days from the hatched date and updates the sex to hen or rooster if older than 20 weeks.",
+      "external_dependencies": "none"
+    },
+    {
+      "name": "Cluck - Adjust flock head count when bird status changes",
+      "table": "x_1939459_cluck_bird",
+      "trigger": "after update",
+      "logic_summary": "Decreases flock head count if bird status changes to deceased, processed, escaped, or retired.",
+      "external_dependencies": "none"
+    },
+    {
+      "name": "Cluck - Compute egg production rate",
+      "table": "x_1939459_cluck_egg_log",
+      "trigger": "before insert",
+      "logic_summary": "Calculates and stores the egg production rate based on the flock size and collected eggs.",
+      "external_dependencies": "none"
+    },
+    {
+      "name": "Cluck - Auto-open feed reorder task",
+      "table": "x_1939459_cluck_feed",
+      "trigger": "after update",
+      "logic_summary": "Creates a reorder incident if feed stock drops below reorder threshold.",
+      "external_dependencies": "none"
+    },
+    {
+      "name": "Cluck - Calculate order total",
+      "table": "x_1939459_cluck_order",
+      "trigger": "before insert",
+      "logic_summary": "Computes order subtotal and total cost based on items ordered.",
+      "external_dependencies": "none"
+    },
+    {
+      "name": "Cluck - Award loyalty eggs on fulfillment",
+      "table": "x_1939459_cluck_order",
+      "trigger": "after update",
+      "logic_summary": "Awards loyalty points based on the total order value after fulfillment.",
+      "external_dependencies": "none"
+    },
+    {
+      "name": "Cluck - Escalate critical incidents",
+      "table": "x_1939459_cluck_incident",
+      "trigger": "before insert",
+      "logic_summary": "Adjusts priority and urgency if incident is marked as critical.",
+      "external_dependencies": "none"
+    }
+  ]
+}
