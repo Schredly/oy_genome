@@ -1,0 +1,843 @@
+{
+  "domain_model": {
+    "entities": [
+      {
+        "name": "Bird",
+        "attributes": [
+          {
+            "name": "tag_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "breed",
+            "type": "reference",
+            "required": true
+          },
+          {
+            "name": "flock",
+            "type": "reference"
+          },
+          {
+            "name": "sex",
+            "type": "choice",
+            "required": true,
+            "choices": [
+              "hen",
+              "rooster",
+              "pullet",
+              "cockerel",
+              "unknown"
+            ]
+          },
+          {
+            "name": "hatched_date",
+            "type": "date"
+          },
+          {
+            "name": "age_days",
+            "type": "integer"
+          },
+          {
+            "name": "weight_grams",
+            "type": "integer"
+          },
+          {
+            "name": "color_pattern",
+            "type": "string"
+          },
+          {
+            "name": "is_breeding_stock",
+            "type": "boolean"
+          },
+          {
+            "name": "is_adoptable",
+            "type": "boolean"
+          },
+          {
+            "name": "adoption_sponsor",
+            "type": "reference"
+          },
+          {
+            "name": "adoption_expires",
+            "type": "date"
+          },
+          {
+            "name": "egg_color_observed",
+            "type": "string"
+          },
+          {
+            "name": "lifetime_eggs",
+            "type": "integer"
+          },
+          {
+            "name": "status",
+            "type": "choice",
+            "required": true,
+            "choices": [
+              "active",
+              "molting",
+              "brooding",
+              "injured",
+              "retired",
+              "deceased",
+              "processed",
+              "escaped"
+            ]
+          },
+          {
+            "name": "personality_score",
+            "type": "decimal"
+          }
+        ]
+      },
+      {
+        "name": "Breed",
+        "attributes": [
+          {
+            "name": "name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "purpose",
+            "type": "choice",
+            "required": true,
+            "choices": [
+              "layer",
+              "meat",
+              "dual",
+              "ornamental"
+            ]
+          },
+          {
+            "name": "avg_eggs_per_year",
+            "type": "integer"
+          },
+          {
+            "name": "egg_color",
+            "type": "choice",
+            "choices": [
+              "white",
+              "brown",
+              "blue",
+              "green",
+              "cream",
+              "speckled",
+              "chocolate"
+            ]
+          },
+          {
+            "name": "temperament",
+            "type": "choice",
+            "choices": [
+              "docile",
+              "active",
+              "broody",
+              "aggressive"
+            ]
+          },
+          {
+            "name": "avg_weight_kg",
+            "type": "integer"
+          },
+          {
+            "name": "cold_hardy",
+            "type": "boolean"
+          },
+          {
+            "name": "heat_tolerant",
+            "type": "boolean"
+          },
+          {
+            "name": "heritage",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "name": "Coop",
+        "attributes": [
+          {
+            "name": "name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "capacity",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "square_meters",
+            "type": "integer"
+          },
+          {
+            "name": "style",
+            "type": "choice",
+            "choices": [
+              "fixed",
+              "mobile",
+              "pasture",
+              "hoop"
+            ]
+          },
+          {
+            "name": "heating",
+            "type": "boolean"
+          },
+          {
+            "name": "automatic_door",
+            "type": "boolean"
+          },
+          {
+            "name": "nest_boxes",
+            "type": "integer"
+          },
+          {
+            "name": "roost_length_m",
+            "type": "integer"
+          },
+          {
+            "name": "ventilation_rating",
+            "type": "choice",
+            "choices": [
+              "poor",
+              "adequate",
+              "good",
+              "excellent"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Customer",
+        "attributes": [
+          {
+            "name": "name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "email",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "phone",
+            "type": "string"
+          },
+          {
+            "name": "street",
+            "type": "string"
+          },
+          {
+            "name": "city",
+            "type": "string"
+          },
+          {
+            "name": "state",
+            "type": "string"
+          },
+          {
+            "name": "postal_code",
+            "type": "string"
+          },
+          {
+            "name": "tier",
+            "type": "choice",
+            "required": true,
+            "choices": [
+              "regular",
+              "csa",
+              "sponsor",
+              "wholesale",
+              "vip"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Egg Log",
+        "attributes": [
+          {
+            "name": "log_date",
+            "type": "date",
+            "required": true
+          },
+          {
+            "name": "flock",
+            "type": "reference",
+            "required": true
+          },
+          {
+            "name": "coop",
+            "type": "reference"
+          },
+          {
+            "name": "count_collected",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "count_jumbo",
+            "type": "integer"
+          },
+          {
+            "name": "count_xlarge",
+            "type": "integer"
+          },
+          {
+            "name": "count_large",
+            "type": "integer"
+          },
+          {
+            "name": "count_medium",
+            "type": "integer"
+          },
+          {
+            "name": "count_small",
+            "type": "integer"
+          },
+          {
+            "name": "count_cracked",
+            "type": "integer"
+          },
+          {
+            "name": "count_soft_shell",
+            "type": "integer"
+          },
+          {
+            "name": "count_double_yolk",
+            "type": "integer"
+          },
+          {
+            "name": "time_of_day",
+            "type": "choice",
+            "choices": [
+              "morning",
+              "afternoon",
+              "evening"
+            ]
+          },
+          {
+            "name": "avg_weight_g",
+            "type": "decimal"
+          },
+          {
+            "name": "collector",
+            "type": "reference"
+          }
+        ]
+      },
+      {
+        "name": "Feed",
+        "attributes": [
+          {
+            "name": "name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "sku",
+            "type": "string"
+          },
+          {
+            "name": "feed_type",
+            "type": "choice",
+            "required": true,
+            "choices": [
+              "starter",
+              "grower",
+              "layer",
+              "broiler",
+              "scratch",
+              "treat",
+              "supplement"
+            ]
+          },
+          {
+            "name": "supplier",
+            "type": "string"
+          },
+          {
+            "name": "bag_size_kg",
+            "type": "decimal"
+          },
+          {
+            "name": "cost_per_bag",
+            "type": "decimal"
+          },
+          {
+            "name": "protein_pct",
+            "type": "decimal"
+          },
+          {
+            "name": "organic",
+            "type": "boolean"
+          },
+          {
+            "name": "non_gmo",
+            "type": "boolean"
+          },
+          {
+            "name": "on_hand_bags",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "reorder_threshold",
+            "type": "integer"
+          },
+          {
+            "name": "reorder_quantity",
+            "type": "integer"
+          }
+        ]
+      },
+      {
+        "name": "Flock",
+        "attributes": [
+          {
+            "name": "name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "coop",
+            "type": "reference",
+            "required": true
+          },
+          {
+            "name": "purpose",
+            "type": "choice",
+            "choices": [
+              "laying",
+              "breeding",
+              "meat",
+              "brooder",
+              "mixed"
+            ]
+          },
+          {
+            "name": "current_count",
+            "type": "integer"
+          },
+          {
+            "name": "established_date",
+            "type": "date"
+          },
+          {
+            "name": "pasture_rotation_days",
+            "type": "integer"
+          },
+          {
+            "name": "feed_schedule",
+            "type": "choice",
+            "choices": [
+              "once_daily",
+              "twice_daily",
+              "free_feed",
+              "pasture_only"
+            ]
+          },
+          {
+            "name": "status",
+            "type": "choice",
+            "required": true,
+            "choices": [
+              "active",
+              "quarantine",
+              "molting",
+              "retired",
+              "harvested"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Health Record",
+        "attributes": [
+          {
+            "name": "bird",
+            "type": "reference"
+          },
+          {
+            "name": "flock",
+            "type": "reference"
+          },
+          {
+            "name": "event_type",
+            "type": "choice",
+            "required": true,
+            "choices": [
+              "wellness",
+              "vaccination",
+              "illness",
+              "injury",
+              "parasite",
+              "broken_egg",
+              "molt",
+              "death"
+            ]
+          },
+          {
+            "name": "diagnosis",
+            "type": "string"
+          },
+          {
+            "name": "symptoms",
+            "type": "string"
+          },
+          {
+            "name": "treatment",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "Incident",
+        "attributes": [
+          {
+            "name": "incident_type",
+            "type": "choice",
+            "required": true,
+            "choices": [
+              "predator",
+              "escape",
+              "disease",
+              "fencing",
+              "theft",
+              "quality",
+              "delivery",
+              "other"
+            ]
+          },
+          {
+            "name": "severity",
+            "type": "choice",
+            "required": true,
+            "choices": [
+              "minor",
+              "moderate",
+              "major",
+              "critical"
+            ]
+          },
+          {
+            "name": "occurred_at",
+            "type": "datetime"
+          },
+          {
+            "name": "affected_flock",
+            "type": "reference"
+          },
+          {
+            "name": "affected_coop",
+            "type": "reference"
+          },
+          {
+            "name": "predator_species",
+            "type": "choice",
+            "choices": [
+              "hawk",
+              "owl",
+              "fox",
+              "coyote",
+              "raccoon",
+              "weasel",
+              "snake",
+              "dog",
+              "rat",
+              "unknown"
+            ]
+          },
+          {
+            "name": "birds_lost",
+            "type": "integer"
+          },
+          {
+            "name": "birds_injured",
+            "type": "integer"
+          },
+          {
+            "name": "eggs_lost",
+            "type": "integer"
+          },
+          {
+            "name": "estimated_cost",
+            "type": "integer"
+          },
+          {
+            "name": "evidence_notes",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "Incubation Batch",
+        "attributes": [
+          {
+            "name": "batch_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "incubator_id",
+            "type": "string"
+          },
+          {
+            "name": "parent_flock",
+            "type": "reference"
+          },
+          {
+            "name": "breed",
+            "type": "reference"
+          },
+          {
+            "name": "start_date",
+            "type": "date",
+            "required": true
+          },
+          {
+            "name": "expected_hatch_date",
+            "type": "date"
+          },
+          {
+            "name": "actual_hatch_date",
+            "type": "date"
+          },
+          {
+            "name": "eggs_set",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "eggs_viable_day_7",
+            "type": "integer"
+          },
+          {
+            "name": "eggs_viable_day_14",
+            "type": "integer"
+          },
+          {
+            "name": "eggs_pipped",
+            "type": "integer"
+          },
+          {
+            "name": "chicks_hatched",
+            "type": "integer"
+          },
+          {
+            "name": "chicks_alive_day_3",
+            "type": "integer"
+          },
+          {
+            "name": "target_temp_f",
+            "type": "decimal"
+          },
+          {
+            "name": "target_humidity_pct",
+            "type": "decimal"
+          },
+          {
+            "name": "hatch_rate_pct",
+            "type": "decimal"
+          },
+          {
+            "name": "status",
+            "type": "choice",
+            "required": true,
+            "choices": [
+              "incubating",
+              "lockdown",
+              "hatching",
+              "complete",
+              "failed"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Order",
+        "attributes": [
+          {
+            "name": "customer",
+            "type": "reference"
+          },
+          {
+            "name": "customer_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "order_type",
+            "type": "choice",
+            "required": true,
+            "choices": [
+              "eggs",
+              "csa",
+              "chicks",
+              "tour",
+              "adoption",
+              "other"
+            ]
+          },
+          {
+            "name": "egg_grade",
+            "type": "choice",
+            "choices": [
+              "jumbo",
+              "xlarge",
+              "large",
+              "medium",
+              "mixed"
+            ]
+          },
+          {
+            "name": "egg_dozens",
+            "type": "integer"
+          },
+          {
+            "name": "chick_breed",
+            "type": "reference"
+          },
+          {
+            "name": "chick_quantity",
+            "type": "integer"
+          }
+        ]
+      }
+    ]
+  },
+  "application_services": [
+    {
+      "name": "Egg Collection Service",
+      "responsibilities": [
+        "Record and verify daily egg collections",
+        "Generate daily production reports"
+      ],
+      "inputs": [
+        "Egg Log"
+      ],
+      "outputs": [
+        "Production Report"
+      ]
+    },
+    {
+      "name": "Flock Management Service",
+      "responsibilities": [
+        "Maintain flock details",
+        "Update head count based on bird status"
+      ],
+      "inputs": [
+        "Bird",
+        "Flock"
+      ],
+      "outputs": [
+        "Flock Summary"
+      ]
+    },
+    {
+      "name": "Feed Inventory Service",
+      "responsibilities": [
+        "Manage feed stock levels and reordering"
+      ],
+      "inputs": [
+        "Feed"
+      ],
+      "outputs": [
+        "Reorder Requests"
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Egg Collection Analysis",
+      "steps": [
+        "Record egg collection",
+        "Verify egg counts",
+        "Report production rate"
+      ]
+    }
+  ],
+  "api_surface": [
+    {
+      "endpoint": "/api/v1/eggs",
+      "method": "GET",
+      "purpose": "Retrieve data on current egg availability"
+    }
+  ],
+  "ui_model": {
+    "screens": [
+      {
+        "name": "Flock Management",
+        "components": [
+          {
+            "data_list": "Flock"
+          }
+        ]
+      },
+      {
+        "name": "Breed Catalog",
+        "components": [
+          {
+            "data_list": "Breed"
+          }
+        ]
+      },
+      {
+        "name": "Egg Log",
+        "components": [
+          {
+            "data_list": "Egg Log"
+          },
+          {
+            "form": "New Collection Entry"
+          }
+        ]
+      }
+    ]
+  },
+  "automation_rules": [
+    {
+      "name": "Calculate Bird Age",
+      "trigger": "Bird record created",
+      "action": "Calculate age from hatch date and update if older than 20 weeks"
+    },
+    {
+      "name": "Adjust Flock Head Count",
+      "trigger": "Bird status changes",
+      "action": "Update flock head count accordingly"
+    },
+    {
+      "name": "Compute Egg Production Rate",
+      "trigger": "New egg log entry",
+      "action": "Calculate production rate"
+    },
+    {
+      "name": "Auto-Create Feed Reorder",
+      "trigger": "Feed amount below threshold",
+      "action": "Generate reorder request"
+    },
+    {
+      "name": "Calculate Order Total",
+      "trigger": "New order entry",
+      "action": "Calculate subtotal and total cost"
+    },
+    {
+      "name": "Award Loyalty Eggs",
+      "trigger": "Order fulfillment",
+      "action": "Assign loyalty points based on order value"
+    },
+    {
+      "name": "Escalate Critical Incidents",
+      "trigger": "Incident marked critical",
+      "action": "Increase priority and urgency, notify staff"
+    }
+  ]
+}
