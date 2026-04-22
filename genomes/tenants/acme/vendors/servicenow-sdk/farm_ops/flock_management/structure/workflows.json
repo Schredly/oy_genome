@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Egg Collection Analysis",
+    "trigger": "Daily logs updated",
+    "conditions": "Daily logs must be updated by noon",
+    "actions": "Report today's egg yield by 3PM"
+  }
+]
