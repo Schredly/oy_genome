@@ -1,0 +1,81 @@
+{
+  "tables": [
+    {
+      "name": "x_1939459_cluck_bird",
+      "purpose": "To manage individual bird information for farm birds.",
+      "key_fields": [
+        {
+          "name": "tag_id",
+          "type": "string",
+          "notes": "Identifies leg-banded or wing-banded birds."
+        }
+      ]
+    },
+    {
+      "name": "x_1939459_cluck_breed",
+      "purpose": "A reference catalog of chicken breeds being raised.",
+      "key_fields": [
+        {
+          "name": "name",
+          "type": "string",
+          "notes": "Identifies chicken breed by name."
+        }
+      ]
+    },
+    {
+      "name": "x_1939459_cluck_coop",
+      "purpose": "To manage and monitor chicken coops and capacity.",
+      "key_fields": [
+        {
+          "name": "name",
+          "type": "string",
+          "notes": "Unique name identifying the coop."
+        }
+      ]
+    },
+    {
+      "name": "x_1939459_cluck_customer",
+      "purpose": "Tracks customer details including sponsorship and order history.",
+      "key_fields": [
+        {
+          "name": "email",
+          "type": "string",
+          "notes": "Unique identifier for customers based on email."
+        }
+      ]
+    },
+    {
+      "name": "x_1939459_cluck_egg_log",
+      "purpose": "Records daily egg collection details and production metrics.",
+      "key_fields": [
+        {
+          "name": "log_date",
+          "type": "date",
+          "notes": "Date of recorded egg collection."
+        }
+      ]
+    },
+    {
+      "name": "x_1939459_cluck_feed",
+      "purpose": "Manages feed inventory and reordering thresholds.",
+      "key_fields": [
+        {
+          "name": "name",
+          "type": "string",
+          "notes": "Identifies feed by its common name."
+        }
+      ]
+    },
+    {
+      "name": "x_1939459_cluck_flock",
+      "purpose": "To manage bird groupings, roll-up egg counts, and overall flock management.",
+      "key_fields": [
+        {
+          "name": "name",
+          "type": "string",
+          "notes": "Identifies flock by name."
+        }
+      ]
+    }
+  ]
+}
