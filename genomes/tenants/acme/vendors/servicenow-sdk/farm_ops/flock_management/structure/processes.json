@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Egg Collection Process",
+    "steps": [
+      {
+        "step": "Record egg collection",
+        "actor": "Farmhand",
+        "action": "Log the number of eggs collected from each flock",
+        "system_behavior": "Update egg log record"
+      },
+      {
+        "step": "Verify egg counts",
+        "actor": "Farmer",
+        "action": "Validate the recorded egg counts",
+        "system_behavior": "Confirm egg log accuracy"
+      },
+      {
+        "step": "Report production rate",
+        "actor": "System",
+        "action": "Calculate and report daily production rates",
+        "system_behavior": "Generate production report"
+      }
+    ]
+  }
+]
