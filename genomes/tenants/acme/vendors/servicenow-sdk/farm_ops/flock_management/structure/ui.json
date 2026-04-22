@@ -1,0 +1,22 @@
+{
+  "modules": [
+    {
+      "name": "All Flocks",
+      "table": "x_1939459_cluck_flock",
+      "type": "LIST",
+      "filter": "none"
+    },
+    {
+      "name": "Breed Catalog",
+      "table": "x_1939459_cluck_breed",
+      "type": "LIST",
+      "filter": "none"
+    },
+    {
+      "name": "Today's Egg Log",
+      "table": "x_1939459_cluck_egg_log",
+      "type": "LIST",
+      "filter": "log_dateONToday@javascript:gs.beginningOfToday()@javascript:gs.endOfToday()"
+    }
+  ]
+}
