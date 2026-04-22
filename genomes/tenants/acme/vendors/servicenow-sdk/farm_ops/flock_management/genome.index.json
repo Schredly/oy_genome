@@ -1,0 +1,95 @@
+{
+  "entities": {
+    "forms": [
+      {
+        "id": "form_bird",
+        "name": "Bird",
+        "file_path": "genomes/tenants/acme/vendors/servicenow-sdk/farm_ops/flock_management/structure/entities.json"
+      },
+      {
+        "id": "form_breed",
+        "name": "Breed",
+        "file_path": "genomes/tenants/acme/vendors/servicenow-sdk/farm_ops/flock_management/structure/entities.json"
+      },
+      {
+        "id": "form_coop",
+        "name": "Coop",
+        "file_path": "genomes/tenants/acme/vendors/servicenow-sdk/farm_ops/flock_management/structure/entities.json"
+      },
+      {
+        "id": "form_customer",
+        "name": "Customer",
+        "file_path": "genomes/tenants/acme/vendors/servicenow-sdk/farm_ops/flock_management/structure/entities.json"
+      },
+      {
+        "id": "form_egg_log",
+        "name": "Egg Log",
+        "file_path": "genomes/tenants/acme/vendors/servicenow-sdk/farm_ops/flock_management/structure/entities.json"
+      },
+      {
+        "id": "form_feed",
+        "name": "Feed",
+        "file_path": "genomes/tenants/acme/vendors/servicenow-sdk/farm_ops/flock_management/structure/entities.json"
+      },
+      {
+        "id": "form_flock",
+        "name": "Flock",
+        "file_path": "genomes/tenants/acme/vendors/servicenow-sdk/farm_ops/flock_management/structure/entities.json"
+      },
+      {
+        "id": "form_health_record",
+        "name": "Health Record",
+        "file_path": "genomes/tenants/acme/vendors/servicenow-sdk/farm_ops/flock_management/structure/entities.json"
+      },
+      {
+        "id": "form_incident",
+        "name": "Incident",
+        "file_path": "genomes/tenants/acme/vendors/servicenow-sdk/farm_ops/flock_management/structure/entities.json"
+      },
+      {
+        "id": "form_incubation_batch",
+        "name": "Incubation Batch",
+        "file_path": "genomes/tenants/acme/vendors/servicenow-sdk/farm_ops/flock_management/structure/entities.json"
+      },
+      {
+        "id": "form_order",
+        "name": "Order",
+        "file_path": "genomes/tenants/acme/vendors/servicenow-sdk/farm_ops/flock_management/structure/entities.json"
+      }
+    ],
+    "workflows": [
+      {
+        "id": "wf_egg_collection_analysis",
+        "name": "Egg Collection Analysis",
+        "file_path": "genomes/tenants/acme/vendors/servicenow-sdk/farm_ops/flock_management/structure/workflows.json"
+      }
+    ],
+    "tables": [],
+    "ui_components": []
+  },
+  "relationships": {},
+  "summaries": {
+    "form_bird": "Form: Bird. Contains 17 fields.",
+    "form_breed": "Form: Breed. Contains 9 fields.",
+    "form_coop": "Form: Coop. Contains 9 fields.",
+    "form_customer": "Form: Customer. Contains 8 fields.",
+    "form_egg_log": "Form: Egg Log. Contains 15 fields.",
+    "form_feed": "Form: Feed. Contains 12 fields.",
+    "form_flock": "Form: Flock. Contains 8 fields.",
+    "form_health_record": "Form: Health Record. Contains 6 fields.",
+    "form_incident": "Form: Incident. Contains 11 fields.",
+    "form_incubation_batch": "Form: Incubation Batch. Contains 17 fields.",
+    "form_order": "Form: Order. Contains 7 fields.",
+    "wf_egg_collection_analysis": "Workflow: Egg Collection Analysis."
+  },
+  "metadata": {
+    "application_name": "Cluckworks",
+    "source_system": "ServiceNow SDK",
+    "entity_counts": {
+      "forms": 11,
+      "workflows": 1,
+      "tables": 0,
+      "ui_components": 0
+    }
+  }
+}
